@@ -5,21 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22522964-ee30-41fa-aa84-8bf6b9a1ee96" name="Changes" comment="first commit project initialisation">
-      <change afterPath="$PROJECT_DIR$/src/main/java/DataBases/PatientDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DataBases/PatientFileDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Exceptions/PatientAllreadyExistException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Exceptions/PatientDoesNotExistException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Patient/AdultSchema.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Patient/EnfantSchema.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Patient/PatientModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Patient/PatientSchema.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBases/OrthophonisteFileDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBases/OrthophonisteFileDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBases/OrthophonistheDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBases/OrthophonistheDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Orthophoniste/OrthophonisteSchema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Orthophoniste/OrthophonisteSchema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataBases/PatientDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBases/PatientDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataBases/PatientFileDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBases/PatientFileDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Exceptions/PatientAllreadyExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exceptions/PatientAlreadyExistException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Patient/AdultSchema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Patient/AdultSchema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Patient/EnfantSchema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Patient/EnfantSchema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Patient/PatientModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Patient/PatientModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Patient/PatientSchema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Patient/PatientSchema.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patient_management_system/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patient_management_system/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/login-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/signup-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/signup-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +123,7 @@
       <workItem from="1715267426173" duration="1416000" />
       <workItem from="1715316215904" duration="1995000" />
       <workItem from="1715324910551" duration="72000" />
-      <workItem from="1715324991807" duration="8538000" />
+      <workItem from="1715324991807" duration="10717000" />
     </task>
     <task id="LOCAL-00001" summary="first commit project initialisation">
       <option name="closed" value="true" />
