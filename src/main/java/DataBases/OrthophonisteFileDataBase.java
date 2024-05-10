@@ -4,9 +4,10 @@ import Exceptions.UniqueUsernameViolationException;
 import Exceptions.UserDoesNotExistException;
 import Models.Orthophoniste.OrthophonisteSchema;
 
+import java.io.Serializable;
 import java.util.TreeMap;
 
-public class OrthophonisteFileDataBase implements OrthophonistheDataBase{
+public class OrthophonisteFileDataBase implements OrthophonistheDataBase, Serializable {
     private TreeMap<String, OrthophonisteSchema> orthophonistes = new TreeMap<>();
 
     public OrthophonisteFileDataBase() {
@@ -19,10 +20,10 @@ public class OrthophonisteFileDataBase implements OrthophonistheDataBase{
 
 
     @Override
-    public OrthophonisteSchema create(String username, String password) throws UniqueUsernameViolationException {
+    public void create(String username, String password) throws UniqueUsernameViolationException {
        if(orthophonistes.containsKey(username)) throw new UniqueUsernameViolationException();
        orthophonistes.put(username, new OrthophonisteSchema(username, password));
-       return orthophonistes.get(username);
+        orthophonistes.get(username);
     }
 
     @Override

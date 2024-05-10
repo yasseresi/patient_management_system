@@ -4,9 +4,11 @@ import Exceptions.UniqueUsernameViolationException;
 import Exceptions.UserDoesNotExistException;
 import Models.Orthophoniste.OrthophonisteSchema;
 
-public interface OrthophonistheDataBase {
+import java.io.Serializable;
 
-    public OrthophonisteSchema create(String username, String password) throws UniqueUsernameViolationException;
+public interface OrthophonistheDataBase extends Serializable {
+
+    public void create(String username, String password) throws UniqueUsernameViolationException;
     public OrthophonisteSchema create(OrthophonisteSchema newUser) throws UniqueUsernameViolationException;
     public boolean exists(String username);
     public OrthophonisteSchema find(String username) throws UserDoesNotExistException;

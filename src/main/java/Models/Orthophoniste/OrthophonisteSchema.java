@@ -1,8 +1,9 @@
 package Models.Orthophoniste;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class OrthophonisteSchema {
+public class OrthophonisteSchema implements Serializable {
     private  String nom,prenom,adress,adress_mail;
     private  int  nb_phone;
     private String password;
