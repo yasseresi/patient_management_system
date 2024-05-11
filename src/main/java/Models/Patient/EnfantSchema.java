@@ -10,6 +10,10 @@ public class EnfantSchema extends PatientSchema{
         super(nom, prenom, age, dateNaissance, lieuNaissance, adresse, nouveau);
     }
 
+    public EnfantSchema(String nom, String prenom , int age){
+        super(nom,prenom,age);
+    }
+
 
 
 

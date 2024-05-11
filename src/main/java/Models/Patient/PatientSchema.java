@@ -24,6 +24,12 @@ public abstract class PatientSchema implements Serializable, Comparable<PatientS
         this.nouveau = nouveau;
     }
 
+    public PatientSchema(String nom, String prenom, int age) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.age = age;
+    }
+
 
     public String getNom() {
         return nom;

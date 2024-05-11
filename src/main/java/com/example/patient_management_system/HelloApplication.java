@@ -23,6 +23,7 @@ public class HelloApplication extends Application {
     public static final String  TherapistDBuserName = "SpeachTherapistDBFile.dat";
     public static final String usersDirectoryName = "orthophoniste_directory";
     public static final String patientsDBFileName = "patientsFileDatabase.dat";
+    public static final String categoryDbFileName = "rendez_vousDBFile.dat";
     public static String currentUserName = null;
 
     @Override

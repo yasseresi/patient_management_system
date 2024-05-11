@@ -33,7 +33,7 @@ public class PatientModel implements Serializable {
         try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(patientsDBFileName))) {
 
             dataBase = (PatientDB) objectInputStream.readObject();
-            System.out.println("loading the user model");
+            System.out.println("loading the patient model");
         }
     }
 
