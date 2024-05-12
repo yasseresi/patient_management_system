@@ -5,20 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22522964-ee30-41fa-aa84-8bf6b9a1ee96" name="Changes" comment="first commit project initialisation">
-      <change afterPath="$PROJECT_DIR$/src/main/java/DataBases/RendezVousFileDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DataBases/RendezVouzDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/RendezVous/AtelierSchema.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/RendezVous/ConsultationSchema.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/RendezVous/DeroulementSuivi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/RendezVous/RendezVousModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/RendezVous/SuiviSchema.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Patient/AdultSchema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Patient/AdultSchema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Patient/EnfantSchema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Patient/EnfantSchema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Patient/PatientModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Patient/PatientModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Patient/PatientSchema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Patient/PatientSchema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/RendezVous/RendezVousSchema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/RendezVous/RendezVousSchema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patient_management_system/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patient_management_system/HelloApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +71,7 @@
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -136,6 +123,8 @@
       <workItem from="1715324991807" duration="11950000" />
       <workItem from="1715347448627" duration="3656000" />
       <workItem from="1715359398008" duration="4852000" />
+      <workItem from="1715446336361" duration="94000" />
+      <workItem from="1715463192963" duration="44000" />
     </task>
     <task id="LOCAL-00001" summary="first commit project initialisation">
       <option name="closed" value="true" />
