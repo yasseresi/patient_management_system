@@ -1,6 +1,7 @@
 module com.example.patient_management_system {
     requires javafx.controls;
     requires javafx.fxml;
+    requires jdk.xml.dom;
 
     opens com.example.patient_management_system to javafx.fxml;
     opens Controllers.OrthophonisteControllers to javafx.fxml;
