@@ -4,14 +4,14 @@ import Models.Objectif.ObjectifShema;
 
 import java.util.ArrayList;
 
-public class objectifDBFile implements ObjectifDB{
+public class objectifFileDB implements ObjectifDB{
     private ArrayList<ObjectifShema> objectifs ;
 
-    public objectifDBFile(ArrayList<ObjectifShema> objectifs) {
+    public objectifFileDB(ArrayList<ObjectifShema> objectifs) {
         this.objectifs = objectifs;
     }
 
-    public objectifDBFile(){
+    public objectifFileDB(){
         this.objectifs  = new ArrayList<ObjectifShema>();
     }
 }
