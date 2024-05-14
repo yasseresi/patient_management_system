@@ -1,11 +1,10 @@
 package Models.ObservationsCliniques;
 
-import DataBases.RendezVouzDB;
+
 
 import java.io.*;
 import java.util.List;
 
-import static com.example.patient_management_system.HelloApplication.categoryDbFileName;
 import static com.example.patient_management_system.HelloApplication.observationCliniqueDBFileName;
 
 public class ObservationModel {
