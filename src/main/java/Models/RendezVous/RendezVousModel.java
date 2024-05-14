@@ -1,12 +1,15 @@
 package Models.RendezVous;
 
-import DataBases.PatientDB;
 import DataBases.RendezVouzDB;
+import Exceptions.ConsultationAlreadyPassedExecption;
+import Exceptions.ConsultationFirstException;
 
 import java.io.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.ArrayList;
 
 import static com.example.patient_management_system.HelloApplication.categoryDbFileName;
-import static com.example.patient_management_system.HelloApplication.patientsDBFileName;
 
 public class RendezVousModel implements Serializable {
 
@@ -17,10 +20,11 @@ public class RendezVousModel implements Serializable {
         this.dataBase = dataBase;
     }
 
-    public RendezVousModel(){}
+    public RendezVousModel() {
+    }
 
     public void save() throws IOException {
-        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(categoryDbFileName))){
+        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(categoryDbFileName))) {
             objectOutputStream.writeObject(dataBase);
         }
     }
@@ -34,12 +38,19 @@ public class RendezVousModel implements Serializable {
     }
 
 
-
-
-    public void createAtelier(RendezVousSchema rendezVous){
+    public void createAtelier(RendezVousSchema rendezVous) throws ConsultationFirstException, ConsultationAlreadyPassedExecption {
         dataBase.create(rendezVous.date, rendezVous.heure, rendezVous);
     }
 
+
+    public ArrayList<RendezVousSchema> findAll(LocalDate date) {
+        return dataBase.findAll(date);
+    }
+
+
+    public RendezVousSchema find(LocalDate date, LocalTime time) {
+        return dataBase.find(date, time);
+    }
 
 
 }

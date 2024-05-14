@@ -1,2 +1,4 @@
-package Models.Objectif;public class ObjectifModel {
+package Models.Objectif;
+
+public class ObjectifModel {
 }
