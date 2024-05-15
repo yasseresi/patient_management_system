@@ -5,17 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22522964-ee30-41fa-aa84-8bf6b9a1ee96" name="Changes" comment="first commit project initialisation">
-      <change afterPath="$PROJECT_DIR$/src/main/java/DataBases/TestDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DataBases/TestFileDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Exceptions/TestDoesNotExistException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Exceptions/TestNomUniqueException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Test/Exercice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Test/TestModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Test/TestSchema.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Test/TestSchemaExercice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Test/TestSchemaQuestionaire.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Diagnostique/TroubleModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Diagnostique/TroubleSchema.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Diagnostique/TypeTrouble.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/OrthophonisteControllers/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/OrthophonisteControllers/SignUpController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Models/ObservationsCliniques/ObservationModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/ObservationsCliniques/ObservationModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Orthophoniste/OrthophonisteSchema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Orthophoniste/OrthophonisteSchema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patient_management_system/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patient_management_system/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/signup-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/signup-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -152,6 +150,8 @@
       <workItem from="1715691058770" duration="3436000" />
       <workItem from="1715694995198" duration="3671000" />
       <workItem from="1715704332484" duration="2970000" />
+      <workItem from="1715707313195" duration="3578000" />
+      <workItem from="1715802543954" duration="2720000" />
     </task>
     <task id="LOCAL-00001" summary="first commit project initialisation">
       <option name="closed" value="true" />

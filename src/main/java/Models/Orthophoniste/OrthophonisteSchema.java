@@ -18,6 +18,15 @@ public class OrthophonisteSchema implements Serializable {
 
     }
 
+    public OrthophonisteSchema(String nom, String prenom, String adress, String adress_mail, int nb_phone, String password) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.adress = adress;
+        this.adress_mail = adress_mail;
+        this.nb_phone = nb_phone;
+        this.password = password;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

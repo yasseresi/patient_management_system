@@ -35,4 +35,6 @@ public class ObservationModel {
         }
     }
 
+    //todo: all the methods needed is the List Methods
+
 }

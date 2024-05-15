@@ -1,10 +1,12 @@
 package Controllers.OrthophonisteControllers;
 
+import DataBases.OrthophonisteFileDataBase;
 import Exceptions.PasswordNotProvidedException;
 import Exceptions.UniqueUsernameViolationException;
 import Exceptions.UserDoesNotExistException;
 import Exceptions.UserNameNotProvidedException;
 import Models.Orthophoniste.OrthophonisteModel;
+import Models.Orthophoniste.OrthophonisteSchema;
 import Utils.Popups;
 import com.example.patient_management_system.HelloApplication;
 import javafx.fxml.FXML;
@@ -12,6 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Screen;
@@ -26,20 +29,43 @@ public class SignUpController {
         //assign models and views
         private final OrthophonisteModel orthophonisteModel = HelloApplication.orthophonisteModel;
 
-        @FXML
-        private TextField userNameField;
-        @FXML
-        private PasswordField passwordField;
-        @FXML
-        private Button signUpButton;
+    @FXML
+    private TextField Adress;
+
+    @FXML
+    private TextField Email;
+
+    @FXML
+    private TextField FamilyName;
+
+    @FXML
+    private TextField FirstName;
+
+    @FXML
+    private PasswordField Password;
+
+    @FXML
+    private TextField Phone;
+
+    @FXML
+    private Hyperlink loginButton;
+
+    @FXML
+    private Button signUpButton;
 
         public void handle() throws IOException {
 
-            String username = userNameField.getText();
-            String password = passwordField.getText();
+
+
+            String nom = FirstName.getText();
+            String password = Password.getText();
+            String phone = Phone.getText();
+            String familyName= FamilyName.getText();
+            String email = Email.getText();
+            String adress = Adress.getText();
             try  {
 
-                if (username == null || username.isEmpty()) throw new UserNameNotProvidedException();
+                if (nom == null || nom.isEmpty()) throw new UserNameNotProvidedException();
                 if (password == null || password.isEmpty()) throw new PasswordNotProvidedException();
 
                 if(orthophonisteModel.exists(username)) throw new UniqueUsernameViolationException();

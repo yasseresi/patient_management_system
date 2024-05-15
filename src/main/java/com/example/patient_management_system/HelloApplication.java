@@ -36,6 +36,7 @@ public class HelloApplication extends Application {
     public static final String questionsDBFileName = "questionsDBFile.dat";
     public static final String fichSuivisDBFileName = "fichSuivisDBFile.dat";
     public static final String objectifsDBFileName = "objectifsDBFile.dat";
+    public static final String troubleDBFileName = "troubleDBFile.dat";
 
 
     public static String currentUserName = null;
