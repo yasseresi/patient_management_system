@@ -28,8 +28,8 @@ public class OrthophonisteFileDataBase implements OrthophonistheDataBase, Serial
 
     @Override
     public OrthophonisteSchema create(OrthophonisteSchema newUser) throws UniqueUsernameViolationException {
-        if (orthophonistes.containsKey(newUser.getNom())) throw new UniqueUsernameViolationException();
-        orthophonistes.put(newUser.getNom(), newUser);
+        if (orthophonistes.containsKey(newUser.getNom()+" "+newUser.getPrenom())) throw new UniqueUsernameViolationException();
+        orthophonistes.put(newUser.getNom()+" "+newUser.getPrenom(), newUser);
         return orthophonistes.get(newUser.getNom());
     }
 
@@ -47,20 +47,22 @@ public class OrthophonisteFileDataBase implements OrthophonistheDataBase, Serial
     @Override
     public OrthophonisteSchema update(String oldUsername, OrthophonisteSchema userSchema) throws UniqueUsernameViolationException, UserDoesNotExistException {
         if (!orthophonistes.containsKey(oldUsername)) throw new UserDoesNotExistException();
-        if (userSchema.getNom().equals(oldUsername)) {
+        String key = userSchema.getNom()+" "+userSchema.getPrenom();
+        if (key.equals(oldUsername)) {
             return orthophonistes.replace(oldUsername, userSchema);
         } else {
             // In case he changes his username
-            if (orthophonistes.containsKey(userSchema.getNom())) throw new UniqueUsernameViolationException();
+            if (orthophonistes.containsKey(key)) throw new UniqueUsernameViolationException();
             orthophonistes.remove(oldUsername);
-            return orthophonistes.put(userSchema.getNom(), userSchema);
+            return orthophonistes.put(key, userSchema);
         }
     }
 
     @Override
     public OrthophonisteSchema update(OrthophonisteSchema userSchema) throws UserDoesNotExistException {
-        if (!orthophonistes.containsKey(userSchema.getNom())) throw new UserDoesNotExistException();
-        return orthophonistes.replace(userSchema.getNom(), userSchema);
+        String key = userSchema.getNom()+" "+userSchema.getPrenom();
+        if (!orthophonistes.containsKey(key)) throw new UserDoesNotExistException();
+        return orthophonistes.replace(key, userSchema);
     }
 
     @Override

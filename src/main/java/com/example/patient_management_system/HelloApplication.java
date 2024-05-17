@@ -56,6 +56,12 @@ public class HelloApplication extends Application {
 
 
     @Override
+    public void init() throws IOException, ClassNotFoundException {
+        orthophonisteModel.load();
+    }
+
+
+    @Override
     public void stop() throws IOException {
         orthophonisteModel.save();
     }

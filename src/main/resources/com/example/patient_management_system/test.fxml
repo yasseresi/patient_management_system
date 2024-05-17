@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="your.package.DashboardController">
+    <left>
+        <VBox spacing="10">
+            <Button fx:id="btnAccueil" text="Accueil" onAction="#showAccueil"/>
+            <Button fx:id="btnStatistique" text="Statistique" onAction="#showStatistique"/>
+            <Button fx:id="btnRendezVous" text="Rendez-vous" onAction="#showRendezVous"/>
+            <!-- Add more buttons as needed -->
+        </VBox>
+    </left>
+    <center>
+        <StackPane fx:id="centerPane">
+            <!-- Content for different sections will be loaded dynamically here -->
+        </StackPane>
+    </center>
+</BorderPane>

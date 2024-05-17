@@ -25,7 +25,7 @@ public class OrthophonisteModel {
         try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(TherapistDBuserName))) {
 
             dataBase = (OrthophonistheDataBase) objectInputStream.readObject();
-            System.out.println("loading the user model");
+            System.out.println("loading the orthophiste model");
         }
     }
     public boolean exists(String username){

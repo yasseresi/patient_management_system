@@ -5,6 +5,7 @@ module com.example.patient_management_system {
 
     opens com.example.patient_management_system to javafx.fxml;
     opens Controllers.OrthophonisteControllers to javafx.fxml;
+    opens Controllers.HomeController to javafx.fxml;
 
 
     exports com.example.patient_management_system;
@@ -21,6 +22,7 @@ module com.example.patient_management_system {
 
     //Exporting Controllers
     exports Controllers.OrthophonisteControllers;
+    exports Controllers.HomeController;
 
 
 

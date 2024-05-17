@@ -62,11 +62,11 @@ public class LogInController {
 //            HelloApplication.categoryModel.load();
             System.out.println("Logged in successfully");
 
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("home-page-view.fxml"));
 //            fxmlLoader.setControllerFactory(c -> new LoginController());
             Scene scene = new Scene(fxmlLoader.load(), 840, 500);
             Stage stage = (Stage) userName.getScene().getWindow();
-            stage.setTitle("Calendar");
+            stage.setTitle("home");
 
             //center the view on the user's screen
             Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
