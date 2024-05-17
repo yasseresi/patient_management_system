@@ -3,6 +3,7 @@ package Models.Orthophoniste;
 import DataBases.OrthophonistheDataBase;
 import Exceptions.UniqueUsernameViolationException;
 import Exceptions.UserDoesNotExistException;
+import com.example.patient_management_system.HelloApplication;
 
 import java.io.*;
 
@@ -16,13 +17,13 @@ public class OrthophonisteModel {
     }
 
     public void save() throws IOException{
-        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(TherapistDBuserName))){
+        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(HelloApplication.usersDirectoryName + "/"+ HelloApplication.TherapistDBuserName))){
             objectOutputStream.writeObject(dataBase);
         }
     }
 
     public void load() throws IOException, ClassNotFoundException {
-        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(TherapistDBuserName))) {
+        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(HelloApplication.usersDirectoryName + "/" + HelloApplication.TherapistDBuserName))) {
 
             dataBase = (OrthophonistheDataBase) objectInputStream.readObject();
             System.out.println("loading the orthophiste model");

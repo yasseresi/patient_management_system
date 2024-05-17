@@ -9,7 +9,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import org.w3c.dom.events.Event;
 
+import java.io.File;
 import java.io.IOException;
 
 public class HelloApplication extends Application {
@@ -47,7 +49,7 @@ public class HelloApplication extends Application {
 
 
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("signup-view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("home-page-view.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -57,7 +59,9 @@ public class HelloApplication extends Application {
 
     @Override
     public void init() throws IOException, ClassNotFoundException {
-        orthophonisteModel.load();
+        if( (new File(usersDirectoryName, TherapistDBuserName)).exists() ){
+            orthophonisteModel.load();
+        }
     }
 
 

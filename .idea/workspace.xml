@@ -5,19 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22522964-ee30-41fa-aa84-8bf6b9a1ee96" name="Changes" comment="first commit project initialisation">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/HomeController/SideBarController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/home-page-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/test.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/ProfileControllers/ProfileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/RendezVousController/RendezVousController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/StatistiqueControllers/StatistiqueController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/Profil-page-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/rendez-vous-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/statistique-page-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpeachTherapistDBFile.dat" beforeDir="false" afterPath="$PROJECT_DIR$/SpeachTherapistDBFile.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/OrthophonisteControllers/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/OrthophonisteControllers/LogInController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/OrthophonisteControllers/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/OrthophonisteControllers/SignUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBases/OrthophonisteFileDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBases/OrthophonisteFileDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBases/objectifFileDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBases/objectifFileDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/HomeController/SideBarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/HomeController/AcuilePageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Models/Orthophoniste/OrthophonisteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Orthophoniste/OrthophonisteModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patient_management_system/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patient_management_system/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/signup-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/signup-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/home-page-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/home-page-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/test.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +30,7 @@
         <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -160,7 +161,7 @@
       <workItem from="1715951607679" duration="829000" />
       <workItem from="1715952678458" duration="971000" />
       <workItem from="1715958370408" duration="2896000" />
-      <workItem from="1715967478043" duration="1986000" />
+      <workItem from="1715967478043" duration="10401000" />
     </task>
     <task id="LOCAL-00001" summary="first commit project initialisation">
       <option name="closed" value="true" />
