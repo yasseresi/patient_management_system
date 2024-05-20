@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="Controllers.Anamnese.AnamneseController">
+    <children>
+        <HBox spacing="10" alignment="CENTER">
+            <ToggleButton text="Children" fx:id="childrenToggle" onAction="#toggleChildren" />
+            <ToggleButton text="Adult" fx:id="adultToggle" onAction="#toggleAdult" />
+        </HBox>
+        <StackPane fx:id="stackPane">
+            <VBox fx:id="childrenPage" spacing="10" alignment="CENTER">
+                <ChoiceBox fx:id="childrenTypeChoiceBox" />
+                <TextField fx:id="childrenQuestionField" promptText="Enter children question" />
+                <Button text="Add" onAction="#addChildrenQuestion"/>
+                <ListView fx:id="childrenQuestionListView" prefHeight="400" prefWidth="600" />
+                <HBox spacing="10" alignment="CENTER">
+                    <Button text="Modify" onAction="#modifyChildrenQuestion"/>
+                    <Button text="Delete" onAction="#deleteChildrenQuestion"/>
+                </HBox>
+            </VBox>
+            <VBox fx:id="adultPage" spacing="10" alignment="CENTER" visible="false">
+                <ChoiceBox fx:id="adultTypeChoiceBox" />
+                <TextField fx:id="adultQuestionField" promptText="Enter adult question" />
+                <Button text="Add" onAction="#addAdultQuestion"/>
+                <ListView fx:id="adultQuestionListView" prefHeight="400" prefWidth="600" />
+                <HBox spacing="10" alignment="CENTER">
+                    <Button text="Modify" onAction="#modifyAdultQuestion"/>
+                    <Button text="Delete" onAction="#deleteAdultQuestion"/>
+                </HBox>
+            </VBox>
+        </StackPane>
+    </children>
+</VBox>

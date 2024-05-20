@@ -5,6 +5,8 @@ import Exceptions.PatientAlreadyExistException;
 import Exceptions.PatientDoesNotExistException;
 import Exceptions.UniqueUsernameViolationException;
 import Exceptions.UserDoesNotExistException;
+import com.example.patient_management_system.HelloApplication;
+import javafx.collections.ObservableList;
 
 import java.io.*;
 import java.time.LocalDate;
@@ -24,16 +26,19 @@ public class PatientModel implements Serializable {
 
 
     public void save() throws IOException {
-        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(patientsDBFileName))){
+        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(HelloApplication.usersDirectoryName+"/"+HelloApplication.currentUserName + "/" + patientsDBFileName))){
             objectOutputStream.writeObject(dataBase);
         }
     }
 
-    public void load() throws IOException, ClassNotFoundException {
-        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(patientsDBFileName))) {
-
+    public void load() throws IOException {
+        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(HelloApplication.usersDirectoryName+"/"+HelloApplication.currentUserName + "/" + patientsDBFileName))) {
             dataBase = (PatientDB) objectInputStream.readObject();
             System.out.println("loading the patient model");
+        } catch (EOFException e) {
+            System.out.println("Error while loading Patient model: Unexpected end of file. The database file may be corrupted or incomplete.");
+        } catch (ClassNotFoundException e) {
+            throw new IOException(e);
         }
     }
 
@@ -49,9 +54,9 @@ public class PatientModel implements Serializable {
         }
     }
 
-    public void create(String nom , String prenom, int age, LocalDate dateNaissance, String lieuNaissance, String adresse, boolean nouveau) {
+    public void create(String nom , String prenom, LocalDate dateNaissance, String lieuNaissance, String adresse, boolean nouveau) {
         try {
-            this.dataBase.create(nom,prenom,age,dateNaissance,lieuNaissance,adresse,nouveau);
+            this.dataBase.create(nom,prenom,caluclateAge(dateNaissance),dateNaissance,lieuNaissance,adresse,nouveau);
         } catch (PatientAlreadyExistException e) {
             throw new RuntimeException(e);
         }
@@ -79,6 +84,17 @@ public class PatientModel implements Serializable {
         } catch (PatientAlreadyExistException | PatientDoesNotExistException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public boolean isEmpty(){
+        return this.dataBase.isEmpty();
+    }
+    private int caluclateAge(LocalDate dateNaissance){
+        return LocalDate.now().getYear() - dateNaissance.getYear();
+    }
+
+    public ObservableList<PatientSchema> getPatients(){
+        return this.dataBase.getPatients();
     }
 
 

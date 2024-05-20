@@ -2,7 +2,9 @@ package com.example.patient_management_system;
 
 import DataBases.OrthophonisteFileDataBase;
 import DataBases.OrthophonistheDataBase;
+import DataBases.PatientFileDB;
 import Models.Orthophoniste.OrthophonisteModel;
+import Models.Patient.PatientModel;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,7 +21,7 @@ public class HelloApplication extends Application {
 
 
     public static final OrthophonisteModel orthophonisteModel = new OrthophonisteModel(new OrthophonisteFileDataBase() );
-
+    public static final PatientModel patientModel = new PatientModel( new PatientFileDB() );
 
     public static final String usersDirectoryName = "orthophoniste_directory";
     public static final String bilonDirectoryName = "bilons_directory";
@@ -41,7 +43,8 @@ public class HelloApplication extends Application {
     public static final String troubleDBFileName = "troubleDBFile.dat";
 
 
-    public static String currentUserName = null;
+    public static String currentUserName = "yasser korzane";
+    public static String currentPatientName = null;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -49,7 +52,7 @@ public class HelloApplication extends Application {
 
 
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("home-page-view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("anamnese-view.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -68,6 +71,7 @@ public class HelloApplication extends Application {
     @Override
     public void stop() throws IOException {
         orthophonisteModel.save();
+        patientModel.save();
     }
     public static void main(String[] args) {
         launch();

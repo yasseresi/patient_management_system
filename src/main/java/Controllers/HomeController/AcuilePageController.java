@@ -33,19 +33,20 @@ public class AcuilePageController  implements Initializable {
     @FXML
     private Button statistiqueButton;
 
-    void initialize() {
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
         OrthophonisteName.setText(HelloApplication.currentUserName);
     }
 
     @FXML
-    void toAccueilPage(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("home-page-view.fxml"));
+    void toDossiersPatients(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("dossier-patient-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("HomePage");
+        stage.setTitle("Patients");
         stage.setScene(scene);
-
-
     }
 
     @FXML
@@ -94,8 +95,5 @@ public class AcuilePageController  implements Initializable {
     }
 
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        OrthophonisteName.setText(HelloApplication.currentUserName);
-    }
+
 }

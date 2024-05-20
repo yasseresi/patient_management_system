@@ -46,6 +46,8 @@ public class LogInController {
             OrthophonisteSchema user = orthophonisteModel.find(username); //If he doesn't exist an exception will be thrown
             if (!user.getPassword().equals(password)) throw new WrongPasswordException();
             HelloApplication.currentUserName = username;
+            //todo: load the needed files
+            HelloApplication.patientModel.load();
 //            HelloApplication.currentUserSettings = user.getSettings();
 
             //Load the DBs from the corresponding files
@@ -74,7 +76,8 @@ public class LogInController {
             stage.setY((screenBounds.getHeight() - scene.getHeight()) / 2);
             stage.setScene(scene);
 
-        } catch (PasswordNotProvidedException | UserNameNotProvidedException | UserDoesNotExistException | WrongPasswordException e) {
+        } catch (PasswordNotProvidedException | UserNameNotProvidedException | UserDoesNotExistException |
+                 WrongPasswordException e) {
             System.out.println(e.getMessage());
             Popups.showErrorMessage(e.getMessage());
         }

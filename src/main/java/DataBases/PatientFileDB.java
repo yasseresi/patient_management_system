@@ -5,6 +5,8 @@ import Exceptions.PatientDoesNotExistException;
 import Models.Patient.AdultSchema;
 import Models.Patient.EnfantSchema;
 import Models.Patient.PatientSchema;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -12,7 +14,7 @@ import java.util.Iterator;
 import java.util.TreeSet;
 
 public class PatientFileDB implements PatientDB, Serializable {
-TreeSet<PatientSchema> patients = new TreeSet<>();
+  private TreeSet<PatientSchema> patients = new TreeSet<>();
 
     public PatientFileDB(TreeSet< PatientSchema> patients) {
         this.patients = patients;
@@ -75,5 +77,12 @@ TreeSet<PatientSchema> patients = new TreeSet<>();
     @Override
     public PatientSchema update(PatientSchema patientSchema) throws PatientAlreadyExistException, PatientDoesNotExistException{
         return update(patientSchema.getNom(), patientSchema.getPrenom(), patientSchema);
+    }
+    public boolean isEmpty(){
+        return patients.isEmpty();
+    }
+
+    public ObservableList<PatientSchema> getPatients(){
+        return FXCollections.observableArrayList(patients);
     }
 }

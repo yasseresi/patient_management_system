@@ -55,11 +55,11 @@ public class ProfileController {
     }
 
     @FXML
-    void toProfilPage(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Profil-page-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(),800,600);
+    void toDossiersPatients(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("dossier-patient-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("Profil");
+        stage.setTitle("Patients");
         stage.setScene(scene);
 
 

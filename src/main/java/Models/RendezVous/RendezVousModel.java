@@ -3,6 +3,7 @@ package Models.RendezVous;
 import DataBases.RendezVouzDB;
 import Exceptions.ConsultationAlreadyPassedExecption;
 import Exceptions.ConsultationFirstException;
+import com.example.patient_management_system.HelloApplication;
 
 import java.io.*;
 import java.time.LocalDate;
@@ -24,13 +25,13 @@ public class RendezVousModel implements Serializable {
     }
 
     public void save() throws IOException {
-        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(categoryDbFileName))) {
+        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(HelloApplication.usersDirectoryName + "/" +  HelloApplication.currentPatientName + "/"+ HelloApplication.categoryDbFileName))) {
             objectOutputStream.writeObject(dataBase);
         }
     }
 
     public void load() throws IOException, ClassNotFoundException {
-        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(categoryDbFileName))) {
+        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(HelloApplication.usersDirectoryName + "/" +  HelloApplication.currentPatientName + "/"+ HelloApplication.categoryDbFileName))) {
 
             dataBase = (RendezVouzDB) objectInputStream.readObject();
             System.out.println("loading the rendez_vous model");
