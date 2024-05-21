@@ -48,6 +48,9 @@ public class LogInController {
             HelloApplication.currentUserName = username;
             //todo: load the needed files
             HelloApplication.patientModel.load();
+            HelloApplication.anamneseModel.load();
+            HelloApplication.testquestions.load();
+            HelloApplication.testquestions.load();
 //            HelloApplication.currentUserSettings = user.getSettings();
 
             //Load the DBs from the corresponding files
@@ -77,7 +80,7 @@ public class LogInController {
             stage.setScene(scene);
 
         } catch (PasswordNotProvidedException | UserNameNotProvidedException | UserDoesNotExistException |
-                 WrongPasswordException e) {
+                 WrongPasswordException | ClassNotFoundException e) {
             System.out.println(e.getMessage());
             Popups.showErrorMessage(e.getMessage());
         }

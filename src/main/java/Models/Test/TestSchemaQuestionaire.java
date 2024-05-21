@@ -2,6 +2,7 @@ package Models.Test;
 
 import Models.Question.QuestionEpreuve;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TestSchemaQuestionaire extends TestSchema {
@@ -12,6 +13,11 @@ public class TestSchemaQuestionaire extends TestSchema {
     public TestSchemaQuestionaire(String nom, List<QuestionEpreuve> questions) {
         this.nom = nom;
         this.questions = questions;
+        this.score = 0;
+    }
+    public TestSchemaQuestionaire (String nom){
+        this.nom  =nom;
+        this.questions = new ArrayList<>();
         this.score = 0;
     }
 

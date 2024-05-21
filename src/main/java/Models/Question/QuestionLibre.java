@@ -9,6 +9,8 @@ public class QuestionLibre extends QuestionEpreuve {
         this.reponse = reponse;
         super.question = question;
     }
+    public QuestionLibre() {
+    }
 
     public String getQuestion() {
         return super.question;

@@ -1,5 +1,6 @@
 package Models.Question;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class QCU extends QuestionEpreuve {
@@ -9,6 +10,10 @@ public class QCU extends QuestionEpreuve {
     public QCU(String question, List<String> propostions) {
         this.propositions = propostions;
         super.question = question;
+    }
+    public QCU() {
+        this.propositions = new ArrayList<>();
+        this.reponse = "";
     }
 
     public String getQuestion() {

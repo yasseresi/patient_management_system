@@ -29,6 +29,8 @@
                   <Button fx:id="rendezVousButtom" mnemonicParsing="false" onAction="#toRendezVousPage" prefHeight="26.0" prefWidth="104.0" text="REndez Vous" />
                   <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="106.0" text="Statistique" />
                   <Button fx:id="DosssierPatientbutton" mnemonicParsing="false" onAction="#toDossiersPatients" prefHeight="26.0" prefWidth="106.0" text="Dossier Patients" />
+                  <Button mnemonicParsing="false" onAction="#toAnamnese" prefHeight="26.0" prefWidth="109.0" text="Anamnese" />
+                  <Button mnemonicParsing="false" onAction="#toTests" prefHeight="26.0" prefWidth="109.0" text="Tests" />
                </children>
                <padding>
                   <Insets left="5.0" right="10.0" top="20.0" />

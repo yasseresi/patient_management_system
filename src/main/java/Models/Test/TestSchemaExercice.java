@@ -1,5 +1,6 @@
 package Models.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TestSchemaExercice extends TestSchema {
@@ -10,6 +11,10 @@ public class TestSchemaExercice extends TestSchema {
         this.nom = nom;
         this.exercices = exercices;
         this.score = 0;
+    }
+    public TestSchemaExercice(String nom){
+        this.nom = nom;
+        exercices = new ArrayList<>();
     }
 
     public List<Exercice> getExercices() {

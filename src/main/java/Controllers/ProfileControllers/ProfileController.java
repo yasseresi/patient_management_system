@@ -31,6 +31,26 @@ public class ProfileController {
 
 
 
+
+
+    @FXML
+    public void toTests(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("tests-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(),800,600);
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("statistique");
+        stage.setScene(scene);
+    }
+
+
+    @FXML
+    public void toAnamnese(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("anamnese-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(),800,600);
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("statistique");
+        stage.setScene(scene);
+    }
     @FXML
     void toAccueilPage(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("home-page-view.fxml"));

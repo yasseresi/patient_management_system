@@ -5,15 +5,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22522964-ee30-41fa-aa84-8bf6b9a1ee96" name="Changes" comment="first commit project initialisation">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/TestControllers/CreateTestsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/TestControllers/ExercisesQuestionsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/TestControllers/QCMController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/TestControllers/QCUController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/TestControllers/QuestionLibreController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Question/QuestionQpreuveModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Test/TestExerciceModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/LibrePopup.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/QCMPopup.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/QCUPopup.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/tests-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orthophoniste_directory/SpeachTherapistDBFile.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orthophoniste_directory/yasser korzane/SpeachTherapistDBFile.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orthophoniste_directory/yasser korzane/jdhgaj adjhfaj/bilonsDBFile.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orthophoniste_directory/yasser korzane/jdhgaj adjhfaj/fichSuivisDBFile.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orthophoniste_directory/yasser korzane/jdhgaj adjhfaj/rendez_vousDBFile.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orthophoniste_directory/yasser korzane/korzane achraf/bilonsDBFile.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orthophoniste_directory/yasser korzane/korzane achraf/fichSuivisDBFile.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orthophoniste_directory/yasser korzane/korzane achraf/rendez_vousDBFile.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orthophoniste_directory/yasser korzane/korzane yasser/bilonsDBFile.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orthophoniste_directory/yasser korzane/korzane yasser/fichSuivisDBFile.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orthophoniste_directory/yasser korzane/korzane yasser/rendez_vousDBFile.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orthophoniste_directory/yasser korzane/patientsFileDatabase.dat" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Anamnese/AnamneseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Anamnese/AnamneseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/CreatePatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/CreatePatientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBases/AnamneseDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBases/AnamneseDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBases/AnamneseDBFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBases/AnamneseDBFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBases/PatientFileDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBases/PatientFileDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/DossierPatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/DossierPatientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/HomeController/AcuilePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/HomeController/AcuilePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/OrthophonisteControllers/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/OrthophonisteControllers/LogInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/OrthophonisteControllers/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/OrthophonisteControllers/SignUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ProfileControllers/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ProfileControllers/ProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/RendezVousController/RendezVousController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/RendezVousController/RendezVousController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/StatistiqueControllers/StatistiqueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/StatistiqueControllers/StatistiqueController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataBases/TestFileDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBases/TestFileDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Models/Anamnese/AnamneseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Anamnese/AnamneseModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Question/QCM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Question/QCM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Question/QCU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Question/QCU.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Question/QuestionEpreuve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Question/QuestionEpreuve.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Question/QuestionLibre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Question/QuestionLibre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Test/TestSchemaExercice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Test/TestSchemaExercice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Test/TestSchemaQuestionaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Test/TestSchemaQuestionaire.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patient_management_system/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patient_management_system/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/Profil-page-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/Profil-page-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/anamnese-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/anamnese-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/dossier-patient-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/dossier-patient-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/home-page-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/home-page-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/rendez-vous-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/rendez-vous-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/statistique-page-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/statistique-page-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +64,8 @@
       <list>
         <option value="Interface" />
         <option value="Enum" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -165,7 +204,10 @@
       <workItem from="1716036902206" duration="9443000" />
       <workItem from="1716112146829" duration="1620000" />
       <workItem from="1716113791962" duration="3040000" />
-      <workItem from="1716229551818" duration="9137000" />
+      <workItem from="1716229551818" duration="13959000" />
+      <workItem from="1716257554782" duration="2933000" />
+      <workItem from="1716294815685" duration="12048000" />
+      <workItem from="1716310173952" duration="13901000" />
     </task>
     <task id="LOCAL-00001" summary="first commit project initialisation">
       <option name="closed" value="true" />
