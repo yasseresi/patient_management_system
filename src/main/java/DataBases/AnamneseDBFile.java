@@ -2,11 +2,11 @@ package DataBases;
 
 import Exceptions.QuestionAlreadyExistException;
 import Exceptions.QuestionNotFoundException;
+import Models.Question.QuestionAdult;
 import Models.Question.QuestionAnamnese;
 import Models.Question.QuestionEnfant;
 
 import java.util.ArrayList;
-import java.util.TreeSet;
 
 public class AnamneseDBFile implements AnamneseDB{
 
@@ -54,21 +54,21 @@ public class AnamneseDBFile implements AnamneseDB{
         return null;
     }
 
-    public ArrayList<QuestionAnamnese>  getQuestionsEnfant(){
-        ArrayList<QuestionAnamnese> questionsEnfant = new ArrayList<QuestionAnamnese>();
+    public ArrayList<QuestionEnfant> getQuestionsEnfant(){
+        ArrayList<QuestionEnfant> questionsEnfant = new ArrayList<>();
         for(QuestionAnamnese question : this.questions){
             if(question instanceof QuestionEnfant ){
-                questionsEnfant.add(question);
+                questionsEnfant.add((QuestionEnfant)question);
             }
         }
         return questionsEnfant;
     }
 
-    public ArrayList<QuestionAnamnese>  getQuestionsAdulte(){
-        ArrayList<QuestionAnamnese> questionsAdulte = new ArrayList<QuestionAnamnese>();
+    public ArrayList<QuestionAdult>  getQuestionsAdulte(){
+        ArrayList<QuestionAdult> questionsAdulte = new ArrayList<QuestionAdult>();
         for(QuestionAnamnese question : this.questions){
             if(!(question instanceof QuestionEnfant) ){
-                questionsAdulte.add(question);
+                questionsAdulte.add((QuestionAdult) question);
             }
         }
         return questionsAdulte;

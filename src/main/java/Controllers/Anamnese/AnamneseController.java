@@ -1,57 +1,84 @@
 package Controllers.Anamnese;
 
+import Exceptions.QuestionAlreadyExistException;
+import Exceptions.QuestionNotFoundException;
+import Models.Anamnese.AnamneseModel;
+import Models.Question.QuestionAdult;
+import Models.Question.QuestionEnfant;
 import Models.Question.TypeAdult;
 import Models.Question.TypeEnfant;
 import Utils.Popups;
+import com.example.patient_management_system.HelloApplication;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleButton;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
 public class AnamneseController {
 
     @FXML
-    private TextField childrenQuestionField;
+    private VBox adultPage;
 
     @FXML
     private TextField adultQuestionField;
 
     @FXML
-    private ListView<String> childrenQuestionListView;
-
-    @FXML
-    private ListView<String> adultQuestionListView;
-
-    @FXML
-    private ChoiceBox<TypeEnfant> childrenTypeChoiceBox;
-
-    @FXML
-    private ChoiceBox<TypeAdult> adultTypeChoiceBox;
-
-    @FXML
-    private ToggleButton childrenToggle;
+    private TableView<QuestionAdult> adultQuestionListView;
 
     @FXML
     private ToggleButton adultToggle;
 
     @FXML
+    private ChoiceBox<TypeAdult> adultTypeChoiceBox;
+
+    @FXML
     private VBox childrenPage;
 
     @FXML
-    private VBox adultPage;
+    private TextField childrenQuestionField;
 
-    private ObservableList<String> childrenQuestions;
-    private ObservableList<String> adultQuestions;
+    @FXML
+    private TableView<QuestionEnfant> childrenQuestionListView;
+
+    @FXML
+    private ToggleButton childrenToggle;
+
+    @FXML
+    private ChoiceBox<TypeEnfant> childrenTypeChoiceBox;
+
+    @FXML
+    private StackPane stackPane;
+
+    private AnamneseModel anamneseModel = HelloApplication.anamneseModel;
+
+    private ObservableList<QuestionEnfant> childrenQuestions ;
+    private ObservableList<QuestionAdult> adultQuestions ;
+
+    @FXML
+    private TableColumn<QuestionEnfant, String> childrenQuestionColumn;
+
+    @FXML
+    private TableColumn<QuestionAdult, String> adultQuestionColumn;
+
+    @FXML
+    private TableColumn<QuestionEnfant, TypeEnfant> childrenTypeColumn;
+
+    @FXML
+    private TableColumn<QuestionAdult, TypeAdult> adultTypeColumn;
+
 
     public void initialize() {
-        childrenQuestions = FXCollections.observableArrayList();
-        adultQuestions = FXCollections.observableArrayList();
+        childrenQuestions = FXCollections.observableArrayList(anamneseModel.getQuestionsEnfant());
+        adultQuestions = FXCollections.observableArrayList(anamneseModel.getQuestionsAdulte());
+
+        // Set the cell value factory for each column
+        childrenQuestionColumn.setCellValueFactory(new PropertyValueFactory<>("question"));
+        adultQuestionColumn.setCellValueFactory(new PropertyValueFactory<>("question"));
+        childrenTypeColumn.setCellValueFactory(new PropertyValueFactory<>("typeQuestion"));
+        adultTypeColumn.setCellValueFactory(new PropertyValueFactory<>("typeQuestion"));
 
         childrenQuestionListView.setItems(childrenQuestions);
         adultQuestionListView.setItems(adultQuestions);
@@ -85,7 +112,12 @@ public class AnamneseController {
         String question = childrenQuestionField.getText().trim();
         TypeEnfant type = childrenTypeChoiceBox.getValue();
         if (!question.isEmpty() && type != null) {
-            childrenQuestions.add(type + ":/t" + question);
+            try {
+                anamneseModel.createChildQuestion(question, type);
+                childrenQuestions.setAll(anamneseModel.getQuestionsEnfant());
+            } catch (QuestionAlreadyExistException e) {
+                Popups.showErrorMessage(e.getMessage());
+            }
             childrenQuestionField.clear();
             childrenTypeChoiceBox.setValue(null);
         } else {
@@ -98,7 +130,12 @@ public class AnamneseController {
         String question = adultQuestionField.getText().trim();
         TypeAdult type = adultTypeChoiceBox.getValue();
         if (!question.isEmpty() && type != null) {
-            adultQuestions.add(type + ": " + question);
+            try {
+                anamneseModel.createAdultQuestion(question, type);
+                adultQuestions.setAll(anamneseModel.getQuestionsAdulte());
+            } catch (QuestionAlreadyExistException e) {
+                Popups.showErrorMessage(e.getMessage());
+            }
             adultQuestionField.clear();
             adultTypeChoiceBox.setValue(null);
         } else {
@@ -108,9 +145,14 @@ public class AnamneseController {
 
     @FXML
     private void deleteChildrenQuestion() {
-        String selectedQuestion = childrenQuestionListView.getSelectionModel().getSelectedItem();
+        QuestionEnfant selectedQuestion = childrenQuestionListView.getSelectionModel().getSelectedItem();
         if (selectedQuestion != null) {
-            childrenQuestions.remove(selectedQuestion);
+            try {
+                anamneseModel.deleteQuestion(selectedQuestion);
+                childrenQuestions.setAll(anamneseModel.getQuestionsEnfant());
+            } catch (QuestionNotFoundException e) {
+                Popups.showErrorMessage(e.getMessage());
+            }
         } else {
             Popups.showErrorMessage("Selection Error", "Please select a question to delete!");
         }
@@ -118,23 +160,32 @@ public class AnamneseController {
 
     @FXML
     private void deleteAdultQuestion() {
-        String selectedQuestion = adultQuestionListView.getSelectionModel().getSelectedItem();
+        QuestionAdult selectedQuestion = adultQuestionListView.getSelectionModel().getSelectedItem();
         if (selectedQuestion != null) {
-            adultQuestions.remove(selectedQuestion);
+            try {
+                anamneseModel.deleteQuestion(selectedQuestion);
+                adultQuestions.setAll(anamneseModel.getQuestionsAdulte());
+            } catch (QuestionNotFoundException e) {
+                Popups.showErrorMessage(e.getMessage());
+            }
         } else {
             Popups.showErrorMessage("Selection Error", "Please select a question to delete!");
         }
     }
-
+   //todo: check out the update methods cause it's not working
     @FXML
     private void modifyChildrenQuestion() {
-        String selectedQuestion = childrenQuestionListView.getSelectionModel().getSelectedItem();
+        QuestionEnfant selectedQuestion = childrenQuestionListView.getSelectionModel().getSelectedItem();
         if (selectedQuestion != null) {
             String newQuestion = childrenQuestionField.getText().trim();
             TypeEnfant newType = childrenTypeChoiceBox.getValue();
             if (!newQuestion.isEmpty() && newType != null) {
-                int selectedIndex = childrenQuestionListView.getSelectionModel().getSelectedIndex();
-                childrenQuestions.set(selectedIndex, newType + ": " + newQuestion);
+                try {
+                    anamneseModel.updateQuestion(new QuestionEnfant(newQuestion,newType));
+                    childrenQuestions.setAll(anamneseModel.getQuestionsEnfant());
+                } catch (QuestionNotFoundException e) {
+                    Popups.showErrorMessage(e.getMessage());
+                }
                 childrenQuestionField.clear();
                 childrenTypeChoiceBox.setValue(null);
             } else {
@@ -147,13 +198,17 @@ public class AnamneseController {
 
     @FXML
     private void modifyAdultQuestion() {
-        String selectedQuestion = adultQuestionListView.getSelectionModel().getSelectedItem();
+        QuestionAdult selectedQuestion = adultQuestionListView.getSelectionModel().getSelectedItem();
         if (selectedQuestion != null) {
             String newQuestion = adultQuestionField.getText().trim();
             TypeAdult newType = adultTypeChoiceBox.getValue();
             if (!newQuestion.isEmpty() && newType != null) {
-                int selectedIndex = adultQuestionListView.getSelectionModel().getSelectedIndex();
-                adultQuestions.set(selectedIndex, newType + ": " + newQuestion);
+                try {
+                    anamneseModel.updateQuestion(new QuestionAdult( newQuestion, newType));
+                    adultQuestions.setAll(anamneseModel.getQuestionsAdulte());
+                } catch (QuestionNotFoundException  e) {
+                    Popups.showErrorMessage(e.getMessage());
+                }
                 adultQuestionField.clear();
                 adultTypeChoiceBox.setValue(null);
             } else {

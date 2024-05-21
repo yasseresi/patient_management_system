@@ -22,9 +22,9 @@ public class CreatePatientController {
     public DatePicker Date;
     public TextField Lieu;
     public TextField phone;
+    PatientModel patientModel = HelloApplication.patientModel;
 
     public void create(javafx.event.ActionEvent event) throws IOException, PatientAlreadyExistException {
-        PatientModel patientModel = HelloApplication.patientModel;
         HelloApplication.currentPatientName = familyName.getText() + " " + firstName.getText();
         if (patientModel.isEmpty()) {
             System.out.println("there is no patient yet");

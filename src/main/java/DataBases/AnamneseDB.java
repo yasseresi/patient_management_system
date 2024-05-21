@@ -2,7 +2,9 @@ package DataBases;
 
 import Exceptions.QuestionAlreadyExistException;
 import Exceptions.QuestionNotFoundException;
+import Models.Question.QuestionAdult;
 import Models.Question.QuestionAnamnese;
+import Models.Question.QuestionEnfant;
 
 import java.util.ArrayList;
 
@@ -14,7 +16,7 @@ public interface AnamneseDB {
     void updateQuestion(QuestionAnamnese question) throws QuestionNotFoundException;
     boolean searchQuestion(String nom);
     QuestionAnamnese searchQuestionByNom(String nom);
-    ArrayList<QuestionAnamnese> getQuestionsEnfant();
-    ArrayList<QuestionAnamnese> getQuestionsAdulte();
+    ArrayList<QuestionEnfant> getQuestionsEnfant();
+    ArrayList<QuestionAdult> getQuestionsAdulte();
 
 }

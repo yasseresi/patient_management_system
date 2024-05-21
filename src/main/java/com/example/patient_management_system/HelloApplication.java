@@ -1,8 +1,7 @@
 package com.example.patient_management_system;
 
-import DataBases.OrthophonisteFileDataBase;
-import DataBases.OrthophonistheDataBase;
-import DataBases.PatientFileDB;
+import DataBases.*;
+import Models.Anamnese.AnamneseModel;
 import Models.Orthophoniste.OrthophonisteModel;
 import Models.Patient.PatientModel;
 import javafx.application.Application;
@@ -22,6 +21,7 @@ public class HelloApplication extends Application {
 
     public static final OrthophonisteModel orthophonisteModel = new OrthophonisteModel(new OrthophonisteFileDataBase() );
     public static final PatientModel patientModel = new PatientModel( new PatientFileDB() );
+    public static final AnamneseModel anamneseModel = new AnamneseModel(new AnamneseDBFile());
 
     public static final String usersDirectoryName = "orthophoniste_directory";
     public static final String bilonDirectoryName = "bilons_directory";

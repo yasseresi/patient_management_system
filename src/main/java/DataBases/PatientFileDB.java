@@ -83,6 +83,7 @@ public class PatientFileDB implements PatientDB, Serializable {
     }
 
     public ObservableList<PatientSchema> getPatients(){
+        //todo: change the type to normal TreeSet and then change it to observable Set in the controller
         return FXCollections.observableArrayList(patients);
     }
 }
