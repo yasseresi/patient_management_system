@@ -14,6 +14,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -22,6 +23,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Collections;
 
 public class AnamneseController {
 
@@ -122,9 +124,13 @@ public class AnamneseController {
     void toLogOut(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),800,600);
-        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle("login");
         stage.setScene(scene);
+        //todo: save the files of the current orthophoniste
+        HelloApplication.patientModel.save();
+        HelloApplication.anamneseModel.save();
+        HelloApplication.testModel.save();
         HelloApplication.currentUserName = null;
         System.out.println("Logged out successfully");
 
@@ -137,7 +143,6 @@ public class AnamneseController {
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         stage.setTitle("Profil");
         stage.setScene(scene);
-
 
     }
 

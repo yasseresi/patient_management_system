@@ -1,10 +1,13 @@
 package Models.Test;
 
+import DataBases.PatientDB;
 import Models.Question.QuestionEpreuve;
 import com.example.patient_management_system.HelloApplication;
 
 import java.io.*;
 import java.util.ArrayList;
+
+import static com.example.patient_management_system.HelloApplication.patientsDBFileName;
 
 public class TestExerciceModel {
 
@@ -20,12 +23,17 @@ public class TestExerciceModel {
         }
     }
 
-    public void load() throws IOException, ClassNotFoundException {
+    public void load() throws IOException ,ClassNotFoundException{
         try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(HelloApplication.usersDirectoryName + "/"+ HelloApplication.currentUserName +"/"+"listTestExercice.dt"))) {
             exercices = (ArrayList<Exercice>) objectInputStream.readObject();
-            System.out.println("loading the orthophiste model");
+            System.out.println("loading the TestExerciseStatique model");
+        } catch (EOFException e) {
+            System.out.println("Error while loading Patient model: Unexpected end of file. The database file may be corrupted or incomplete.");
+        } catch (ClassNotFoundException e) {
+            throw new IOException(e);
         }
     }
+
 
     public void addExercice(Exercice exercice) {
         exercices.add(exercice);

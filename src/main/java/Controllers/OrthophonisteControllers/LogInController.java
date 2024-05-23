@@ -80,7 +80,7 @@ public class LogInController {
             stage.setScene(scene);
 
         } catch (PasswordNotProvidedException | UserNameNotProvidedException | UserDoesNotExistException |
-                 WrongPasswordException | ClassNotFoundException e) {
+                 WrongPasswordException e) {
             System.out.println(e.getMessage());
             Popups.showErrorMessage(e.getMessage());
         }

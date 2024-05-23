@@ -1,14 +1,17 @@
 package Models.Question;
 
 import DataBases.OrthophonistheDataBase;
+import DataBases.PatientDB;
 import com.example.patient_management_system.HelloApplication;
 
 import java.io.*;
 import java.util.ArrayList;
 
+import static com.example.patient_management_system.HelloApplication.patientsDBFileName;
+
 public class QuestionQpreuveModel {
 
-    ArrayList<QuestionEpreuve> questions = new ArrayList<QuestionEpreuve>();
+    private ArrayList<QuestionEpreuve> questions = new ArrayList<>();
 
     public QuestionQpreuveModel() {
     }
@@ -19,10 +22,16 @@ public class QuestionQpreuveModel {
         }
     }
 
-    public void load() throws IOException, ClassNotFoundException {
-        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(HelloApplication.usersDirectoryName + "/"+ HelloApplication.currentUserName +"/"+"listTestQuestions.dt"))) {
+
+
+    public void load() throws IOException {
+        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(HelloApplication.usersDirectoryName+"/"+HelloApplication.currentUserName + "/" + "listTestQuestions.dt"))) {
             questions = (ArrayList<QuestionEpreuve>) objectInputStream.readObject();
-            System.out.println("loading the orthophiste model");
+            System.out.println("loading the questionsteststatiques model");
+        } catch (EOFException e) {
+            System.out.println("Error while loading questionsteststatiques model: Unexpected end of file. The database file may be corrupted or incomplete.");
+        } catch (ClassNotFoundException e) {
+            throw new IOException(e);
         }
     }
 

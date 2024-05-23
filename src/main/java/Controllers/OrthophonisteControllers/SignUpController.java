@@ -80,7 +80,7 @@ public class SignUpController {
                     System.out.println("Directory created");
                     //Create a file for each FileDataBase class
                     HelloApplication.currentUserName = nom+" "+prenom;
-                    new File(HelloApplication.usersDirectoryName + "/" + HelloApplication.currentUserName + "/" + HelloApplication.TherapistDBuserName).createNewFile();
+                    new File(HelloApplication.usersDirectoryName + "/"  + HelloApplication.TherapistDBuserName).createNewFile();
                     //create patients file~~
                     new File(HelloApplication.usersDirectoryName + "/" + HelloApplication.currentUserName + "/" + HelloApplication.patientsDBFileName).createNewFile();
                     new File(HelloApplication.usersDirectoryName + "/"+ HelloApplication.currentUserName +"/"+"listTestQuestions.dt").createNewFile();

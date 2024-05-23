@@ -1,6 +1,7 @@
 package Models.Anamnese;
 
 import DataBases.AnamneseDB;
+import DataBases.PatientDB;
 import Exceptions.QuestionAlreadyExistException;
 import Exceptions.QuestionNotFoundException;
 import Models.Question.*;
@@ -9,6 +10,8 @@ import javafx.collections.ObservableList;
 
 import java.io.*;
 import java.util.ArrayList;
+
+import static com.example.patient_management_system.HelloApplication.patientsDBFileName;
 
 public class AnamneseModel {
 
@@ -26,10 +29,14 @@ public class AnamneseModel {
         }
     }
 
-    public void load() throws IOException, ClassNotFoundException {
-        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(HelloApplication.usersDirectoryName + "/"+ HelloApplication.currentUserName +"/"+HelloApplication.anamneseDBFileName))) {
+    public void load() throws IOException {
+        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(HelloApplication.usersDirectoryName+"/"+HelloApplication.currentUserName + "/" + HelloApplication.anamneseDBFileName))) {
             dataBase = (AnamneseDB) objectInputStream.readObject();
-            System.out.println("loading the orthophiste model");
+            System.out.println("loading the anamnese static  model");
+        } catch (EOFException e) {
+            System.out.println("Error while loading Patient model: Unexpected end of file. The database file may be corrupted or incomplete.");
+        } catch (ClassNotFoundException e) {
+            throw new IOException(e);
         }
     }
 

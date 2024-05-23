@@ -15,19 +15,19 @@ public class TroubleModel {
 
     }
 
-    public void save() throws IOException {
-        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(troubleDBFileName))){
-            objectOutputStream.writeObject(troubles);
-        }
-    }
-
-    public void load() throws IOException, ClassNotFoundException {
-        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(troubleDBFileName))) {
-
-            troubles = (TreeMap<String, TroubleSchema>) objectInputStream.readObject();
-            System.out.println("loading the troubles model");
-        }
-    }
+//    public void save() throws IOException {
+//        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(troubleDBFileName))){
+//            objectOutputStream.writeObject(troubles);
+//        }
+//    }
+//
+//    public void load() throws IOException, ClassNotFoundException {
+//        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(troubleDBFileName))) {
+//
+//            troubles = (TreeMap<String, TroubleSchema>) objectInputStream.readObject();
+//            System.out.println("loading the troubles model");
+//        }
+//    }
 
     public TroubleModel(TreeMap<String, TroubleSchema> troubles) {
         this.troubles = troubles;

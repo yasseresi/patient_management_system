@@ -20,8 +20,8 @@ import java.io.IOException;
 public class HelloApplication extends Application {
 
 
-    public static TestExerciceModel testexercice = new TestExerciceModel();
-    public static QuestionQpreuveModel testquestions = new QuestionQpreuveModel();
+    public static final  TestExerciceModel testexercice = new TestExerciceModel();
+    public static final  QuestionQpreuveModel testquestions = new QuestionQpreuveModel();
 
 
     public static final OrthophonisteModel orthophonisteModel = new OrthophonisteModel(new OrthophonisteFileDataBase() );
@@ -48,6 +48,7 @@ public class HelloApplication extends Application {
     public static final String objectifsDBFileName = "objectifsDBFile.dat";
     public static final String troubleDBFileName = "troubleDBFile.dat";
     public static final String anamneseDBFileName = "AnamneseFileDB.dat";
+    public static final String patientFolderName = "dossierPatient.dat";
 
 
     public static String currentUserName = null;
