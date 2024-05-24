@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 import static com.example.patient_management_system.HelloApplication.patientsDBFileName;
 
-public class AnamneseModel {
+public class AnamneseModel implements Serializable {
 
 
     AnamneseDB dataBase;
@@ -34,7 +34,7 @@ public class AnamneseModel {
             dataBase = (AnamneseDB) objectInputStream.readObject();
             System.out.println("loading the anamnese static  model");
         } catch (EOFException e) {
-            System.out.println("Error while loading Patient model: Unexpected end of file. The database file may be corrupted or incomplete.");
+            System.out.println("Error while loading anamnese model: Unexpected end of file. The database file may be corrupted or incomplete.");
         } catch (ClassNotFoundException e) {
             throw new IOException(e);
         }

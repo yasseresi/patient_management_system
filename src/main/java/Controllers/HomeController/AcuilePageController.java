@@ -75,8 +75,16 @@ public class AcuilePageController  implements Initializable {
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         stage.setTitle("login");
         stage.setScene(scene);
-        HelloApplication.currentUserName = null;
         System.out.println("Logged out successfully");
+        HelloApplication.patientModel.save();
+        HelloApplication.testquestions.save();
+        HelloApplication.testexercice.save();
+        HelloApplication.anamneseModel.save();
+        System.out.println("Files saved succeessfully");
+        HelloApplication.currentUserName = null;
+        HelloApplication.currentPatientName = null;
+        System.out.println("the current user after logout is "+HelloApplication.currentUserName);
+        System.out.println("the current patient after logout is "+HelloApplication.currentPatientName);
 
     }
 

@@ -5,9 +5,10 @@ import Exceptions.TestNomUniqueException;
 import Models.Question.QuestionEpreuve;
 import Models.Test.TestSchema;
 
+import java.io.Serializable;
 import java.util.TreeMap;
 
-public class TestFileDB implements TestDB{
+public class TestFileDB implements TestDB, Serializable {
     TreeMap<String, TestSchema> tests ;
 
     public TestFileDB(){

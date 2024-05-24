@@ -1,6 +1,8 @@
 package Models.Question;
 
-public class QuestionLibre extends QuestionEpreuve {
+import java.io.Serializable;
+
+public class QuestionLibre extends QuestionEpreuve implements Serializable {
 
 
     private String reponse;

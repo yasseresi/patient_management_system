@@ -1,6 +1,8 @@
 package Models.Question;
 
-public class QuestionEnfant extends QuestionAnamnese {
+import java.io.Serializable;
+
+public class QuestionEnfant extends QuestionAnamnese implements Serializable {
     private TypeEnfant typeQuestion;
 
     public QuestionEnfant(String question, TypeEnfant typeQuestion) {

@@ -1,6 +1,8 @@
 package Models.Question;
 
-public abstract class Question {
+import java.io.Serializable;
+
+public abstract class Question implements Serializable {
     protected String question;
 
 

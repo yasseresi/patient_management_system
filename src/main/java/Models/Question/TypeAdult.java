@@ -1,6 +1,8 @@
 package Models.Question;
 
-public enum TypeAdult {
+import java.io.Serializable;
+
+public enum TypeAdult implements Serializable {
     HISTOIRE_DE_MALADIE,
     SUIVI_MEDICAL,
 }

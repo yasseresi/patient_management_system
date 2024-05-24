@@ -1,9 +1,10 @@
 package Models.Test;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestSchemaExercice extends TestSchema {
+public class TestSchemaExercice extends TestSchema implements Serializable {
 
     private List<Exercice> exercices;
 

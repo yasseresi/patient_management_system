@@ -2,10 +2,11 @@ package Models.Test;
 
 import Models.Question.QuestionEpreuve;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestSchemaQuestionaire extends TestSchema {
+public class TestSchemaQuestionaire extends TestSchema implements Serializable {
 
 
     private List<QuestionEpreuve> questions;

@@ -4,7 +4,9 @@ import Exceptions.TestDoesNotExistException;
 import Exceptions.TestNomUniqueException;
 import Models.Test.TestSchema;
 
-public interface TestDB {
+import java.io.Serializable;
+
+public interface TestDB extends Serializable {
 
 
     public void createTest(TestSchema test) throws TestNomUniqueException;

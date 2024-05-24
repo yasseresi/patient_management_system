@@ -45,10 +45,14 @@ public class LogInController {
 
             OrthophonisteSchema user = orthophonisteModel.find(username); //If he doesn't exist an exception will be thrown
             if (!user.getPassword().equals(password)) throw new WrongPasswordException();
+            System.out.println("the current user before login is "+HelloApplication.currentUserName);
+            System.out.println("the current patient before login is "+HelloApplication.currentPatientName);
             HelloApplication.currentUserName = username;
+            System.out.println("the current user after login is "+HelloApplication.currentUserName);
+            System.out.println("the current patient after login is "+HelloApplication.currentPatientName);
             //todo: load the needed files
             HelloApplication.patientModel.load();
-            HelloApplication.anamneseModel.load();
+//            HelloApplication.anamneseModel.load();
             HelloApplication.testquestions.load();
             HelloApplication.testquestions.load();
 //            HelloApplication.currentUserSettings = user.getSettings();

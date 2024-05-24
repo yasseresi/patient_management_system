@@ -1,8 +1,9 @@
 package Models.Test;
 
+import java.io.Serializable;
 import java.util.TreeSet;
 
-public class Exercice {
+public class Exercice implements Serializable {
 
     private String nom;
     private TreeSet<Float> progress ;

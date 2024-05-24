@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 import static com.example.patient_management_system.HelloApplication.patientsDBFileName;
 
-public class QuestionQpreuveModel {
+public class QuestionQpreuveModel implements Serializable{
 
     private ArrayList<QuestionEpreuve> questions = new ArrayList<>();
 

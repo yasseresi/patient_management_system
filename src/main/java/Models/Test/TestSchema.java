@@ -1,6 +1,8 @@
 package Models.Test;
 
-public abstract class TestSchema {
+import java.io.Serializable;
+
+public abstract class TestSchema implements Serializable {
     protected String nom ;
     protected float score ;
 

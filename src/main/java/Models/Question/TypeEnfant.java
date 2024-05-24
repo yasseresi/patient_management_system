@@ -1,6 +1,8 @@
 package Models.Question;
 
-public enum TypeEnfant {
+import java.io.Serializable;
+
+public enum TypeEnfant implements Serializable {
     STRUCTURE_FAMILIALE,
     DYNAMIQUE_ENFANT,
     ANTECEDENTS_FAMILIAUX,

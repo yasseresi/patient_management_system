@@ -20,14 +20,14 @@ import java.io.IOException;
 public class HelloApplication extends Application {
 
 
-    public static final  TestExerciceModel testexercice = new TestExerciceModel();
-    public static final  QuestionQpreuveModel testquestions = new QuestionQpreuveModel();
+    public static   TestExerciceModel testexercice = new TestExerciceModel();
+    public static   QuestionQpreuveModel testquestions = new QuestionQpreuveModel();
 
 
-    public static final OrthophonisteModel orthophonisteModel = new OrthophonisteModel(new OrthophonisteFileDataBase() );
-    public static final PatientModel patientModel = new PatientModel( new PatientFileDB() );
-    public static final AnamneseModel anamneseModel = new AnamneseModel(new AnamneseDBFile());
-    public static final TestModel testModel = new TestModel(new TestFileDB());
+    public static  OrthophonisteModel orthophonisteModel = new OrthophonisteModel(new OrthophonisteFileDataBase() );
+    public static  PatientModel patientModel = new PatientModel( new PatientFileDB() );
+    public static  AnamneseModel anamneseModel = new AnamneseModel(new AnamneseDBFile());
+    public static  TestModel testModel = new TestModel(new TestFileDB());
 
     public static final String usersDirectoryName = "orthophoniste_directory";
     public static final String bilonDirectoryName = "bilons_directory";
@@ -51,8 +51,8 @@ public class HelloApplication extends Application {
     public static final String patientFolderName = "dossierPatient.dat";
 
 
-    public static String currentUserName = null;
-    public static String currentPatientName = null;
+    public static String currentUserName ;
+    public static String currentPatientName ;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -70,6 +70,8 @@ public class HelloApplication extends Application {
 
     @Override
     public void init() throws IOException, ClassNotFoundException {
+        currentPatientName=null;
+        currentUserName=null;
         if( (new File(usersDirectoryName, TherapistDBuserName)).exists() ){
             orthophonisteModel.load();
         }
@@ -79,10 +81,14 @@ public class HelloApplication extends Application {
     @Override
     public void stop() throws IOException {
         orthophonisteModel.save();
-        patientModel.save();
-        testexercice.save();
-        testquestions.save();
-        anamneseModel.save();
+        if(currentUserName!=null){
+            patientModel.save();
+            anamneseModel.save();
+            testModel.save();
+            //        anamneseModel.save();
+
+        }
+
     }
     public static void main(String[] args) {
         launch();

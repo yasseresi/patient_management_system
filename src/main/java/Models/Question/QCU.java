@@ -1,9 +1,10 @@
 package Models.Question;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QCU extends QuestionEpreuve {
+public class QCU extends QuestionEpreuve implements Serializable {
     private List<String> propositions;
     private String reponse;
 

@@ -80,12 +80,22 @@ public class SignUpController {
                     System.out.println("Directory created");
                     //Create a file for each FileDataBase class
                     HelloApplication.currentUserName = nom+" "+prenom;
+                    System.out.println("the current user is "+HelloApplication.currentUserName);
                     new File(HelloApplication.usersDirectoryName + "/"  + HelloApplication.TherapistDBuserName).createNewFile();
                     //create patients file~~
                     new File(HelloApplication.usersDirectoryName + "/" + HelloApplication.currentUserName + "/" + HelloApplication.patientsDBFileName).createNewFile();
                     new File(HelloApplication.usersDirectoryName + "/"+ HelloApplication.currentUserName +"/"+"listTestQuestions.dt").createNewFile();
                     new File(HelloApplication.usersDirectoryName + "/"+ HelloApplication.currentUserName +"/"+"listTestExercice.dt").createNewFile();
                     new File(HelloApplication.usersDirectoryName + "/"+ HelloApplication.currentUserName +"/"+HelloApplication.anamneseDBFileName).createNewFile();
+
+                    //load them to the model
+                    HelloApplication.patientModel.load();
+                    HelloApplication.testquestions.load();
+                    HelloApplication.testexercice.load();
+                    HelloApplication.anamneseModel.load();
+
+
+
 
 
                     //TODO: create a view for the users who sign up for the first time to get their settings
@@ -110,13 +120,14 @@ public class SignUpController {
                     throw new IOException("A problem occurred when creating the directory");
                 }
 
-            } catch (UniqueUsernameViolationException | UserNameNotProvidedException | PasswordNotProvidedException | IOException e) {
+            } catch (UniqueUsernameViolationException | UserNameNotProvidedException | PasswordNotProvidedException |
+                     IOException | ClassNotFoundException e) {
                 System.out.println(e.getMessage());
                 Popups.showErrorMessage(e.getMessage());
             }
             finally {
 
-                System.out.println("\nUsersDB content the orthophiniste is "+ nom + " " +prenom + " " + password + " " + phone + " " + familyName + " " + email + " " + adress + "\n");
+                System.out.println("\nUsersDB content the orthophiniste is nom:"+ nom + "prenom: " +prenom + "password:" + password + " " + phone + " " + familyName + " " + email + " " + adress + "\n");
 
 
                 //create days from today to 30 days from now, and 10 days before

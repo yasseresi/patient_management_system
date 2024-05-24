@@ -7,7 +7,7 @@ import com.example.patient_management_system.HelloApplication;
 
 import java.io.*;
 
-public class TestModel {
+public class TestModel implements Serializable {
 
     TestDB dataBase;
 

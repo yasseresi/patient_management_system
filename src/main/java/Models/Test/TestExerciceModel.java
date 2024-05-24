@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 import static com.example.patient_management_system.HelloApplication.patientsDBFileName;
 
-public class TestExerciceModel {
+public class TestExerciceModel implements Serializable{
 
     private ArrayList<Exercice> exercices = new ArrayList<>();
 

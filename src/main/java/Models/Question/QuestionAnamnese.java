@@ -1,6 +1,8 @@
 package Models.Question;
 
-public abstract class QuestionAnamnese extends Question{
+import java.io.Serializable;
+
+public abstract class QuestionAnamnese extends Question implements Serializable {
 
     protected String reponse;
 
