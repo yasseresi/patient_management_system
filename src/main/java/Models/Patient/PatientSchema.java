@@ -12,9 +12,10 @@ public abstract class PatientSchema implements Serializable, Comparable<PatientS
     private String lieuNaissance;
     private String adresse;
     private  boolean nouveau;
+    private int nbTelephones;
 
 
-    public PatientSchema(String nom, String prenom, int age, LocalDate dateNaissance, String lieuNaissance, String adresse, boolean nouveau) {
+    public PatientSchema(String nom, String prenom, int age, LocalDate dateNaissance, String lieuNaissance, String adresse,int nbTelephones, boolean nouveau) {
         this.nom = nom;
         this.prenom = prenom;
         this.age = age;
@@ -22,6 +23,7 @@ public abstract class PatientSchema implements Serializable, Comparable<PatientS
         this.lieuNaissance = lieuNaissance;
         this.adresse = adresse;
         this.nouveau = nouveau;
+        this.nbTelephones = nbTelephones;
     }
 
     public PatientSchema(String nom, String prenom, int age) {

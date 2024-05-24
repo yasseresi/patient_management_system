@@ -5,37 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22522964-ee30-41fa-aa84-8bf6b9a1ee96" name="Changes" comment="first commit project initialisation">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/consultation-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/HomeController/AcuilePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/HomeController/AcuilePageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/OrthophonisteControllers/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/OrthophonisteControllers/LogInController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/OrthophonisteControllers/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/OrthophonisteControllers/SignUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ProfileControllers/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ProfileControllers/ProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/RendezVousController/RendezVousController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/RendezVousController/RendezVousController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/StatistiqueControllers/StatistiqueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/StatistiqueControllers/StatistiqueController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/TestControllers/CreateTestsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/TestControllers/CreateTestsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBases/AnamneseDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBases/AnamneseDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBases/AnamneseDBFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBases/AnamneseDBFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBases/TestDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBases/TestDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBases/TestFileDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBases/TestFileDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Anamnese/AnamneseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Anamnese/AnamneseModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Question/QCM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Question/QCM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Question/QCU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Question/QCU.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Question/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Question/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Question/QuestionAdult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Question/QuestionAdult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Question/QuestionAnamnese.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Question/QuestionAnamnese.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Question/QuestionEnfant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Question/QuestionEnfant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Question/QuestionEpreuve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Question/QuestionEpreuve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Question/QuestionLibre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Question/QuestionLibre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Question/QuestionQpreuveModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Question/QuestionQpreuveModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Question/TypeAdult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Question/TypeAdult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Question/TypeEnfant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Question/TypeEnfant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Test/Exercice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Test/Exercice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Test/TestExerciceModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Test/TestExerciceModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Test/TestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Test/TestModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Test/TestSchema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Test/TestSchema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Test/TestSchemaExercice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Test/TestSchemaExercice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Test/TestSchemaQuestionaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Test/TestSchemaQuestionaire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patient_management_system/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patient_management_system/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Patient/AdultSchema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Patient/AdultSchema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Patient/EnfantSchema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Patient/EnfantSchema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Patient/PatientSchema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Patient/PatientSchema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/RendezVous/ConsultationSchema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/RendezVous/ConsultationSchema.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,15 +22,15 @@
       <list>
         <option value="Interface" />
         <option value="Enum" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="ilyes_version" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -221,7 +196,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="YasserBranch" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
