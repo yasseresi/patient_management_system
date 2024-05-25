@@ -1,36 +1,175 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Hyperlink?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="519.0" prefWidth="778.0" stylesheets="@general.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.OrthophonisteControllers.SignUpController">
-   <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="63.0" layoutY="192.0" pickOnBounds="true"
-              preserveRatio="true">
-      <Image url="@../../../../../../../../../Downloads/6ddoiu-LogoMakr.png"/>
-   </ImageView>
-   <Text layoutX="363.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up" wrappingWidth="161.70166015625">
-      <font>
-         <Font name="System Bold" size="39.0" />
-      </font>
-   </Text>
-   <TextField id="userNameField" fx:id="FirstName" layoutX="364.0" layoutY="182.0" promptText="First Name" />
-   <TextField id="FamilyFiled" fx:id="FamilyName" layoutX="549.0" layoutY="182.0" promptText="Family Name" />
-   <TextField id="adressField" fx:id="Adress" layoutX="364.0" layoutY="226.0" prefHeight="26.0" prefWidth="346.0" promptText="Adress" />
-   <TextField id="emailField" fx:id="Email" layoutX="364.0" layoutY="273.0" prefHeight="26.0" prefWidth="346.0" promptText="Email                                                                                    @gmail.com" />
-     <Button id="signUpButton" fx:id="signUpButton" layoutX="509.0" layoutY="376.0" mnemonicParsing="false" onAction="#handle" text="Signup" />
-     <Text layoutX="425.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already have an account?" />
-   <TextField id="phoneField" fx:id="Phone" layoutX="364.0" layoutY="321.0" promptText="Phone Number +213" />
-   <PasswordField id="passwordField" fx:id="Password" layoutX="549.0" layoutY="322.0" promptText="Password" />
-   <Hyperlink fx:id="loginButton" layoutX="573.0" layoutY="419.0" onAction="#moveToLoginView" text="login" textFill="#1b7ecf">
-      <font>
-         <Font name="BM HANNA Air OTF" size="14.0" />
-      </font>
-   </Hyperlink>
+<AnchorPane maxHeight="625.0" maxWidth="1200.0" minHeight="625.0" minWidth="1200.0" prefHeight="625.0" prefWidth="1200.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.OrthophonisteControllers.SignUpController">
+   <padding>
+      <Insets bottom="60.0" left="160.0" right="160.0" top="60.0" />
+   </padding>
+
+   <GridPane alignment="CENTER" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <padding>
+         <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+      </padding>
+
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+
+      <ImageView accessibleText="Image" fitHeight="400.0" fitWidth="450.0" layoutX="103.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
+         <Image url="@images/login_picture.jpg" />
+      </ImageView>
+
+      <Rectangle height="275.0" style="-fx-fill: #00000;" width="0.75" GridPane.columnIndex="1" GridPane.rowIndex="0">
+         <GridPane.margin>
+            <Insets left="50.0" right="50.0" />
+         </GridPane.margin>
+      </Rectangle>
+
+      <VBox alignment="CENTER_LEFT" GridPane.columnIndex="2" GridPane.rowIndex="0">
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin>
+         <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" styleClass="text-style" stylesheets="@general.css" text="Create an account" textAlignment="CENTER">
+            <font>
+               <Font name="Arial Bold" size="30.0" />
+            </font>
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+            <textFill>
+               <LinearGradient endX="1.0" endY="1.0">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="0.0892999991774559" green="0.41034892201423645" blue="0.4699999988079071" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color opacity="0.7723076939582825" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </textFill>
+         </Label>
+
+         <Label layoutX="10.0" layoutY="10.0" text="Family Name" textFill="#888888">
+            <font>
+               <Font name="AdobeDevanagari-Regular" size="15.0" />
+            </font>
+            <VBox.margin>
+               <Insets top="2.0" />
+            </VBox.margin>
+         </Label>
+         <TextField fx:id="FamilyName" prefHeight="50.0" prefWidth="150.0">
+         </TextField>
+
+         <Label layoutX="10.0" layoutY="10.0" text="First Name" textFill="#888888">
+            <font>
+               <Font name="AdobeDevanagari-Regular" size="15.0" />
+            </font>
+            <VBox.margin>
+               <Insets top="2.0" />
+            </VBox.margin>
+         </Label>
+         <TextField fx:id="FirstName" prefHeight="50.0" prefWidth="150.0">
+
+         </TextField>
+
+         <Label layoutX="10.0" layoutY="10.0" text="Address" textFill="#888888">
+            <font>
+               <Font name="AdobeDevanagari-Regular" size="15.0" />
+            </font>
+            <VBox.margin>
+               <Insets top="2.0" />
+            </VBox.margin>
+         </Label>
+         <TextField fx:id="Adress" prefHeight="50.0" prefWidth="346.0">
+
+         </TextField>
+
+         <Label layoutX="10.0" layoutY="10.0" text="Email" textFill="#888888">
+            <font>
+               <Font name="AdobeDevanagari-Regular" size="15.0" />
+            </font>
+            <VBox.margin>
+               <Insets top="5.0" />
+            </VBox.margin>
+         </Label>
+         <TextField fx:id="Email" prefHeight="50.0" prefWidth="346.0" promptText="Email                                                                                    @gmail.com">
+
+         </TextField>
+
+         <Label layoutX="10.0" layoutY="10.0" text="Phone Number" textFill="#888888">
+            <font>
+               <Font name="AdobeDevanagari-Regular" size="15.0" />
+            </font>
+            <VBox.margin>
+               <Insets top="5.0" />
+            </VBox.margin>
+         </Label>
+         <TextField fx:id="Phone" prefHeight="50.0" prefWidth="150.0" promptText="Phone Number +213">
+
+         </TextField>
+
+         <Label layoutX="10.0" layoutY="10.0" text="Password" textFill="#888888">
+            <font>
+               <Font name="AdobeDevanagari-Regular" size="15.0" />
+            </font>
+            <VBox.margin>
+               <Insets top="5.0" />
+            </VBox.margin>
+         </Label>
+         <PasswordField fx:id="Password" prefHeight="50.0" prefWidth="150.0">
+
+         </PasswordField>
+
+         <Button id="signUpButton" fx:id="signUpButton" mnemonicParsing="false" onAction="#handle" prefHeight="35.0" prefWidth="300.0" styleClass="button2-style" stylesheets="@general.css" text="Sign Up" textAlignment="CENTER">
+            <VBox.margin>
+               <Insets top="15.0" />
+            </VBox.margin>
+            <font>
+               <Font name="System Bold" size="17.0" />
+            </font>
+         </Button>
+
+         <HBox alignment="CENTER">
+            <Label layoutX="10.0" layoutY="10.0" text="Already have an account?" textFill="#888888">
+               <font>
+                  <Font name="Calisto MT Bold" size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="50.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+
+            <Hyperlink fx:id="loginButton" layoutX="10.0" layoutY="10.0" onAction="#moveToLoginView" text="Sign In" textFill="#1b7ecf">
+               <font>
+                  <Font name="Calisto MT Bold" size="16.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </Hyperlink>
+
+            <VBox.margin>
+               <Insets top="25.0" />
+            </VBox.margin>
+         </HBox>
+      </VBox>
+
+      <rowConstraints>
+         <RowConstraints />
+      </rowConstraints>
+   </GridPane>
 </AnchorPane>

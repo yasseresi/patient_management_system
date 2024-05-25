@@ -6,9 +6,10 @@ import Models.Question.QuestionAdult;
 import Models.Question.QuestionAnamnese;
 import Models.Question.QuestionEnfant;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class AnamneseDBFile implements AnamneseDB{
+public class AnamneseDBFile implements AnamneseDB, Serializable {
 
     ArrayList<QuestionAnamnese> questions ;
 

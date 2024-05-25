@@ -18,7 +18,6 @@
          <children>
             <ImageView fitHeight="95.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../../Downloads/6ddoiu-LogoMakr.png" />
                </image>
             </ImageView>
             <VBox alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="345.0" prefWidth="158.0" spacing="14.0">

@@ -7,6 +7,7 @@ import Exceptions.UserNameNotProvidedException;
 import Exceptions.WrongPasswordException;
 import Models.Orthophoniste.OrthophonisteModel;
 import Models.Orthophoniste.OrthophonisteSchema;
+import Models.Patient.PatientModel;
 import Utils.Popups;
 import com.example.patient_management_system.HelloApplication;
 import javafx.fxml.FXML;
@@ -22,6 +23,7 @@ import javafx.stage.Stage;
 
 import java.io.*;
 
+import static com.example.patient_management_system.HelloApplication.currentPatientName;
 import static com.example.patient_management_system.HelloApplication.orthophonisteModel;
 
 
@@ -44,13 +46,16 @@ public class LogInController {
             if (password == null || password.isEmpty()) throw new PasswordNotProvidedException();
 
             OrthophonisteSchema user = orthophonisteModel.find(username); //If he doesn't exist an exception will be thrown
+
+            System.out.println("username trouve = "+user.getNom()+" "+user.getPrenom() + ", password = "+user.getPassword());
+
             if (!user.getPassword().equals(password)) throw new WrongPasswordException();
             HelloApplication.currentUserName = username;
             //todo: load the needed files
             HelloApplication.patientModel.load();
             HelloApplication.anamneseModel.load();
             HelloApplication.testquestions.load();
-            HelloApplication.testquestions.load();
+            //HelloApplication.testquestions.load();
 //            HelloApplication.currentUserSettings = user.getSettings();
 
             //Load the DBs from the corresponding files
@@ -94,7 +99,7 @@ public class LogInController {
     }
     public void moveToSignupView() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("signup-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 800, 600);
         Stage stage = (Stage) userName.getScene().getWindow();
         stage.setTitle("Login");
 

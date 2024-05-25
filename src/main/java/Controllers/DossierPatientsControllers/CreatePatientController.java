@@ -26,8 +26,8 @@ public class CreatePatientController {
 
     public void create(javafx.event.ActionEvent event) throws IOException, PatientAlreadyExistException {
         HelloApplication.currentPatientName = familyName.getText() + " " + firstName.getText();
-        if (patientModel.isEmpty()) {
-            System.out.println("there is no patient yet");
+        if (!patientModel.exists(familyName.getText() , firstName.getText())) {
+            System.out.println("the patient does not exist , so we will create his folder");
 
             //creation de folder pour chaque patient
             if (new File(HelloApplication.usersDirectoryName + "/" + HelloApplication.currentUserName + "/" + HelloApplication.currentPatientName).mkdirs()) {

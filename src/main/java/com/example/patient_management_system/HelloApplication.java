@@ -5,6 +5,7 @@ import Models.Anamnese.AnamneseModel;
 import Models.Orthophoniste.OrthophonisteModel;
 import Models.Patient.PatientModel;
 import Models.Question.QuestionQpreuveModel;
+import Models.RendezVous.RendezVousModel;
 import Models.Test.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -28,6 +29,7 @@ public class HelloApplication extends Application {
     public static final PatientModel patientModel = new PatientModel( new PatientFileDB() );
     public static final AnamneseModel anamneseModel = new AnamneseModel(new AnamneseDBFile());
     public static final TestModel testModel = new TestModel(new TestFileDB());
+    public static final RendezVousModel rendezvousModel = new RendezVousModel(new RendezVousFileDB());
 
     public static final String usersDirectoryName = "orthophoniste_directory";
     public static final String bilonDirectoryName = "bilons_directory";
@@ -56,9 +58,6 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-
-
-
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("signup-view.fxml"));
         Parent root = loader.load();
