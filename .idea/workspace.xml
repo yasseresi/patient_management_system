@@ -5,71 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22522964-ee30-41fa-aa84-8bf6b9a1ee96" name="Changes" comment="first commit project initialisation">
-      <change afterPath="$PROJECT_DIR$/orthophoniste_directory/SpeachTherapistDBFile.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orthophoniste_directory/blidi ilyes/AnamneseFileDB.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orthophoniste_directory/blidi ilyes/dabouz moh/bilonsDBFile.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orthophoniste_directory/blidi ilyes/dabouz moh/fichSuivisDBFile.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orthophoniste_directory/blidi ilyes/dabouz moh/rendez_vousDBFile.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orthophoniste_directory/blidi ilyes/daoud morad/bilonsDBFile.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orthophoniste_directory/blidi ilyes/daoud morad/fichSuivisDBFile.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orthophoniste_directory/blidi ilyes/daoud morad/rendez_vousDBFile.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orthophoniste_directory/blidi ilyes/douag omar/bilonsDBFile.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orthophoniste_directory/blidi ilyes/douag omar/fichSuivisDBFile.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orthophoniste_directory/blidi ilyes/douag omar/rendez_vousDBFile.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orthophoniste_directory/blidi ilyes/listTestExercice.dt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orthophoniste_directory/blidi ilyes/listTestQuestions.dt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orthophoniste_directory/blidi ilyes/patientsFileDatabase.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orthophoniste_directory/blidi ilyes/tellai daoud/bilonsDBFile.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orthophoniste_directory/blidi ilyes/tellai daoud/fichSuivisDBFile.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orthophoniste_directory/blidi ilyes/tellai daoud/rendez_vousDBFile.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/BOController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/FicheSuiviController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/PatientDetailsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/RendezVousListController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/bo.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/fiche-suivi.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/images/add-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/images/add.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/images/add_task.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/images/assigned-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/images/browse-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/images/done-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/images/eye.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/images/historique.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/images/home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/images/login_picture.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/images/loginpicture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/images/menu_indicator.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/images/person.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/images/reminder.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/images/retour.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/images/settings.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/images/statistics.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/images/task_done.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/images/tasks.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/patient-details.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/rendez-vous-list.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/SceneSwitcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/CreatePatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/CreatePatientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/BOController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/BOController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/DossierPatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/DossierPatientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/FicheSuiviController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/FicheSuiviController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/PatientDetailsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/PatientDetailsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/RendezVousListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/RendezVousListController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/OrthophonisteControllers/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/OrthophonisteControllers/LogInController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/OrthophonisteControllers/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/OrthophonisteControllers/SignUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBases/AnamneseDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBases/AnamneseDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBases/AnamneseDBFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBases/AnamneseDBFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBases/RendezVousFileDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBases/RendezVousFileDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Anamnese/AnamneseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Anamnese/AnamneseModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Bilan/BilonModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Bilan/BilonModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/DossierPatient/DossierPatientModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/DossierPatient/DossierPatientModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataBases/ObjectifDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBases/ObjectifDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataBases/objectifFileDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBases/objectifFileDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Objectif/ObjectifModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Objectif/ObjectifModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Models/RendezVous/RendezVousModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/RendezVous/RendezVousModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/RendezVous/RendezVousSchema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/RendezVous/RendezVousSchema.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patient_management_system/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patient_management_system/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/Profil-page-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/Profil-page-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/dossier-patient-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/dossier-patient-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/general.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/general.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/home-page-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/home-page-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/bo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/bo.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/fiche-suivi.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/fiche-suivi.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/login-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/signup-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/signup-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/rendez-vous-list.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/rendez-vous-list.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,6 +193,7 @@
       <workItem from="1716586585122" duration="11330000" />
       <workItem from="1716598445639" duration="62000" />
       <workItem from="1716639814158" duration="1378000" />
+      <workItem from="1716675629176" duration="5860000" />
     </task>
     <task id="LOCAL-00001" summary="first commit project initialisation">
       <option name="closed" value="true" />

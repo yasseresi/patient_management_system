@@ -8,6 +8,7 @@ import Exceptions.UserNameNotProvidedException;
 import Models.Orthophoniste.OrthophonisteModel;
 import Models.Orthophoniste.OrthophonisteSchema;
 import Utils.Popups;
+import Utils.SceneSwitcher;
 import com.example.patient_management_system.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -134,16 +135,8 @@ public class SignUpController {
 
     }
     public void moveToLoginView(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 800, 600);
-        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("Login");
-
-        //center the view on the user's screen
-        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
-        stage.setX((screenBounds.getWidth() - scene.getWidth()) / 2);
-        stage.setY((screenBounds.getHeight() - scene.getHeight()) / 2);
-        stage.setScene(scene);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        SceneSwitcher.switchScene(stage, "login-view.fxml", 1200, 625);
     }
 }
 

@@ -127,7 +127,7 @@ public class DossierPatientController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("patient-details.fxml" ));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-            stage.setTitle("addPatient");
+            stage.setTitle("Patient Details");
             stage.setScene(scene);
 
             // Update the current patient name in the application

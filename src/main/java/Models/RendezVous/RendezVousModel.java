@@ -39,9 +39,6 @@ public class RendezVousModel implements Serializable {
     }
 
 
-
-
-
     public void createAtelier(RendezVousSchema rendezVous) throws ConsultationFirstException, ConsultationAlreadyPassedExecption {
         dataBase.create(rendezVous.date, rendezVous.heure, rendezVous);
     }

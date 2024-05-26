@@ -78,6 +78,7 @@ public class PatientDetailsController {
             Stage currentStage = (Stage) patientNameLabel.getScene().getWindow();
             currentStage.setScene(newScene);
             currentStage.setTitle(title);
+            currentStage.centerOnScreen();
             currentStage.show();
         } catch (IOException e) {
             e.printStackTrace();

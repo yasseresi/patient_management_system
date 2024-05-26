@@ -85,7 +85,7 @@
                 </VBox.margin>
             </Label>
 
-            <Button fx:id="loginButton" mnemonicParsing="false" onAction="#handle" prefHeight="35.0" prefWidth="300.0" styleClass="button-style" stylesheets="@general.css" text="Log In" textAlignment="CENTER">
+            <Button fx:id="loginButton" mnemonicParsing="false" onAction="#handle" prefHeight="35.0" prefWidth="300.0" styleClass="button2-style" stylesheets="@general.css" text="Log In" textAlignment="CENTER">
                 <VBox.margin>
                     <Insets left="10.0" top="10.0" />
                 </VBox.margin>

@@ -10,10 +10,10 @@
 <AnchorPane xmlns="http://javafx.com/javafx/22"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="Controllers.DossierPatientsControllers.RendezVousListController"
-            prefHeight="400.0" prefWidth="600.0" >
+            prefHeight="500.0" prefWidth="800.0" >
 
-    <VBox alignment="TOP_CENTER" spacing="15">
-        <Label fx:id="patientNameLabel" text="Patient Name" alignment="CENTER" />
+    <VBox alignment="CENTER" spacing="15" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" >
+        <Label fx:id="patientNameLabel" text="Patient Name" style="-fx-font-size: 17; -fx-font-weight: 700; -fx-padding: 15px" alignment="CENTER" />
 
         <!-- TableView to display rendez-vous information -->
         <TableView fx:id="rendezVousTableView" prefHeight="500.0" prefWidth="600.0">
@@ -56,7 +56,7 @@
         </TableView>
 
         <!-- Button to go back to Patient Details -->
-        <Button text="Back to Patient Details" onAction="#handleBackToPatientDetails" />
+        <Button onAction="#handleBackToPatientDetails" prefHeight="25.0" prefWidth="75.0" style="-fx-padding: 10px; -fx-font-size: 15; -fx-border-radius: 15; -fx-background-color: #053c7c" text="Back" textFill="white" />
     </VBox>
 
 </AnchorPane>
