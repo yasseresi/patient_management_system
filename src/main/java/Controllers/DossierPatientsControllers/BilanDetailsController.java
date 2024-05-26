@@ -1,10 +1,16 @@
 package Controllers.DossierPatientsControllers;
 
+import Utils.SceneSwitcher;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableView;
 import Models.Bilan.BilonSchema;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class BilanDetailsController {
 
@@ -39,5 +45,11 @@ public class BilanDetailsController {
 
         // Set root item to tree table view
         treeTableView.setRoot(rootItem);
+    }
+
+    @FXML
+    private void handleBackToPatientDetails(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        SceneSwitcher.switchScene(stage, "dossier-patient-view.fxml", 800, 600);
     }
 }

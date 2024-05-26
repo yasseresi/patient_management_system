@@ -9,6 +9,8 @@ import Models.Bilan.BilonModel;
 import Models.Bilan.BilonSchema;
 import Models.Diagnostique.TroubleModel;
 import Models.Diagnostique.TypeTrouble;
+import Models.DossierPatient.DossierPatientSchema;
+import Models.Objectif.FichSuiviSchema;
 import Models.ObservationsCliniques.ObservationModel;
 import Models.Question.QuestionAdult;
 import Models.Question.QuestionAnamnese;
@@ -20,6 +22,7 @@ import Models.Patient.PatientSchema;
 import Models.Test.TestSchemaQuestionaire;
 import Utils.SceneSwitcher;
 import com.example.patient_management_system.HelloApplication;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -48,23 +51,36 @@ public class BOController {
     @FXML
     private VBox bilanDetailContainer; // Container for displaying bilan details
 
-    private BilonModel bilanModel;
 
     public void setPatientDetails(PatientSchema patient) {
+
         patientNameLabel.setText(patient.getNom().toUpperCase() + " " + patient.getPrenom().toUpperCase());
 
-        bilanModel = new BilonModel();
-        try {
-            if (new File(HelloApplication.usersDirectoryName + "/" + HelloApplication.currentUserName + "/" + HelloApplication.currentPatientName, HelloApplication.boDBFileName).exists()) {
-                System.out.println("Bilan file exists");
-                bilanModel.load();
-                System.out.println("Bilan model has been loaded");
+        ArrayList<BilonSchema> bilans = new ArrayList<>();
+
+        ArrayList<DossierPatientSchema> dossiers = HelloApplication.dossierPatientModel.getDossierPatients();
+
+        for (DossierPatientSchema dossier : dossiers) {
+            if (dossier.getId().equals(HelloApplication.currentPatientName)) {
+                bilans = dossier.getBilan().getBilans();
+                System.out.println("id : " + dossier.getId().toUpperCase());
             }
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
         }
 
-        ArrayList<BilonSchema> bilansss = HelloApplication.bilonModel.getBilans();
+        if (bilans.isEmpty()) {
+            System.out.println("Bilans list is empty");
+        } else {
+            System.out.println("Bilans list size: " + bilans.size());
+
+            for (BilonSchema element : bilans){
+                System.out.println("Bilan.Tests.Test1.Nom : " + element.getTests().getAllTests().getFirst().getNom());
+            }
+        }
+
+        // Populate ListView with Bilans
+        bilanListView.setItems(FXCollections.observableArrayList(bilans));
+
+
 
         // ------------------ Example data for testing ------------------------------
         AnamneseModel anamneseModel = new AnamneseModel(new AnamneseDBFile());
@@ -88,11 +104,11 @@ public class BOController {
         troubleModel.addTroubles("Trouble 1", TypeTrouble.CONGNITIFS);
 
         BilonSchema bilan = new BilonSchema(anamneseModel, testModel, observationModel, troubleModel);
-        ArrayList<BilonSchema> bilans = new ArrayList<>();
-        bilans.add(bilan);
+        ArrayList<BilonSchema> bilans_exemple = new ArrayList<>();
+        bilans_exemple.add(bilan);
 
         // Combine example data with loaded data
-        bilans.addAll(bilanModel.getBilans());
+        bilans.addAll(bilans_exemple);
 
         displayBilans(bilans);
 
@@ -119,7 +135,7 @@ public class BOController {
             Label anamneseLabel = new Label("Anamnese (Adulte): " + bilan.getAnamneseModel().getQuestionsAdulte().toString());
             Label testLabel = new Label("Tests: " + bilan.getTests().getAllTests().toString());
             Label observationLabel = new Label("Observations: " + bilan.getObservations().toString());
-            Label diagnosticLabel = new Label("Diagnostic: " + bilan.getDiagnostic().getTroubles().toString());
+            Label diagnosticLabel = new Label("Diagnostic.Trouble.First.Type: " + bilan.getDiagnostic().getTroubles().firstEntry().getValue().getCategorie().toString());
 
             bilanDetailContainer.getChildren().addAll(anamneseLabel, testLabel, observationLabel, diagnosticLabel);
         }

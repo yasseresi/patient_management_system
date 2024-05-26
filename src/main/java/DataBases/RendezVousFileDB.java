@@ -56,12 +56,17 @@ public class RendezVousFileDB implements RendezVouzDB{
     public ArrayList<RendezVousSchema> findAll(LocalDate date) {
         ArrayList<RendezVousSchema> rendezVousList = new ArrayList<>();
         for (TreeMap<LocalDate, LocalTime> key : rendezVous.keySet()) {
-            // If date is null or key contains the given date, add all rendez-vous for that key
-            if (date == null || key.containsKey(date)) {
+            // If key contains the given date, add all rendez-vous for that key
+            if (key.containsKey(date)) {
                 rendezVousList.add(rendezVous.get(key));
             }
         }
         return rendezVousList;
+    }
+
+    // New method to return all Rendezvous
+    public ArrayList<RendezVousSchema> findAll() {
+        return new ArrayList<>(rendezVous.values());
     }
 
 }

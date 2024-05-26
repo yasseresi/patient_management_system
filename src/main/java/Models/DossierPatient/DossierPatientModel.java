@@ -10,6 +10,14 @@ public class DossierPatientModel {
 
     private ArrayList<DossierPatientSchema> dossierPatients;
 
+    public ArrayList<DossierPatientSchema> getDossierPatients() {
+        return dossierPatients;
+    }
+
+    public void setDossierPatients(ArrayList<DossierPatientSchema> dossierPatients) {
+        this.dossierPatients = dossierPatients;
+    }
+
 
     public DossierPatientModel(ArrayList<DossierPatientSchema> dossierPatients) {
         this.dossierPatients = dossierPatients;
@@ -18,6 +26,7 @@ public class DossierPatientModel {
     public DossierPatientModel(){
 
     }
+
 
     public void save() throws IOException {
         try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(HelloApplication.usersDirectoryName + "/"+ HelloApplication.currentUserName +"/"+HelloApplication.dossierPatientFileName))){
@@ -37,6 +46,18 @@ public class DossierPatientModel {
         }
     }
 
+    public void addDossierPatient(DossierPatientSchema dossierPatient) {
+        dossierPatients.add(dossierPatient);
+    }
+
+    public DossierPatientSchema getDossierPatientById(String PatientName) {
+        for (DossierPatientSchema dossierPatient : dossierPatients) {
+            if (dossierPatient.getId().equals(PatientName)) {
+                return dossierPatient;
+            }
+        }
+        return null; // Return null if no matching DossierPatientSchema is found
+    }
 //    public DossierPatientSchema getDossierPatient() {
 //        return dossierPatients;
 //    }

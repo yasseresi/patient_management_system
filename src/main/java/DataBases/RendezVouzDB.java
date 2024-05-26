@@ -16,4 +16,6 @@ public interface RendezVouzDB extends Serializable {
     RendezVousSchema find(LocalDate date, LocalTime time);
 
     ArrayList<RendezVousSchema> findAll(LocalDate date);
+
+    ArrayList<RendezVousSchema> findAll();
 }

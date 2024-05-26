@@ -43,7 +43,6 @@ public class RendezVousModel implements Serializable {
         dataBase.create(rendezVous.date, rendezVous.heure, rendezVous);
     }
 
-
     public ArrayList<RendezVousSchema> findAll(LocalDate date) {
         return dataBase.findAll(date);
     }
@@ -53,5 +52,8 @@ public class RendezVousModel implements Serializable {
         return dataBase.find(date, time);
     }
 
+    public ArrayList<RendezVousSchema> findAll(){
+        return dataBase.findAll();
+    };
 
 }

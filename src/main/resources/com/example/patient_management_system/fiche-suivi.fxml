@@ -8,10 +8,12 @@
     <VBox alignment="CENTER" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
         <Label fx:id="patientNameLabel" style="-fx-font-size: 17; -fx-font-weight: 700; -fx-padding: 15px" text="Patient Name" />
 
+        <ListView fx:id="fichSuiviListView" />
+
         <ScrollPane fx:id="scrollPane" >
-        <VBox fx:id="chartContainer" spacing="10.0">
-            <!-- Charts will be dynamically added here -->
-        </VBox>
+            <VBox fx:id="chartContainer" spacing="10.0">
+                <!-- Charts will be dynamically added here -->
+            </VBox>
         </ScrollPane>
 
         <Button onAction="#handleBackToPatientDetails" prefHeight="25.0" prefWidth="75.0" style="-fx-padding: 10px; -fx-font-size: 15; -fx-border-radius: 15; -fx-background-color: #053c7c" text="Back" textFill="white" />

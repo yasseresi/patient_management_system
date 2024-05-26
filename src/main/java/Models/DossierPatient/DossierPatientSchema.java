@@ -2,6 +2,7 @@ package Models.DossierPatient;
 
 import Models.Bilan.BilonModel;
 import Models.Bilan.BilonSchema;
+import Models.Objectif.FichSuiviModel;
 import Models.Objectif.ObjectifModel;
 import Models.RendezVous.RendezVousModel;
 
@@ -10,11 +11,11 @@ public class DossierPatientSchema {
     private String id;
 
     private RendezVousModel rendezVous;
-    private ObjectifModel fichSuivi;
+    private FichSuiviModel fichSuivi;
     private BilonModel bilan;
 
 
-    public DossierPatientSchema(String id, RendezVousModel rendezVous, ObjectifModel fichSuivi, BilonModel bilan) {
+    public DossierPatientSchema(String id, RendezVousModel rendezVous, FichSuiviModel fichSuivi, BilonModel bilan) {
         this.id = id;
         this.rendezVous = rendezVous;
         this.fichSuivi = fichSuivi;
@@ -29,11 +30,11 @@ public class DossierPatientSchema {
         this.rendezVous = rendezVous;
     }
 
-    public ObjectifModel getFichSuivi() {
+    public FichSuiviModel getFichSuivi() {
         return fichSuivi;
     }
 
-    public void setFichSuivi(ObjectifModel fichSuivi) {
+    public void setFichSuivi(FichSuiviModel fichSuivi) {
         this.fichSuivi = fichSuivi;
     }
 

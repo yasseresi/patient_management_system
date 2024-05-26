@@ -3,6 +3,7 @@ package Controllers.DossierPatientsControllers;
 import DataBases.RendezVousFileDB;
 import Exceptions.ConsultationAlreadyPassedExecption;
 import Exceptions.ConsultationFirstException;
+import Models.DossierPatient.DossierPatientSchema;
 import Models.RendezVous.ConsultationSchema;
 import Models.RendezVous.DeroulementSuivi;
 import Models.RendezVous.RendezVousSchema;
@@ -58,13 +59,18 @@ public class RendezVousListController {
 
         System.out.println("Current Patient: " + HelloApplication.currentPatientName);
 
-        if (new File(HelloApplication.usersDirectoryName + "/" + HelloApplication.currentUserName + "/" + HelloApplication.currentPatientName, HelloApplication.categoryDbFileName).exists()) {
-            System.out.println("Rendez-vous file exists");
-            HelloApplication.rendezvousModel.load();
-            System.out.println("Rendez-vous model has been loaded");
+        ArrayList<RendezVousSchema> RVs = new ArrayList<>();
+
+        ArrayList<DossierPatientSchema> dossiers = new ArrayList<>();
+        dossiers = HelloApplication.dossierPatientModel.getDossierPatients();
+
+        for (DossierPatientSchema dossier : dossiers) {
+            if (dossier.getId().equals(HelloApplication.currentPatientName)) {
+                RVs = dossier.getRendezVous().findAll();
+                System.out.println("id : " + dossier.getId().toUpperCase());
+            }
         }
 
-        ArrayList<RendezVousSchema> RVs = HelloApplication.rendezvousModel.findAll(null);
         if (RVs == null) {
             System.out.println("Rendez-vous list is null");
             RVs = new ArrayList<>(); // Initialize an empty list if null
@@ -78,8 +84,6 @@ public class RendezVousListController {
 //        } catch (ConsultationAlreadyPassedExecption | ConsultationFirstException e) {
 //            e.printStackTrace();
 //        }
-
-        RVs.addAll(HelloApplication.rendezvousModel.findAll(null));
 
         rendezVousTableView.setItems(FXCollections.observableArrayList(RVs));
 

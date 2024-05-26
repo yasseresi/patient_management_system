@@ -35,8 +35,8 @@ public class HelloApplication extends Application {
     public static  AnamneseModel anamneseModel = new AnamneseModel(new AnamneseDBFile());
     public static DossierPatientModel dossierPatientModel = new DossierPatientModel(new ArrayList<>());
 
-    public static final RendezVousModel rendezvousModel = new RendezVousModel(new RendezVousFileDB());
-    public static final ObjectifModel fichesuivi = new ObjectifModel(new objectifFileDB());
+//    public static final RendezVousModel rendezvousModel = new RendezVousModel(new RendezVousFileDB());
+//    public static final ObjectifModel fichesuivi = new ObjectifModel(new objectifFileDB());
     public static final BilonModel bilonModel = new BilonModel();
 
 
