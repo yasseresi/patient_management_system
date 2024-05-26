@@ -83,9 +83,10 @@ public class HelloApplication extends Application {
         orthophonisteModel.save();
         if(currentUserName!=null){
             patientModel.save();
+            testquestions.save();
+            testexercice.save();
             anamneseModel.save();
-            testModel.save();
-            //        anamneseModel.save();
+
 
         }
 

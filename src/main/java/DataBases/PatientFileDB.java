@@ -24,15 +24,17 @@ public class PatientFileDB implements PatientDB, Serializable {
     }
 
     @Override
-    public void create(String nom, String prenom, int age, LocalDate dateNaissance, String lieuNaissance, String adresse, boolean nouveau) throws PatientAlreadyExistException {
+    public void create(String nom, String prenom, int age, LocalDate dateNaissance, String lieuNaissance, String adresse,int nbTelephone, boolean nouveau) throws PatientAlreadyExistException {
         //creating an object of type PatientSchema
-        PatientSchema patient = (age <= 13) ? patient = new EnfantSchema(nom, prenom, age, dateNaissance, lieuNaissance, adresse, nouveau) : new AdultSchema(nom, prenom, age, dateNaissance, lieuNaissance, adresse, nouveau);
+        PatientSchema patient = (age <= 13) ? patient = new EnfantSchema(nom, prenom, age, dateNaissance, lieuNaissance, adresse,nbTelephone, nouveau) : new AdultSchema(nom, prenom, age, dateNaissance, lieuNaissance, adresse,nbTelephone, nouveau);
 
         if (patients.contains(patient)) throw new PatientAlreadyExistException();
         patients.add(patient);
         System.out.println("Patient added successfully : "+patient.getNom() + " " + patient.getPrenom());
 
     }
+
+
 
     @Override
     public PatientSchema create(PatientSchema newPatient) throws PatientAlreadyExistException {
@@ -85,5 +87,9 @@ public class PatientFileDB implements PatientDB, Serializable {
     public ObservableList<PatientSchema> getPatients(){
         //todo: change the type to normal TreeSet and then change it to observable Set in the controller
         return FXCollections.observableArrayList(patients);
+    }
+
+    public void clear(){
+        patients.clear();
     }
 }

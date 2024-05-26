@@ -28,6 +28,7 @@ public class PatientModel implements Serializable {
     public void save() throws IOException {
         try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(HelloApplication.usersDirectoryName+"/"+HelloApplication.currentUserName + "/" + patientsDBFileName))){
             objectOutputStream.writeObject(dataBase);
+            dataBase.clear();
         }
     }
 
@@ -54,9 +55,9 @@ public class PatientModel implements Serializable {
         }
     }
 
-    public void create(String nom , String prenom, LocalDate dateNaissance, String lieuNaissance, String adresse, boolean nouveau) {
+    public void create(String nom , String prenom, LocalDate dateNaissance, String lieuNaissance, String adresse,int nbTelephone ,boolean nouveau) {
         try {
-            this.dataBase.create(nom,prenom,caluclateAge(dateNaissance),dateNaissance,lieuNaissance,adresse,nouveau);
+            this.dataBase.create(nom,prenom,caluclateAge(dateNaissance),dateNaissance,lieuNaissance,adresse,nbTelephone,nouveau);
         } catch (PatientAlreadyExistException e) {
             throw new RuntimeException(e);
         }

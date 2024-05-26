@@ -19,6 +19,7 @@ public class QuestionQpreuveModel implements Serializable{
     public void save() throws IOException {
         try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(HelloApplication.usersDirectoryName + "/"+ HelloApplication.currentUserName +"/"+"listTestQuestions.dt"))){
             objectOutputStream.writeObject(questions);
+            questions.clear();
         }
     }
 

@@ -63,6 +63,7 @@ public class CreateTestsController {
 
 
         questionTypeChoiceBox.getItems().addAll("QCM", "QCU", "Libre");
+        updateExerciseListView();
         updateQuestionListView();
 
         toggoleExercice();

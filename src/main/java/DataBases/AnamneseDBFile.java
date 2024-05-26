@@ -74,5 +74,8 @@ public class AnamneseDBFile implements AnamneseDB, Serializable {
         }
         return questionsAdulte;
     }
+    public void clear(){
+        questions.clear();
+    }
 
 }

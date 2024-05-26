@@ -19,5 +19,6 @@ public interface AnamneseDB  extends Serializable {
     QuestionAnamnese searchQuestionByNom(String nom);
     ArrayList<QuestionEnfant> getQuestionsEnfant();
     ArrayList<QuestionAdult> getQuestionsAdulte();
+    public void clear();
 
 }

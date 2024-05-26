@@ -130,7 +130,9 @@ public class AnamneseController {
         //todo: save the files of the current orthophoniste
         HelloApplication.patientModel.save();
         HelloApplication.anamneseModel.save();
-        HelloApplication.testModel.save();
+        HelloApplication.testexercice.save();
+        HelloApplication.testquestions.save();
+//        HelloApplication.testModel.save();
         HelloApplication.currentUserName = null;
         System.out.println("Logged out successfully");
 

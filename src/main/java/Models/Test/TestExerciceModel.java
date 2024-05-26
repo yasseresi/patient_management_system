@@ -20,6 +20,7 @@ public class TestExerciceModel implements Serializable{
     public void save() throws IOException {
         try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(HelloApplication.usersDirectoryName + "/"+ HelloApplication.currentUserName +"/"+"listTestExercice.dt"))){
             objectOutputStream.writeObject(exercices);
+            exercices.clear();
         }
     }
 

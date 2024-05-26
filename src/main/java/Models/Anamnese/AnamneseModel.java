@@ -26,6 +26,7 @@ public class AnamneseModel implements Serializable {
     public void save() throws IOException {
         try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(HelloApplication.usersDirectoryName + "/"+ HelloApplication.currentUserName +"/"+HelloApplication.anamneseDBFileName))){
             objectOutputStream.writeObject(dataBase);
+            dataBase.clear();
         }
     }
 

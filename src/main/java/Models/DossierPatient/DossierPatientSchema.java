@@ -11,6 +11,7 @@ public class DossierPatientSchema {
     private ObjectifModel fichSuivi;
     private BilonModel bilan;
 
+
     public DossierPatientSchema(RendezVousModel rendezVous, ObjectifModel fichSuivi, BilonModel bilan) {
         this.rendezVous = rendezVous;
         this.fichSuivi = fichSuivi;

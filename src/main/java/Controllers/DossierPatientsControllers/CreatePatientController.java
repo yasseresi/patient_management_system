@@ -44,7 +44,7 @@ public class CreatePatientController {
             Popups.showErrorMessage("Patient already exists");
             throw new PatientAlreadyExistException();
         }
-        patientModel.create(familyName.getText(),firstName.getText(),Date.getValue(),Lieu.getText(),Adress.getText(),true);
+        patientModel.create(familyName.getText(),firstName.getText(),Date.getValue(),Lieu.getText(),Adress.getText(), Integer.parseInt(phone.getText()),true);
 
 
         //go to the dossier patient view
