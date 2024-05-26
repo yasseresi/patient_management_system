@@ -3,6 +3,7 @@ package com.example.patient_management_system;
 import DataBases.*;
 import Models.Anamnese.AnamneseModel;
 import Models.Bilan.BilonModel;
+import Models.DossierPatient.DossierPatientModel;
 import Models.Objectif.ObjectifModel;
 import Models.Orthophoniste.OrthophonisteModel;
 import Models.Patient.PatientModel;
@@ -19,6 +20,7 @@ import org.w3c.dom.events.Event;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class HelloApplication extends Application {
 
@@ -31,6 +33,7 @@ public class HelloApplication extends Application {
     public static  OrthophonisteModel orthophonisteModel = new OrthophonisteModel(new OrthophonisteFileDataBase() );
     public static  PatientModel patientModel = new PatientModel( new PatientFileDB() );
     public static  AnamneseModel anamneseModel = new AnamneseModel(new AnamneseDBFile());
+    public static DossierPatientModel dossierPatientModel = new DossierPatientModel(new ArrayList<>());
 
     public static final RendezVousModel rendezvousModel = new RendezVousModel(new RendezVousFileDB());
     public static final ObjectifModel fichesuivi = new ObjectifModel(new objectifFileDB());
@@ -38,6 +41,7 @@ public class HelloApplication extends Application {
 
 
     public static final String usersDirectoryName = "orthophoniste_directory";
+    public static final String dossierPatientFileName = "dossiersPatientsFileDB.dat";
     public static final String bilonDirectoryName = "bilons_directory";
     public static final String fichSuivisDirectoryName = "fichSuivis_directory";
 

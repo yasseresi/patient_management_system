@@ -94,6 +94,8 @@ public class SignUpController {
                 HelloApplication.anamneseModel.load();
 
 
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                SceneSwitcher.switchScene(stage, "home-page-view.fxml", 1200, 625);
 
 
 

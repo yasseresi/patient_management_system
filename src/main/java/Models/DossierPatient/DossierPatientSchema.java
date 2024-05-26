@@ -7,12 +7,15 @@ import Models.RendezVous.RendezVousModel;
 
 public class DossierPatientSchema {
 
+    private String id;
+
     private RendezVousModel rendezVous;
     private ObjectifModel fichSuivi;
     private BilonModel bilan;
 
 
-    public DossierPatientSchema(RendezVousModel rendezVous, ObjectifModel fichSuivi, BilonModel bilan) {
+    public DossierPatientSchema(String id, RendezVousModel rendezVous, ObjectifModel fichSuivi, BilonModel bilan) {
+        this.id = id;
         this.rendezVous = rendezVous;
         this.fichSuivi = fichSuivi;
         this.bilan = bilan;
@@ -42,5 +45,11 @@ public class DossierPatientSchema {
         this.bilan = bilan;
     }
 
+    public String getId() {
+        return id;
+    }
 
+    public void setId(String id) {
+        this.id = id;
+    }
 }

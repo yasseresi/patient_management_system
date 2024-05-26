@@ -13,7 +13,7 @@
       <Insets bottom="60.0" left="160.0" right="160.0" top="60.0" />
    </padding>
 
-   <GridPane alignment="CENTER" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+   <GridPane alignment="CENTER" prefHeight="400.0" prefWidth="600.0"  AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <padding>
          <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
       </padding>
@@ -28,7 +28,7 @@
          <Image url="@images/login_picture.jpg" />
       </ImageView>
 
-      <Rectangle height="275.0" style="-fx-fill: #00000;" width="0.75" GridPane.columnIndex="1" GridPane.rowIndex="0">
+      <Rectangle height="275.0"  width="0.75" GridPane.columnIndex="1" GridPane.rowIndex="0">
          <GridPane.margin>
             <Insets left="50.0" right="50.0" />
          </GridPane.margin>

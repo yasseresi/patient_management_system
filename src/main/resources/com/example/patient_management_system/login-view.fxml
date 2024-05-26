@@ -107,7 +107,7 @@
             </HBox>
         </VBox>
 
-        <Rectangle height="275.0" style="-fx-fill: #00000;" width="0.75" GridPane.columnIndex="1" GridPane.rowIndex="0">
+        <Rectangle height="275.0"  width="0.75" GridPane.columnIndex="1" GridPane.rowIndex="0">
             <GridPane.margin>
                 <Insets left="100.0" right="100.0" />
             </GridPane.margin>

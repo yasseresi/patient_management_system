@@ -19,6 +19,7 @@ public class OrthophonisteModel {
     public void save() throws IOException{
         try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(HelloApplication.usersDirectoryName + "/"+ HelloApplication.TherapistDBuserName))){
             objectOutputStream.writeObject(dataBase);
+
         }
     }
 
