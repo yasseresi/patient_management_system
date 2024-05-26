@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TreeItem?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" prefWidth="1000" prefHeight="625" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DossierPatientsControllers.BilanDetailsController">
+    <Label text="Bilan Details" style="-fx-padding: 20; -fx-font-weight: 800; -fx-font-size: 18" />
+
+    <ScrollPane VBox.vgrow="ALWAYS" style="-fx-padding: 20px" fitToHeight="true" fitToWidth="true" >
+        <VBox spacing="10.0" alignment="CENTER">
+            <VBox spacing="10.0">
+                <Label text="Anamnesis" style="-fx-font-weight: bold;"/>
+                <TreeTableView fx:id="anamnesisTreeTableView"/>
+            </VBox>
+            <VBox spacing="10.0">
+                <Label text="Test" style="-fx-font-weight: bold;"/>
+                <TreeTableView fx:id="testTreeTableView"/>
+            </VBox>
+            <VBox spacing="10.0">
+                <Label text="Observation" style="-fx-font-weight: bold;"/>
+                <TreeTableView fx:id="observationTreeTableView"/>
+            </VBox>
+            <VBox spacing="10.0">
+                <Label text="Diagnostic" style="-fx-font-weight: bold;"/>
+                <TreeTableView fx:id="diagnosticTreeTableView"/>
+            </VBox>
+        </VBox>
+    </ScrollPane>
+</VBox>

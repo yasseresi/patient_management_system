@@ -2,6 +2,7 @@ package com.example.patient_management_system;
 
 import DataBases.*;
 import Models.Anamnese.AnamneseModel;
+import Models.Bilan.BilonModel;
 import Models.Objectif.ObjectifModel;
 import Models.Orthophoniste.OrthophonisteModel;
 import Models.Patient.PatientModel;
@@ -32,6 +33,7 @@ public class HelloApplication extends Application {
     public static final TestModel testModel = new TestModel(new TestFileDB());
     public static final RendezVousModel rendezvousModel = new RendezVousModel(new RendezVousFileDB());
     public static final ObjectifModel fichesuivi = new ObjectifModel(new objectifFileDB());
+    public static final BilonModel bilonModel = new BilonModel();
 
     public static final String usersDirectoryName = "orthophoniste_directory";
     public static final String bilonDirectoryName = "bilons_directory";
