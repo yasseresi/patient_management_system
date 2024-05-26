@@ -87,84 +87,21 @@ public class SignUpController {
                 new File(HelloApplication.usersDirectoryName + "/"+ HelloApplication.currentUserName +"/"+"listTestQuestions.dt").createNewFile();
                 new File(HelloApplication.usersDirectoryName + "/"+ HelloApplication.currentUserName +"/"+"listTestExercice.dt").createNewFile();
                 new File(HelloApplication.usersDirectoryName + "/"+ HelloApplication.currentUserName +"/"+HelloApplication.anamneseDBFileName).createNewFile();
+                //load them to the model
+                HelloApplication.patientModel.load();
+                HelloApplication.testquestions.load();
+                HelloApplication.testexercice.load();
+                HelloApplication.anamneseModel.load();
 
 
 
-
-            String nom = FirstName.getText();
-            String prenom= FamilyName.getText();
-            String password = Password.getText();
-            String phone = Phone.getText();
-            String familyName= FamilyName.getText();
-            String email = Email.getText();
-            String adress = Adress.getText();
-            try  {
-
-                if (nom == null || nom.isEmpty()) throw new UserNameNotProvidedException();
-                if (password == null || password.isEmpty()) throw new PasswordNotProvidedException();
-
-                if(orthophonisteModel.exists(nom)) throw new UniqueUsernameViolationException();
-
-                orthophonisteModel.create(nom+" "+prenom, password);
-
-                //Create a directory with the username as the name
-                if(new File(HelloApplication.usersDirectoryName + "/" + nom+" "+prenom).mkdirs()){
-                    System.out.println("Directory created");
-                    //Create a file for each FileDataBase class
-                    HelloApplication.currentUserName = nom+" "+prenom;
-                    System.out.println("the current user is "+HelloApplication.currentUserName);
-                    new File(HelloApplication.usersDirectoryName + "/"  + HelloApplication.TherapistDBuserName).createNewFile();
-                    //create patients file~~
-                    new File(HelloApplication.usersDirectoryName + "/" + HelloApplication.currentUserName + "/" + HelloApplication.patientsDBFileName).createNewFile();
-                    new File(HelloApplication.usersDirectoryName + "/"+ HelloApplication.currentUserName +"/"+"listTestQuestions.dt").createNewFile();
-                    new File(HelloApplication.usersDirectoryName + "/"+ HelloApplication.currentUserName +"/"+"listTestExercice.dt").createNewFile();
-                    new File(HelloApplication.usersDirectoryName + "/"+ HelloApplication.currentUserName +"/"+HelloApplication.anamneseDBFileName).createNewFile();
-
-                    //load them to the model
-                    HelloApplication.patientModel.load();
-                    HelloApplication.testquestions.load();
-                    HelloApplication.testexercice.load();
-                    HelloApplication.anamneseModel.load();
-
-
-
-
-
-                    //TODO: create a view for the users who sign up for the first time to get their settings
-
-//                    System.out.println(new File(HelloApplication.usersDirectoryName + "/" + username + "/" + HelloApplication.taskDbFileName).createNewFile());
-//                    new File(HelloApplication.usersDirectoryName + "/" + username + "/" + HelloApplication.freeSlotDbFileName).createNewFile();
-//                    new File(HelloApplication.usersDirectoryName + "/" + username + "/" + HelloApplication.dayDbFileName).createNewFile();
-//                    new File(HelloApplication.usersDirectoryName + "/" + username + "/" + HelloApplication.projectDbFileName).createNewFile();
-
-                //Show the calendar view
-
-                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("home-page-view.fxml"));
-                Scene scene = new Scene(fxmlLoader.load(), 840, 500);
-                Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-                stage.setTitle("HomePage");
-
-                    //center the view on the user's screen
-                    Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
-                    stage.setX((screenBounds.getWidth() - scene.getWidth()) / 2);
-                    stage.setY((screenBounds.getHeight() - scene.getHeight()) / 2);
-                    stage.setScene(scene);
-                } else {
-                    throw new IOException("A problem occurred when creating the directory");
-                }
-
-            } catch (UniqueUsernameViolationException | UserNameNotProvidedException | PasswordNotProvidedException |
-                     IOException | ClassNotFoundException e) {
-                System.out.println(e.getMessage());
-                Popups.showErrorMessage(e.getMessage());
 
 
             }
 
-            }
 
-
-        } catch (UniqueUsernameViolationException | UserNameNotProvidedException | PasswordNotProvidedException | IOException e) {
+        } catch (UniqueUsernameViolationException | UserNameNotProvidedException | PasswordNotProvidedException |
+                 IOException | ClassNotFoundException e) {
             System.out.println(e.getMessage());
             Popups.showErrorMessage(e.getMessage());
         }
