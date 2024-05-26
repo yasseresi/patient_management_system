@@ -1,6 +1,7 @@
 package Models.Bilan;
 
 import Models.Anamnese.AnamneseModel;
+import Models.Diagnostique.TroubleModel;
 import Models.ObservationsCliniques.ObservationModel;
 import Models.Test.TestModel;
 
@@ -12,11 +13,14 @@ public class BilonSchema {
 
     private ObservationModel observations;
 
+    private TroubleModel diagnostic;
 
-    public BilonSchema(AnamneseModel anamneseModel, TestModel tests, ObservationModel observations) {
+
+    public BilonSchema(AnamneseModel anamneseModel, TestModel tests, ObservationModel observations, TroubleModel diagnostic) {
         this.anamneseModel = anamneseModel;
         this.tests = tests;
         this.observations = observations;
+        this.diagnostic = diagnostic;
     }
 
     public BilonSchema() {
@@ -47,5 +51,11 @@ public class BilonSchema {
         this.observations = observations;
     }
 
+    public TroubleModel getDiagnostic() {
+        return diagnostic;
+    }
 
+    public void setDiagnostic(TroubleModel diagnostic) {
+        this.diagnostic = diagnostic;
+    }
 }

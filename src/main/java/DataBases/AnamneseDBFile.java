@@ -39,7 +39,7 @@ public class AnamneseDBFile implements AnamneseDB, Serializable {
         questions.set(index,question);
     }
 
-    public boolean  searchQuestion(String nom){
+    public boolean searchQuestion(String nom){
         for(QuestionAnamnese question : this.questions){
             //todo: redifine the equals method in one class of quesiton to use it instead of the Object one
             if(question.getQuestion().equals(nom)){

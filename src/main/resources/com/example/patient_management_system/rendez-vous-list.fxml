@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/22"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.DossierPatientsControllers.RendezVousListController"
+            prefHeight="500.0" prefWidth="800.0" >
+
+    <VBox alignment="CENTER" spacing="15" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" >
+        <Label fx:id="patientNameLabel" text="Patient Name" style="-fx-font-size: 17; -fx-font-weight: 700; -fx-padding: 15px" alignment="CENTER" />
+
+        <!-- TableView to display rendez-vous information -->
+        <TableView fx:id="rendezVousTableView" prefHeight="500.0" prefWidth="600.0">
+            <columns>
+                <!-- Date Column -->
+                <TableColumn text="Date" prefWidth="125" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="date"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <!-- Heure Column -->
+                <TableColumn text="Heure" prefWidth="125" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="heure"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <!-- Durée Column -->
+                <TableColumn text="Durée" prefWidth="75" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="duree"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <!-- Type Column -->
+                <TableColumn text="Type" prefWidth="75" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="type"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <!-- Observation Column -->
+                <TableColumn text="Observation" prefWidth="175" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="observation"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+
+        <!-- Button to go back to Patient Details -->
+        <Button onAction="#handleBackToPatientDetails" prefHeight="25.0" prefWidth="75.0" style="-fx-padding: 10px; -fx-font-size: 15; -fx-border-radius: 15; -fx-background-color: #053c7c" text="Back" textFill="white" />
+    </VBox>
+
+</AnchorPane>

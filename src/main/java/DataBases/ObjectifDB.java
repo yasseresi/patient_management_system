@@ -11,7 +11,7 @@ public interface ObjectifDB extends Serializable {
 
     ObjectifShema find(String nom);
     ArrayList<ObjectifShema> findType(TypeObjectif type);
-    ObjectifShema create(String nom);
+    ObjectifShema create(String nom , TypeObjectif type);
 
     ObjectifShema addNote(String nom, LocalDate date , int note);
     ObjectifShema addNote( ObjectifShema objectif, LocalDate date , int note);

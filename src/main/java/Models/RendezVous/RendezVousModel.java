@@ -24,17 +24,17 @@ public class RendezVousModel implements Serializable {
     public RendezVousModel() {
     }
 
-    public void save() throws IOException {
-        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(HelloApplication.usersDirectoryName + "/" +  HelloApplication.currentPatientName + "/"+ HelloApplication.categoryDbFileName))) {
-            objectOutputStream.writeObject(dataBase);
-        }
-    }
-
-    public void load() throws IOException, ClassNotFoundException {
-        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(HelloApplication.usersDirectoryName + "/" +  HelloApplication.currentPatientName + "/"+ HelloApplication.categoryDbFileName))) {
-
+    public void load() {
+        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(HelloApplication.usersDirectoryName + "/" + HelloApplication.currentUserName + "/" + HelloApplication.currentPatientName + "/"+ HelloApplication.categoryDbFileName))) {
+            // Attempt to read the object from the file
             dataBase = (RendezVouzDB) objectInputStream.readObject();
-            System.out.println("loading the rendez_vous model");
+            System.out.println("Loading the rendez_vous model");
+        } catch (EOFException e) {
+            // Handle the case where the file is empty
+            System.out.println("The rendez_vous data file is empty.");
+        } catch (IOException | ClassNotFoundException e) {
+            // Handle any other IOException or ClassNotFoundException that might occur
+            e.printStackTrace();
         }
     }
 

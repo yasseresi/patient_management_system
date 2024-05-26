@@ -7,11 +7,15 @@ import Exceptions.UserNameNotProvidedException;
 import Exceptions.WrongPasswordException;
 import Models.Orthophoniste.OrthophonisteModel;
 import Models.Orthophoniste.OrthophonisteSchema;
+import Models.Patient.PatientModel;
 import Utils.Popups;
+import Utils.SceneSwitcher;
 import com.example.patient_management_system.HelloApplication;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -22,6 +26,7 @@ import javafx.stage.Stage;
 
 import java.io.*;
 
+import static com.example.patient_management_system.HelloApplication.currentPatientName;
 import static com.example.patient_management_system.HelloApplication.orthophonisteModel;
 
 
@@ -44,6 +49,9 @@ public class LogInController {
             if (password == null || password.isEmpty()) throw new PasswordNotProvidedException();
 
             OrthophonisteSchema user = orthophonisteModel.find(username); //If he doesn't exist an exception will be thrown
+
+            System.out.println("username trouve = "+user.getNom()+" "+user.getPrenom() + ", password = "+user.getPassword());
+
             if (!user.getPassword().equals(password)) throw new WrongPasswordException();
             System.out.println("the current user before login is "+HelloApplication.currentUserName);
             System.out.println("the current patient before login is "+HelloApplication.currentPatientName);
@@ -54,7 +62,7 @@ public class LogInController {
             HelloApplication.patientModel.load();
 //            HelloApplication.anamneseModel.load();
             HelloApplication.testquestions.load();
-            HelloApplication.testquestions.load();
+            //HelloApplication.testquestions.load();
 //            HelloApplication.currentUserSettings = user.getSettings();
 
             //Load the DBs from the corresponding files
@@ -96,17 +104,9 @@ public class LogInController {
         errorMessage.setTitle("Error");
         errorMessage.showAndWait();
     }
-    public void moveToSignupView() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("signup-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-        Stage stage = (Stage) userName.getScene().getWindow();
-        stage.setTitle("Login");
-
-        //center the view on the user's screen
-        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
-        stage.setX((screenBounds.getWidth() - scene.getWidth()) / 2);
-        stage.setY((screenBounds.getHeight() - scene.getHeight()) / 2);
-        stage.setScene(scene);
+    public void moveToSignupView(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        SceneSwitcher.switchScene(stage, "signup-view.fxml", 1200, 625);
     }
 }
 

@@ -54,17 +54,14 @@ public class RendezVousFileDB implements RendezVouzDB{
 
     @Override
     public ArrayList<RendezVousSchema> findAll(LocalDate date) {
-
-        //TODO: CHECK LATER THE IMPLEMENTATION OF THE ITERATOR LOOP
-        Iterator<TreeMap<LocalDate, LocalTime>> iterator = rendezVous.keySet().iterator();
         ArrayList<RendezVousSchema> rendezVousList = new ArrayList<>();
-        while(iterator.hasNext()){
-            TreeMap<LocalDate, LocalTime> key = iterator.next();
-            if (key.containsKey(date)){
+        for (TreeMap<LocalDate, LocalTime> key : rendezVous.keySet()) {
+            // If date is null or key contains the given date, add all rendez-vous for that key
+            if (date == null || key.containsKey(date)) {
                 rendezVousList.add(rendezVous.get(key));
             }
         }
         return rendezVousList;
-
     }
+
 }

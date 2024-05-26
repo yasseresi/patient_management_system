@@ -23,12 +23,22 @@ public class AnamneseModel implements Serializable {
     }
 
 
-    public void save() throws IOException {
-        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(HelloApplication.usersDirectoryName + "/"+ HelloApplication.currentUserName +"/"+HelloApplication.anamneseDBFileName))){
+    public void save() {
+        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(
+                new FileOutputStream(HelloApplication.usersDirectoryName + "/" +
+                        HelloApplication.currentUserName + "/" + HelloApplication.anamneseDBFileName))) {
             objectOutputStream.writeObject(dataBase);
+
             dataBase.clear();
+
+            System.out.println("Anamnese database saved successfully.");
+        } catch (IOException e) {
+            System.err.println("Error saving Anamnese database: " + e.getMessage());
+            e.printStackTrace();
+
         }
     }
+
 
     public void load() throws IOException {
         try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(HelloApplication.usersDirectoryName+"/"+HelloApplication.currentUserName + "/" + HelloApplication.anamneseDBFileName))) {

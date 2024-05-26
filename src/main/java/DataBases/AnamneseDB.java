@@ -9,7 +9,9 @@ import Models.Question.QuestionEnfant;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+
 public interface AnamneseDB  extends Serializable {
+
 
 
     void createQuestion(QuestionAnamnese question) throws QuestionAlreadyExistException;

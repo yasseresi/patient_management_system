@@ -18,17 +18,16 @@ public class DossierPatientModel {
 
     }
 
-
     public void save() throws IOException {
-        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(HelloApplication.usersDirectoryName + "/"+ HelloApplication.currentUserName +"/"+HelloApplication.currentPatientName +"/"+HelloApplication.patientFolderName))){
+        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(HelloApplication.usersDirectoryName + "/"+ HelloApplication.currentUserName +"/"+HelloApplication.currentPatientName))){
             objectOutputStream.writeObject(dossierPatient);
         }
     }
 
     public void load() throws IOException {
-        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(HelloApplication.usersDirectoryName+"/"+HelloApplication.currentUserName + "/" + HelloApplication.anamneseDBFileName))) {
+        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(HelloApplication.usersDirectoryName+"/"+HelloApplication.currentUserName + "/" + HelloApplication.currentPatientName))) {
             dossierPatient = (DossierPatientSchema) objectInputStream.readObject();
-            System.out.println("loading the patientFolder   model");
+            System.out.println("loading the patientFolder model");
         } catch (EOFException e) {
             System.out.println("Error while loading paitentFolder model: Unexpected end of file. The database file may be corrupted or incomplete.");
         } catch (ClassNotFoundException e) {
@@ -36,6 +35,11 @@ public class DossierPatientModel {
         }
     }
 
+    public DossierPatientSchema getDossierPatient() {
+        return dossierPatient;
+    }
 
-
+    public void setDossierPatient(DossierPatientSchema dossierPatient) {
+        this.dossierPatient = dossierPatient;
+    }
 }

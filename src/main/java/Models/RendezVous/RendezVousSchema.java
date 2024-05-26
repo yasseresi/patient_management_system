@@ -14,7 +14,17 @@ public abstract class RendezVousSchema implements Serializable {
     protected String observation = "";
 
 
+    public String getObservation() {
+        return observation;
+    }
 
+    public LocalTime getHeure() {
+        return heure;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
 
 
     @Override
