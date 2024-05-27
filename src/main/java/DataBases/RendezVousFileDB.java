@@ -1,11 +1,12 @@
 package DataBases;
 
+import DataBases.DateTimeKey;
+import DataBases.RendezVouzDB;
 import Exceptions.ConsultationAlreadyPassedExecption;
 import Exceptions.ConsultationFirstException;
 import Models.RendezVous.ConsultationSchema;
 import Models.RendezVous.RendezVousSchema;
 import Models.RendezVous.SuiviSchema;
-import org.w3c.dom.html.HTMLImageElement;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -13,31 +14,31 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.TreeMap;
 
-public class RendezVousFileDB implements RendezVouzDB{
-    TreeMap<TreeMap<LocalDate, LocalTime>,RendezVousSchema> rendezVous = new TreeMap<>();
+public class RendezVousFileDB implements RendezVouzDB {
+    TreeMap<DateTimeKey, RendezVousSchema> rendezVous;
 
-
-    public RendezVousFileDB(TreeMap<TreeMap<LocalDate, LocalTime>, RendezVousSchema> rendezVous) {
+    public RendezVousFileDB(TreeMap<DateTimeKey, RendezVousSchema> rendezVous) {
         this.rendezVous = rendezVous;
     }
 
     public RendezVousFileDB() {
+        rendezVous = new TreeMap<>();
     }
 
     @Override
     public void create(LocalDate date, LocalTime time, RendezVousSchema rendezVous) throws ConsultationAlreadyPassedExecption, ConsultationFirstException {
         boolean isConsultationPassed = isConsultationAlreadyPassed(this.rendezVous);
-        if(rendezVous instanceof ConsultationSchema && isConsultationPassed) throw new ConsultationAlreadyPassedExecption();
-        if(rendezVous instanceof SuiviSchema && !isConsultationPassed) throw new ConsultationFirstException();
-        this.rendezVous.put(new TreeMap<LocalDate, LocalTime>(), rendezVous);
+        if (rendezVous instanceof ConsultationSchema && isConsultationPassed) throw new ConsultationAlreadyPassedExecption();
+        if (rendezVous instanceof SuiviSchema && !isConsultationPassed) throw new ConsultationFirstException();
+        DateTimeKey dateTimeKey = new DateTimeKey(date, time);
+        this.rendezVous.put(dateTimeKey, rendezVous);
     }
 
-
-    private boolean isConsultationAlreadyPassed(TreeMap<TreeMap<LocalDate, LocalTime>,RendezVousSchema> rendezVous){
+    private boolean isConsultationAlreadyPassed(TreeMap<DateTimeKey, RendezVousSchema> rendezVous) {
         Iterator<RendezVousSchema> iterator = rendezVous.values().iterator();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             RendezVousSchema key = iterator.next();
-            if(key instanceof ConsultationSchema){
+            if (key instanceof ConsultationSchema) {
                 return true;
             }
         }
@@ -46,23 +47,23 @@ public class RendezVousFileDB implements RendezVouzDB{
 
     @Override
     public RendezVousSchema find(LocalDate date, LocalTime time) {
-        TreeMap<LocalDate, LocalTime> key = null;
-        key.put(date, time);
+        DateTimeKey key = new DateTimeKey(date, time);
         return rendezVous.get(key);
-
     }
 
     @Override
     public ArrayList<RendezVousSchema> findAll(LocalDate date) {
         ArrayList<RendezVousSchema> rendezVousList = new ArrayList<>();
-        for (TreeMap<LocalDate, LocalTime> key : rendezVous.keySet()) {
-            // If key contains the given date, add all rendez-vous for that key
-            if (key.containsKey(date)) {
+
+
+        for (DateTimeKey key : rendezVous.keySet()) {
+            if (date == null || key.getDate().equals(date)) {
                 rendezVousList.add(rendezVous.get(key));
             }
         }
         return rendezVousList;
     }
+
 
     // New method to return all Rendezvous
     public ArrayList<RendezVousSchema> findAll() {

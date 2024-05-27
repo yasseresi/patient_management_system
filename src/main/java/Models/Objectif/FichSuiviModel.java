@@ -9,6 +9,7 @@ public class FichSuiviModel {
     public FichSuiviModel(ArrayList<FichSuiviSchema> fichsuivis) {
         this.fichsuivis = fichsuivis;
     }
+    public FichSuiviModel(){}
 
     public ArrayList<FichSuiviSchema> getFichsuivis() {
         return fichsuivis;

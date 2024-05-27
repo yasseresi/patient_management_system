@@ -5,7 +5,7 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public abstract class RendezVousSchema implements Serializable {
+public abstract class RendezVousSchema implements Serializable ,Comparable<RendezVousSchema>{
 
 
     protected LocalDate date;
@@ -35,4 +35,20 @@ public abstract class RendezVousSchema implements Serializable {
         return result;
     }
 
+
+    //todo:modify this function to compaire between the rendezVous with date and time
+    @Override
+    public int compareTo(RendezVousSchema o) {
+        return this.date.compareTo(o.date);
+    }
+
+    @Override
+    public String toString() {
+        return "RendezVousSchema{" +
+                "date=" + date +
+                ", heure=" + heure +
+                ", duree=" + duree +
+                ", observation='" + observation + '\'' +
+                '}';
+    }
 }

@@ -68,7 +68,7 @@
                         <Button mnemonicParsing="false" text="Passe Rendez vous" />
                         <Button mnemonicParsing="false" text="add Observation" />
                         <Button mnemonicParsing="false" text="+ atelier" />
-                        <Button mnemonicParsing="false" text="+ Consultation" />
+                        <Button mnemonicParsing="false" onAction="#AjouterConsultation" text="+ Consultation" />
                         <Button mnemonicParsing="false" text="+Suivi" />
                     </children>
                     <padding>
@@ -80,12 +80,11 @@
                         <Font size="26.0" />
                     </font>
                 </Text>
-                <TableView fx:id="RendezVousTable" layoutX="59.0" layoutY="283.0" prefHeight="200.0" prefWidth="556.0">
+                <TableView fx:id="rendezVousTable" layoutX="59.0" layoutY="283.0" prefHeight="200.0" prefWidth="556.0">
                     <columns>
-                        <TableColumn fx:id="TypeConlumn" minWidth="140.0" prefWidth="75.0" resizable="false" text="Type" />
-                        <TableColumn fx:id="FullName" minWidth="140.0" prefWidth="75.0" text="FullName" />
-                        <TableColumn fx:id="startTimeColumn" minWidth="100.0" prefWidth="-1.0" resizable="false" text="From:" />
-                        <TableColumn fx:id="dureeColumn" minWidth="100.0" prefWidth="-1.0" resizable="false" text="Period of time" />
+                        <TableColumn fx:id="heure" minWidth="140.0" prefWidth="75.0" resizable="false" text="heure" />
+                        <TableColumn fx:id="Date" minWidth="140.0" prefWidth="75.0" text="Date" />
+                        <TableColumn fx:id="dureeColumn" minWidth="100.0" prefWidth="-1.0" resizable="false" text="duree" />
                     </columns>
                     <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

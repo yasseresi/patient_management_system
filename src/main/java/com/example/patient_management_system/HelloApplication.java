@@ -33,7 +33,7 @@ public class HelloApplication extends Application {
     public static  OrthophonisteModel orthophonisteModel = new OrthophonisteModel(new OrthophonisteFileDataBase() );
     public static  PatientModel patientModel = new PatientModel( new PatientFileDB() );
     public static  AnamneseModel anamneseModel = new AnamneseModel(new AnamneseDBFile());
-    public static DossierPatientModel dossierPatientModel = new DossierPatientModel(new ArrayList<>());
+    public static  DossierPatientModel dossierPatientModel = new DossierPatientModel(new ArrayList<>());
 
 //    public static final RendezVousModel rendezvousModel = new RendezVousModel(new RendezVousFileDB());
 //    public static final ObjectifModel fichesuivi = new ObjectifModel(new objectifFileDB());

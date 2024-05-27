@@ -8,29 +8,26 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.RendezVousController.">
-   <children>
-      <TextField fx:id="tf_nom1" layoutX="71.0" layoutY="82.0" prefHeight="26.0" prefWidth="98.0" promptText="nom" style="-fx-border-color: #1588ea;" />
-      <Text fx:id="rdvForm1" fill="#1d1f22" layoutX="71.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Information patient">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Text>
-      <TextField fx:id="tf_prenom1" layoutX="192.0" layoutY="82.0" prefHeight="26.0" prefWidth="98.0" promptText="prénom" style="-fx-border-color: #1588ea;" />
-      <TextField fx:id="tf_age1" layoutX="316.0" layoutY="82.0" prefHeight="26.0" prefWidth="98.0" promptText="Age" style="-fx-border-color: #1588ea;" />
-      <Text fill="#0e1011" layoutX="73.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date, heure et durée">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Text>
-      <DatePicker fx:id="datePicker1" layoutX="73.0" layoutY="277.0" promptText="Date du rendez-vous" style="-fx-border-color: #1588ea;" stylesheets="@../../../../../../../Speech-therapy-clinic-management-system-/src/main/resources/datePicker.css" />
-      <ComboBox fx:id="hourPicker1" layoutX="266.0" layoutY="276.0" prefHeight="20.0" prefWidth="74.0" promptText="00h" style="-fx-border-color: #1588ea;" />
-      <ComboBox fx:id="minPicker1" layoutX="344.0" layoutY="276.0" prefHeight="26.0" prefWidth="74.0" promptText="00m" style="-fx-border-color: #1588ea;" />
-      <TextField fx:id="tf_lieu" layoutX="287.0" layoutY="128.0" prefHeight="28.0" prefWidth="127.0" promptText="Lieu de naissance" style="-fx-border-color: #1588ea;" />
-      <DatePicker fx:id="datePicker2" layoutX="69.0" layoutY="128.0" promptText="Date de naissance" style="-fx-background-color: #fff; -fx-border-color: #1588ea;" stylesheets="@../../../../../../../Speech-therapy-clinic-management-system-/src/main/resources/datePicker.css" />
-      <TextField fx:id="tf_adresse" layoutX="233.0" layoutY="183.0" prefHeight="28.0" prefWidth="180.0" promptText="adresse" style="-fx-border-color: #1588ea;" />
-      <TextField fx:id="tf_tele_one" layoutX="71.0" layoutY="183.0" prefHeight="28.0" prefWidth="148.0" promptText="télé: 0540052897" style="-fx-border-color: #1588ea;" />
-      <Button layoutX="418.0" layoutY="336.0" mnemonicParsing="false" text="Creer Consultation" />
-   </children>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.RendezVousController.CreateConsultationController">
+   <TextField fx:id="nom" layoutX="71.0" layoutY="82.0" prefHeight="26.0" prefWidth="98.0" promptText="nom"  />
+   <Text fx:id="rdvForm1" fill="#1d1f22" layoutX="71.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Information patient">
+      <font>
+         <Font name="System Bold" size="15.0" />
+      </font>
+   </Text>
+   <TextField fx:id="prenom" layoutX="192.0" layoutY="82.0" prefHeight="26.0" prefWidth="98.0" promptText="prénom"  />
+   <TextField fx:id="age" layoutX="316.0" layoutY="82.0" prefHeight="26.0" prefWidth="98.0" promptText="Age"  />
+   <Text fill="#0e1011" layoutX="73.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date, heure et durée">
+      <font>
+         <Font name="System Bold" size="15.0" />
+      </font>
+   </Text>
+   <DatePicker fx:id="rdvDate" layoutX="73.0" layoutY="277.0" promptText="Date du rendez-vous"    />
+   <ComboBox fx:id="rdvHeur" layoutX="266.0" layoutY="276.0" prefHeight="20.0" prefWidth="74.0" promptText="00h"  />
+   <ComboBox fx:id="rdvMin" layoutX="344.0" layoutY="276.0" prefHeight="26.0" prefWidth="74.0" promptText="00m"  />
+   <TextField fx:id="lieuNaissance" layoutX="287.0" layoutY="128.0" prefHeight="28.0" prefWidth="127.0" promptText="Lieu de naissance"  />
+   <DatePicker fx:id="dateNaissance" layoutX="69.0" layoutY="128.0" promptText="Date de naissance"    />
+   <TextField fx:id="tf_adresse" layoutX="233.0" layoutY="183.0" prefHeight="28.0" prefWidth="180.0" promptText="adresse"  />
+   <TextField fx:id="tf_tele_one" layoutX="71.0" layoutY="183.0" prefHeight="28.0" prefWidth="148.0" promptText="télé: 0540052897"  />
+   <Button layoutX="418.0" layoutY="336.0" mnemonicParsing="false" onAction="#CreerConsultation" text="Creer Consultation" />
 </AnchorPane>

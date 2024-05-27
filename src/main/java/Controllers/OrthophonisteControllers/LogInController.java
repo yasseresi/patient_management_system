@@ -60,9 +60,9 @@ public class LogInController {
             System.out.println("the current patient after login is "+HelloApplication.currentPatientName);
             //todo: load the needed files
             HelloApplication.patientModel.load();
-//            HelloApplication.anamneseModel.load();
+            HelloApplication.anamneseModel.load();
             HelloApplication.testquestions.load();
-            //HelloApplication.testquestions.load();
+            HelloApplication.testquestions.load();
 //            HelloApplication.currentUserSettings = user.getSettings();
 
             //Load the DBs from the corresponding files

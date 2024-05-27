@@ -106,5 +106,17 @@ public abstract class PatientSchema implements Serializable, Comparable<PatientS
         return age == that.age && nouveau == that.nouveau && Objects.equals(nom, that.nom) && Objects.equals(prenom, that.prenom) && Objects.equals(dateNaissance, that.dateNaissance) && Objects.equals(lieuNaissance, that.lieuNaissance) && Objects.equals(adresse, that.adresse);
     }
 
-
+    @Override
+    public String toString() {
+        return "PatientSchema{" +
+                "nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", age=" + age +
+                ", dateNaissance=" + dateNaissance +
+                ", lieuNaissance='" + lieuNaissance + '\'' +
+                ", adresse='" + adresse + '\'' +
+                ", nouveau=" + nouveau +
+                ", nbTelephones=" + nbTelephones +
+                '}';
+    }
 }

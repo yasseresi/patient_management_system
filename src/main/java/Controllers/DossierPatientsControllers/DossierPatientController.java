@@ -74,14 +74,14 @@ public class DossierPatientController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        if (new File(HelloApplication.usersDirectoryName + "/" + HelloApplication.currentUserName, HelloApplication.patientsDBFileName).exists()) {
-            try {
-                HelloApplication.patientModel.load();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            System.out.println("Patient model has been loaded");
-        }
+//        if (new File(HelloApplication.usersDirectoryName + "/" + HelloApplication.currentUserName, HelloApplication.patientsDBFileName).exists()) {
+//            try {
+//                HelloApplication.patientModel.load();
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//            System.out.println("Patient model has been loaded");
+//        }
 
         noms.setCellValueFactory(new PropertyValueFactory<>("nom"));
         prenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));

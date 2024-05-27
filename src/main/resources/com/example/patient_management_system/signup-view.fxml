@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="625.0" maxWidth="1200.0" minHeight="625.0" minWidth="1200.0" prefHeight="625.0" prefWidth="1200.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.OrthophonisteControllers.SignUpController">
+<AnchorPane maxHeight="625.0" maxWidth="1200.0" minHeight="625.0" minWidth="1200.0" prefHeight="625.0" prefWidth="1200.0"  xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.OrthophonisteControllers.SignUpController">
    <padding>
       <Insets bottom="60.0" left="160.0" right="160.0" top="60.0" />
    </padding>
@@ -106,7 +106,7 @@
                <Insets top="5.0" />
             </VBox.margin>
          </Label>
-         <TextField fx:id="Email" prefHeight="50.0" prefWidth="346.0" promptText="Email                                                                                    @gmail.com">
+         <TextField fx:id="Email" prefHeight="50.0" prefWidth="346.0" promptText="Email                                                                            @gmail.com">
 
          </TextField>
 

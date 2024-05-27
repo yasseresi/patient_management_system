@@ -6,6 +6,8 @@ import Models.Objectif.FichSuiviModel;
 import Models.Objectif.ObjectifModel;
 import Models.RendezVous.RendezVousModel;
 
+import java.util.ArrayList;
+
 public class DossierPatientSchema {
 
     private String id;
@@ -20,6 +22,11 @@ public class DossierPatientSchema {
         this.rendezVous = rendezVous;
         this.fichSuivi = fichSuivi;
         this.bilan = bilan;
+    }
+    public DossierPatientSchema(String id){
+        this.bilan = new BilonModel();
+        this.fichSuivi = new FichSuiviModel(new ArrayList<>());
+        this.rendezVous = new RendezVousModel();
     }
 
     public RendezVousModel getRendezVous() {

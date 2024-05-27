@@ -1,5 +1,6 @@
 package Models.RendezVous;
 
+import DataBases.RendezVousFileDB;
 import DataBases.RendezVouzDB;
 import Exceptions.ConsultationAlreadyPassedExecption;
 import Exceptions.ConsultationFirstException;
@@ -22,6 +23,7 @@ public class RendezVousModel implements Serializable {
     }
 
     public RendezVousModel() {
+        dataBase = new RendezVousFileDB();
     }
 
     public void load() {
@@ -41,6 +43,9 @@ public class RendezVousModel implements Serializable {
 
     public void createAtelier(RendezVousSchema rendezVous) throws ConsultationFirstException, ConsultationAlreadyPassedExecption {
         dataBase.create(rendezVous.date, rendezVous.heure, rendezVous);
+    }
+    public void createRendezVous(RendezVousSchema rendezVousSchema) throws ConsultationFirstException, ConsultationAlreadyPassedExecption {
+        dataBase.create(rendezVousSchema.date,rendezVousSchema.heure,rendezVousSchema);
     }
 
     public ArrayList<RendezVousSchema> findAll(LocalDate date) {

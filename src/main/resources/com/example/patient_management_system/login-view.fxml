@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="625.0" prefWidth="1200.0" stylesheets="@general.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.OrthophonisteControllers.LogInController">
 
-    <GridPane alignment="CENTER" maxHeight="625.0" maxWidth="1200.0" minHeight="625.0" minWidth="1200.0" prefHeight="625.0" prefWidth="1200.0" style="-fx-background-color: #ffffff;">
+    <GridPane alignment="CENTER" maxHeight="625.0" maxWidth="1200.0" minHeight="625.0" minWidth="1200.0" prefHeight="625.0" prefWidth="1200.0">
         <padding>
             <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
         </padding>
@@ -115,7 +115,6 @@
         <ImageView accessibleText="Image" fitHeight="400.0" fitWidth="450.0" layoutX="103.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="0">
             <Image url="@images/login_picture.jpg" />
         </ImageView>
-
         <rowConstraints>
             <RowConstraints />
         </rowConstraints>
