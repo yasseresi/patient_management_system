@@ -12,9 +12,7 @@ import Models.Diagnostique.TypeTrouble;
 import Models.DossierPatient.DossierPatientSchema;
 import Models.Objectif.FichSuiviSchema;
 import Models.ObservationsCliniques.ObservationModel;
-import Models.Question.QuestionAdult;
-import Models.Question.QuestionAnamnese;
-import Models.Question.TypeAdult;
+import Models.Question.*;
 import Models.RendezVous.RendezVousSchema;
 import Models.Test.TestModel;
 import Models.Test.TestSchema;
@@ -85,7 +83,9 @@ public class BOController {
         // ------------------ Example data for testing ------------------------------
         AnamneseModel anamneseModel = new AnamneseModel(new AnamneseDBFile());
         try {
-            anamneseModel.createQuestion(new QuestionAdult("Question 1", TypeAdult.HISTOIRE_DE_MALADIE));
+            anamneseModel.createQuestion(new QuestionEnfant("Question 1", TypeEnfant.ANTECEDENTS_FAMILIAUX));
+            anamneseModel.createQuestion(new QuestionEnfant("Question 2", TypeEnfant.CARACTERE_ET_COMPORTEMENT));
+            anamneseModel.createQuestion(new QuestionEnfant("Question 3", TypeEnfant.DEVELOPPEMENT_PSYCHOMOTEUR));
         } catch (QuestionAlreadyExistException e) {
             e.printStackTrace();
         }
@@ -109,6 +109,7 @@ public class BOController {
 
         // Combine example data with loaded data
         bilans.addAll(bilans_exemple);
+        System.out.println("EX : Bilan.Anamnese.QuestionFirst : " + bilan.getAnamneseModel().getQuestionsEnfant().getFirst().getQuestion().toUpperCase());
 
         displayBilans(bilans);
 
@@ -132,7 +133,7 @@ public class BOController {
 
         if (bilan != null) {
             // Display bilan details in the container
-            Label anamneseLabel = new Label("Anamnese (Adulte): " + bilan.getAnamneseModel().getQuestionsAdulte().toString());
+            Label anamneseLabel = new Label("Anamnese (Adulte) : " + bilan.getAnamneseModel().getQuestionsEnfant().getFirst().getQuestion().toUpperCase());
             Label testLabel = new Label("Tests: " + bilan.getTests().getAllTests().toString());
             Label observationLabel = new Label("Observations: " + bilan.getObservations().toString());
             Label diagnosticLabel = new Label("Diagnostic.Trouble.First.Type: " + bilan.getDiagnostic().getTroubles().firstEntry().getValue().getCategorie().toString());

@@ -29,6 +29,7 @@ public class AnamneseDBFile implements AnamneseDB, Serializable {
             throw new QuestionAlreadyExistException();
         }
     }
+
     public void  deleteQuestion(QuestionAnamnese question)throws QuestionNotFoundException {
         if(!questions.remove(question)) throw new QuestionNotFoundException();
     }

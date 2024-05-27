@@ -16,7 +16,6 @@
 }
 .button-style:hover {
     -fx-background-color: transparent;
-    -fx-effect: drop shadow(gaussian, white, 10, 0.5, 0, 0);
 }
 
 .button2-style {
@@ -33,7 +32,6 @@
 }
 .button2-style:hover {
     -fx-background-color: orange;
-    -fx-effect: drop shadow(gaussian, white, 50, 0.5, 0, 0);
 }
 
 .text-style{
@@ -100,7 +98,6 @@
 .combo-box {
     -fx-background-color: #EFFAFF;
     -fx-background-radius: 15;
-    -fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);
 }
 
 .combo-box .arrow-button {
@@ -141,7 +138,6 @@
     -fx-background-color: #EFFAFF;
     -fx-background-radius: 15;
     -fx-text-fill: black;
-    -fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);
     -fx-font-weight: bold;
     -fx-font-size: 15px;
     -fx-font-family: 'Montserrat';

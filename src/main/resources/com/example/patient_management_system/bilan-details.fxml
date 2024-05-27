@@ -1,32 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TreeItem?>
-<?import javafx.scene.control.TreeTableColumn?>
-<?import javafx.scene.control.TreeTableView?>
 <?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
+
 <VBox alignment="TOP_CENTER" prefWidth="1000" prefHeight="625" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DossierPatientsControllers.BilanDetailsController">
     <Label text="Bilan Details" style="-fx-padding: 20; -fx-font-weight: 800; -fx-font-size: 18" />
-
-    <ScrollPane VBox.vgrow="ALWAYS" style="-fx-padding: 20px" fitToHeight="true" fitToWidth="true" >
+    <ScrollPane VBox.vgrow="ALWAYS" style="-fx-padding: 20px" fitToHeight="true" fitToWidth="true">
         <VBox spacing="10.0" alignment="CENTER">
             <VBox spacing="10.0">
-                <Label text="Anamnesis" style="-fx-font-weight: bold;"/>
-                <TreeTableView fx:id="anamnesisTreeTableView"/>
+                <Label text="Anamnese" style="-fx-font-weight: bold;"/>
+                <ListView fx:id="anamnesisListView" />
             </VBox>
             <VBox spacing="10.0">
                 <Label text="Test" style="-fx-font-weight: bold;"/>
-                <TreeTableView fx:id="testTreeTableView"/>
+                <ListView fx:id="testListView" />
             </VBox>
             <VBox spacing="10.0">
                 <Label text="Observation" style="-fx-font-weight: bold;"/>
-                <TreeTableView fx:id="observationTreeTableView"/>
+                <ListView fx:id="observationListView" />
             </VBox>
             <VBox spacing="10.0">
                 <Label text="Diagnostic" style="-fx-font-weight: bold;"/>
-                <TreeTableView fx:id="diagnosticTreeTableView"/>
+                <ListView fx:id="diagnosticListView" />
             </VBox>
             <Button prefHeight="25.0" prefWidth="75.0" style="-fx-padding: 10px; -fx-font-size: 15; -fx-border-radius: 15; -fx-background-color: #053c7c" text="Back" textFill="white" onAction="#handleBackToPatientDetails"/>
         </VBox>

@@ -1,55 +1,124 @@
 package Controllers.DossierPatientsControllers;
 
+import Models.Diagnostique.TroubleSchema;
+import Models.Question.QuestionAdult;
+import Models.Question.QuestionEnfant;
+import Models.Test.TestSchema;
 import Utils.SceneSwitcher;
+import com.example.patient_management_system.HelloApplication;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Label;
-import javafx.scene.control.TreeItem;
-import javafx.scene.control.TreeTableView;
-import Models.Bilan.BilonSchema;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import Models.Bilan.BilonSchema;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class BilanDetailsController {
 
     @FXML
-    private TreeTableView<String> anamnesisTreeTableView;
+    private TableView<AnamnesisItem> anamnesisTableView ;
 
     @FXML
-    private TreeTableView<String> testTreeTableView;
+    private TableColumn<AnamnesisItem, String> typeColumn;
 
     @FXML
-    private TreeTableView<String> observationTreeTableView;
+    private TableColumn<AnamnesisItem, String> questionColumn;
 
     @FXML
-    private TreeTableView<String> diagnosticTreeTableView;
+    private TableColumn<AnamnesisItem, String> responseColumn;
+
+    @FXML
+    private ListView<AnamnesisItem> anamnesisListView;
+
+    @FXML
+    private ListView<String> testListView;
+
+    @FXML
+    private ListView<String> observationListView;
+
+    @FXML
+    private ListView<String> diagnosticListView;
 
     public void initData(BilonSchema bilan) {
-        populateTreeTableView(anamnesisTreeTableView, "Anamnesis", bilan.getAnamneseModel().getQuestionsAdulte().toString());
-        populateTreeTableView(testTreeTableView, "Test", bilan.getTests().getAllTests().toString());
-        populateTreeTableView(observationTreeTableView, "Observation", bilan.getObservations().toString());
-        populateTreeTableView(diagnosticTreeTableView, "Diagnostic", bilan.getDiagnostic().getTroubles().toString());
+
+        if (HelloApplication.patientModel.getPatientById(HelloApplication.currentPatientName).getAge() < 13) {
+            populateAnamnesisEnfantTableView(bilan.getAnamneseModel().getQuestionsEnfant());
+            System.out.println(" Type est Enfant ");
+        } else {
+            populateAnamnesisAdulteTableView(bilan.getAnamneseModel().getQuestionsAdulte());
+            System.out.println(" Type est Adult ");
+        }
+
+        populateAnamnesisEnfantTableView(bilan.getAnamneseModel().getQuestionsEnfant());
+
+        populateTestListView(bilan.getTests().getAllTests());
+        populateObservationListView(bilan.getObservations().getObservations());
+        populateDiagnosticListView(bilan.getDiagnostic().getTroubles());
     }
 
-    private void populateTreeTableView(TreeTableView<String> treeTableView, String title, String data) {
-        // Create root item
-        TreeItem<String> rootItem = new TreeItem<>(title);
+    private void populateAnamnesisAdulteTableView(ArrayList<QuestionAdult> data) {
+        List<AnamnesisItem> items = new ArrayList<>();
+        for (QuestionAdult item : data) {
+            items.add( new AnamnesisItem(item.getTypeQuestion().toString() , item.getQuestion() , item.getResponse()) );
+        }
+        anamnesisListView.setItems(FXCollections.observableArrayList(items));
+    }
 
-        // Create child item with the data
-        TreeItem<String> dataItem = new TreeItem<>(data);
+    private void populateAnamnesisEnfantTableView(ArrayList<QuestionEnfant> data) {
+        List<AnamnesisItem> items = new ArrayList<>();
+        for (QuestionEnfant item : data) {
+            items.add( new AnamnesisItem(item.getTypeQuestion().toString() , item.getQuestion() , item.getReponse()) );
+        }
+        anamnesisListView.setItems(FXCollections.observableArrayList(items));
+    }
 
-        // Add child item to root
-        rootItem.getChildren().add(dataItem);
+    private void populateTestListView(List<TestSchema> data) {
+        List<String> items = new ArrayList<>();
+        for (TestSchema item : data) {
+            items.add(item.toString());
+        }
+        testListView.setItems(FXCollections.observableArrayList(items));
+    }
 
-        // Set root item to tree table view
-        treeTableView.setRoot(rootItem);
+    private void populateObservationListView(List<String> data) {
+        observationListView.setItems(FXCollections.observableArrayList(data));
+    }
+
+    private void populateDiagnosticListView(Map<String, TroubleSchema> data) {
+        List<String> items = new ArrayList<>();
+        for (Map.Entry<String, TroubleSchema> entry : data.entrySet()) {
+            String key = entry.getKey();
+            TroubleSchema value = entry.getValue();
+            items.add(value.getNom() + " | Type : " + value.getCategorie().toString().toUpperCase());
+        }
+        diagnosticListView.setItems(FXCollections.observableArrayList(items));
     }
 
     @FXML
     private void handleBackToPatientDetails(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         SceneSwitcher.switchScene(stage, "dossier-patient-view.fxml", 800, 600);
+    }
+
+    public static class AnamnesisItem {
+        private String type;
+        private String question;
+        private String response;
+
+        public AnamnesisItem(String type, String question, String response) {
+            this.type = type;
+            this.question = question;
+            this.response = response;
+        }
+
     }
 }

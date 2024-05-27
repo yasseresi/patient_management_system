@@ -19,6 +19,7 @@ public PatientSchema update(String nom, String prenom, PatientSchema patientSche
 public PatientSchema update(PatientSchema patientSchema) throws PatientAlreadyExistException, PatientDoesNotExistException;
 public boolean isEmpty();
 public ObservableList<PatientSchema> getPatients();
+public PatientSchema getPatientById(String PatientName);
     public void clear();
 
 }

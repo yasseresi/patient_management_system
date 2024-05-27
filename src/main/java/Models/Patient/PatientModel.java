@@ -5,6 +5,7 @@ import Exceptions.PatientAlreadyExistException;
 import Exceptions.PatientDoesNotExistException;
 import Exceptions.UniqueUsernameViolationException;
 import Exceptions.UserDoesNotExistException;
+import Models.DossierPatient.DossierPatientSchema;
 import com.example.patient_management_system.HelloApplication;
 import javafx.collections.ObservableList;
 
@@ -90,6 +91,7 @@ public class PatientModel implements Serializable {
     public boolean isEmpty(){
         return this.dataBase.isEmpty();
     }
+
     private int caluclateAge(LocalDate dateNaissance){
         return LocalDate.now().getYear() - dateNaissance.getYear();
     }
@@ -98,5 +100,8 @@ public class PatientModel implements Serializable {
         return this.dataBase.getPatients();
     }
 
+    public PatientSchema getPatientById(String PatientName){
+        return this.dataBase.getPatientById(PatientName);
+    }
 
 }

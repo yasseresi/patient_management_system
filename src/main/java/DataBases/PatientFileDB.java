@@ -2,6 +2,7 @@ package DataBases;
 
 import Exceptions.PatientAlreadyExistException;
 import Exceptions.PatientDoesNotExistException;
+import Models.DossierPatient.DossierPatientSchema;
 import Models.Patient.AdultSchema;
 import Models.Patient.EnfantSchema;
 import Models.Patient.PatientSchema;
@@ -14,7 +15,8 @@ import java.util.Iterator;
 import java.util.TreeSet;
 
 public class PatientFileDB implements PatientDB, Serializable {
-  private TreeSet<PatientSchema> patients = new TreeSet<>();
+
+    private TreeSet<PatientSchema> patients = new TreeSet<>();
 
     public PatientFileDB(TreeSet< PatientSchema> patients) {
         this.patients = patients;
@@ -87,6 +89,16 @@ public class PatientFileDB implements PatientDB, Serializable {
     public ObservableList<PatientSchema> getPatients(){
         //todo: change the type to normal TreeSet and then change it to observable Set in the controller
         return FXCollections.observableArrayList(patients);
+    }
+
+    public PatientSchema getPatientById(String PatientName) {
+        for (PatientSchema patient : patients ) {
+            String id = patient.getNom() + " " + patient.getPrenom();
+            if (id.equals(PatientName)) {
+                return patient;
+            }
+        }
+        return null; // Return null if no matching Patien Names is found
     }
 
     public void clear(){
