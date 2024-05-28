@@ -1,6 +1,5 @@
 package Controllers.RendezVousController;
 
-import Models.Question.QuestionEnfant;
 import Models.RendezVous.RendezVousSchema;
 import com.example.patient_management_system.HelloApplication;
 import javafx.collections.FXCollections;
@@ -10,13 +9,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ResourceBundle;
@@ -24,7 +25,6 @@ import java.util.ResourceBundle;
 public class RendezVousController implements Initializable {
 
 
-    public Button DosssierPatientbutton;
     @FXML
     private Button accueilButton;
 
@@ -52,7 +52,7 @@ public class RendezVousController implements Initializable {
     private TableColumn<RendezVousSchema, LocalTime> heure;
 
     @FXML
-    private TableColumn<RendezVousSchema, Duration> dureeColumn;
+    private TableColumn<RendezVousSchema, String> dureeColumn;
 
 
     @Override
@@ -61,24 +61,6 @@ public class RendezVousController implements Initializable {
             Date.setCellValueFactory(new PropertyValueFactory<>("date"));
             dureeColumn.setCellValueFactory(new PropertyValueFactory<>("duree"));
             heure.setCellValueFactory(new PropertyValueFactory<>("heure"));
-
-            // Set custom cell factory to format the duration
-            dureeColumn.setCellFactory(column -> new TableCell<RendezVousSchema, Duration>() {
-                @Override
-                protected void updateItem(Duration item, boolean empty) {
-                    super.updateItem(item, empty);
-                    if (empty || item == null) {
-                        setText(null);
-                    } else {
-                        setText(formatDuration(item));
-                    }
-                }
-            });
-
-
-
-
-
 
         ObservableList<RendezVousSchema> rendezVous = FXCollections.observableArrayList();
         rendezVous.addAll(HelloApplication.dossierPatientModel.getRendezVousOfToday());
@@ -93,10 +75,7 @@ public class RendezVousController implements Initializable {
 
     }
 
-    private String formatDuration(Duration duration) {
-    long minutes = duration.toMinutes();
-    return minutes + " minutes";
-}
+
 
 
 
@@ -108,6 +87,7 @@ public class RendezVousController implements Initializable {
         stage.setTitle("ADD Consultation");
         stage.setScene(scene);
 
+        CurrentDate.setText(LocalDate.now().getDayOfMonth() + " " + LocalDate.now().getMonth().toString() + " " + LocalDate.now().getYear());
     }
 
 

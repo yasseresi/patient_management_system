@@ -29,19 +29,19 @@ public class HelloApplication extends Application {
     public static   QuestionQpreuveModel testquestions = new QuestionQpreuveModel();
 
 
-
     public static  OrthophonisteModel orthophonisteModel = new OrthophonisteModel(new OrthophonisteFileDataBase() );
     public static  PatientModel patientModel = new PatientModel( new PatientFileDB() );
     public static  AnamneseModel anamneseModel = new AnamneseModel(new AnamneseDBFile());
-    public static  DossierPatientModel dossierPatientModel = new DossierPatientModel(new ArrayList<>());
+    public static  DossierPatientModel dossierPatientModel = new DossierPatientModel();
 
 //    public static final RendezVousModel rendezvousModel = new RendezVousModel(new RendezVousFileDB());
 //    public static final ObjectifModel fichesuivi = new ObjectifModel(new objectifFileDB());
     public static final BilonModel bilonModel = new BilonModel();
 
+    public static  TestModel testModel = new TestModel(new TestFileDB());
 
     public static final String usersDirectoryName = "orthophoniste_directory";
-    public static final String dossierPatientFileName = "dossiersPatientsFileDB.dat";
+    public static final String dossierPatientFileName = "dossiersPatientFileDB.dat";
     public static final String bilonDirectoryName = "bilons_directory";
     public static final String fichSuivisDirectoryName = "fichSuivis_directory";
 
@@ -68,6 +68,9 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+
+
+
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("signup-view.fxml"));
         Parent root = loader.load();

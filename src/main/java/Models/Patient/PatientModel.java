@@ -48,12 +48,9 @@ public class PatientModel implements Serializable {
         return this.dataBase.exists(nom,prenom);
     }
 
-    public PatientSchema create(PatientSchema userSchema) {
-        try {
+    public PatientSchema create(PatientSchema userSchema) throws  PatientAlreadyExistException {
             return this.dataBase.create(userSchema);
-        } catch (UniqueUsernameViolationException | PatientAlreadyExistException e) {
-            throw new RuntimeException(e);
-        }
+
     }
 
     public void create(String nom , String prenom, LocalDate dateNaissance, String lieuNaissance, String adresse,int nbTelephone ,boolean nouveau) {
@@ -64,12 +61,9 @@ public class PatientModel implements Serializable {
         }
     }
 
-    public PatientSchema find(String nom,String prenom) {
-        try {
+    public PatientSchema find(String nom,String prenom)  {
             return this.dataBase.find(nom,prenom);
-        } catch (UserDoesNotExistException | PatientDoesNotExistException e) {
-            throw new RuntimeException(e);
-        }
+
     }
 
     public PatientSchema update(String nom,String prenom ,PatientSchema userSchema) {

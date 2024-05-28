@@ -4,6 +4,7 @@ module com.example.patient_management_system {
     requires jdk.xml.dom;
     requires java.desktop;
     requires jdk.jfr;
+    requires jdk.jconsole;
 
     opens com.example.patient_management_system to javafx.fxml;
     opens Controllers.OrthophonisteControllers to javafx.fxml;

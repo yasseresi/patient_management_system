@@ -24,6 +24,7 @@ public class DossierPatientSchema {
         this.bilan = bilan;
     }
     public DossierPatientSchema(String id){
+        this.id = id;
         this.bilan = new BilonModel();
         this.fichSuivi = new FichSuiviModel(new ArrayList<>());
         this.rendezVous = new RendezVousModel();
@@ -59,5 +60,12 @@ public class DossierPatientSchema {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "DossierPatientSchema{" +
+                "id='" + id + '\'' +
+                '}';
     }
 }

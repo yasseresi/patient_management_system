@@ -23,18 +23,34 @@ public class RendezVousFileDB implements RendezVouzDB {
 
     public RendezVousFileDB() {
         rendezVous = new TreeMap<>();
+
     }
 
     @Override
     public void create(LocalDate date, LocalTime time, RendezVousSchema rendezVous) throws ConsultationAlreadyPassedExecption, ConsultationFirstException {
-        boolean isConsultationPassed = isConsultationAlreadyPassed(this.rendezVous);
+
+        boolean isConsultationPassed = isConsultationAlreadyCreated(this.rendezVous);
+
         if (rendezVous instanceof ConsultationSchema && isConsultationPassed) throw new ConsultationAlreadyPassedExecption();
         if (rendezVous instanceof SuiviSchema && !isConsultationPassed) throw new ConsultationFirstException();
         DateTimeKey dateTimeKey = new DateTimeKey(date, time);
         this.rendezVous.put(dateTimeKey, rendezVous);
     }
 
-    private boolean isConsultationAlreadyPassed(TreeMap<DateTimeKey, RendezVousSchema> rendezVous) {
+    public void createConsult(LocalDate date, LocalTime time, ConsultationSchema rendezVous) throws ConsultationAlreadyPassedExecption{
+
+        boolean isConsultationPassed = isConsultationAlreadyCreated(this.rendezVous);
+
+        if (isConsultationPassed) throw new ConsultationAlreadyPassedExecption();
+        DateTimeKey dateTimeKey = new DateTimeKey(date, time);
+        this.rendezVous.put(dateTimeKey, rendezVous);
+    }
+
+
+
+
+    private boolean isConsultationAlreadyCreated(TreeMap<DateTimeKey, RendezVousSchema> rendezVous) {
+
         Iterator<RendezVousSchema> iterator = rendezVous.values().iterator();
         while (iterator.hasNext()) {
             RendezVousSchema key = iterator.next();

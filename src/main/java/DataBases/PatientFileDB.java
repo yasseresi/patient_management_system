@@ -40,7 +40,7 @@ public class PatientFileDB implements PatientDB, Serializable {
 
     @Override
     public PatientSchema create(PatientSchema newPatient) throws PatientAlreadyExistException {
-        if (patients.contains(newPatient)) throw new PatientAlreadyExistException();
+        if (patients.contains(newPatient) || exists(newPatient.getNom(), newPatient.getPrenom())) throw new PatientAlreadyExistException();
         patients.add(newPatient);
         return newPatient;
     }
@@ -59,13 +59,13 @@ public class PatientFileDB implements PatientDB, Serializable {
 
 
     @Override
-    public PatientSchema find(String nom, String prenom) throws PatientDoesNotExistException {
+    public PatientSchema find(String nom, String prenom)  {
         for (PatientSchema patient : patients) {
             if (patient.getNom().equals(nom) && patient.getPrenom().equals(prenom)) {
                 return patient;
             }
         }
-        throw new PatientDoesNotExistException();
+        return null;
     }
 
     @Override

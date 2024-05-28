@@ -24,6 +24,7 @@ public class OrthophonisteModel {
     }
 
     public void load() throws IOException, ClassNotFoundException {
+        System.out.println(HelloApplication.usersDirectoryName + "/" + HelloApplication.TherapistDBuserName);
         try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(HelloApplication.usersDirectoryName + "/" + HelloApplication.TherapistDBuserName))) {
 
             dataBase = (OrthophonistheDataBase) objectInputStream.readObject();

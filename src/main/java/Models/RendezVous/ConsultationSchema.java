@@ -11,11 +11,11 @@ import java.time.LocalTime;
 
 public class ConsultationSchema extends RendezVousSchema implements Serializable {
 
+    private PatientSchema patient;
     //TODO: CHECK LATER THE CORRECT TIME DURATION OF CONSULTATION
-     static int DUREE = 30;
-    public ConsultationSchema(LocalDate date, LocalTime heure, Duration dureeMin) {
+    public ConsultationSchema(LocalDate date, LocalTime heure, String dureeMin) {
         this.date = date;
         this.heure = heure;
-        super.duree = Duration.ofMinutes(DUREE);
+        super.duree = dureeMin;
     }
 }

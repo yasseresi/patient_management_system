@@ -10,7 +10,7 @@ public abstract class RendezVousSchema implements Serializable ,Comparable<Rende
 
     protected LocalDate date;
     protected LocalTime heure;
-    protected Duration duree = Duration.ofHours(1);
+    protected String duree = "1h";
     protected String observation = "";
 
 
@@ -26,6 +26,13 @@ public abstract class RendezVousSchema implements Serializable ,Comparable<Rende
         return date;
     }
 
+    public String getDuree() {
+        return duree;
+    }
+
+    public void setDuree(String duree) {
+        this.duree = duree;
+    }
 
     @Override
     public int hashCode() {

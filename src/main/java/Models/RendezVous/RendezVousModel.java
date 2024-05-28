@@ -44,8 +44,8 @@ public class RendezVousModel implements Serializable {
     public void createAtelier(RendezVousSchema rendezVous) throws ConsultationFirstException, ConsultationAlreadyPassedExecption {
         dataBase.create(rendezVous.date, rendezVous.heure, rendezVous);
     }
-    public void createRendezVous(RendezVousSchema rendezVousSchema) throws ConsultationFirstException, ConsultationAlreadyPassedExecption {
-        dataBase.create(rendezVousSchema.date,rendezVousSchema.heure,rendezVousSchema);
+    public void createConsultation(ConsultationSchema rendezVousSchema) throws  ConsultationAlreadyPassedExecption {
+        dataBase.createConsult(rendezVousSchema.date,rendezVousSchema.heure,rendezVousSchema);
     }
 
     public ArrayList<RendezVousSchema> findAll(LocalDate date) {
