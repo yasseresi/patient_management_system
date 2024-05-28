@@ -5,7 +5,6 @@ import Exceptions.ConsultationFirstException;
 import Models.Patient.PatientSchema;
 import Models.RendezVous.ConsultationSchema;
 import Models.RendezVous.RendezVousSchema;
-import DataBases.AnamneseDB;
 import com.example.patient_management_system.HelloApplication;
 
 import java.io.*;
@@ -144,11 +143,10 @@ public class DossierPatientModel {
     }
 
 
-    public ArrayList<RendezVousSchema> getRendezVousOfToday() {
-        LocalDate currentDay = LocalDate.now();
+    public ArrayList<RendezVousSchema> getRendezVousOfDay(LocalDate date) {
         ArrayList<RendezVousSchema> rendezVous = new ArrayList<>();
         for (DossierPatientSchema dossier : dossierPatients) {
-            rendezVous.addAll(dossier.getRendezVous().findAll(currentDay));
+            rendezVous.addAll(dossier.getRendezVous().findAll(date));
         }
         return rendezVous;
     }
