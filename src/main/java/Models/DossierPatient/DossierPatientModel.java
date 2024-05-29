@@ -155,6 +155,18 @@ public class DossierPatientModel {
             rendezVous.addAll(dossier.getRendezVous().findAll(date));
         }
         // TODO 0 : SORTE THIS ARRAYLISTBEFORE DESPLAY IT
+        rendezVous.sort(new Comparator<RendezVousSchema>() {
+            @Override
+            public int compare(RendezVousSchema r1, RendezVousSchema r2) {
+                int dateComparison = r1.getDate().compareTo(r2.getDate());
+                if (dateComparison != 0) {
+                    return dateComparison;
+                }
+                return r1.getHeure().compareTo(r2.getHeure());
+            }
+        });
+
+
         return rendezVous;
     }
 

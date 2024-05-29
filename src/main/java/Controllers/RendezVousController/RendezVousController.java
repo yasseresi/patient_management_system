@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Collections;
 import java.util.ResourceBundle;
 
 public class RendezVousController implements Initializable {
@@ -79,6 +80,8 @@ public class RendezVousController implements Initializable {
     private void showRendezVousForDate(LocalDate date) {
         ObservableList<RendezVousSchema> rendezVousList = FXCollections.observableArrayList();
         rendezVousList.addAll(HelloApplication.dossierPatientModel.getRendezVousOfDay(date));
+
+
         rendezVousTable.setItems(rendezVousList);
         CurrentDate.setText(date.getDayOfMonth() + " " + date.getMonth().toString() + " " + date.getYear());
     }
