@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="836.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.StatistiqueControllers.StatistiqueController">
+   <left>
+      <VBox prefHeight="400.0" prefWidth="142.0" BorderPane.alignment="CENTER">
+         <ImageView fitHeight="95.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../../../../../../../../Downloads/6ddoiu-LogoMakr.png" />
+            </image>
+         </ImageView>
+         <VBox alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="345.0" prefWidth="158.0" spacing="14.0">
+            <children>
+               <Button mnemonicParsing="false" onAction="#toAccueilPage" prefHeight="1.0" prefWidth="106.0" text="Accueil">
+                  <VBox.margin>
+                     <Insets />
+                  </VBox.margin>
+               </Button>
+               <Button mnemonicParsing="false" onAction="#toRendezVousPage" prefHeight="26.0" prefWidth="104.0" text="REndez Vous" />
+               <Button mnemonicParsing="false" onAction="#toStatistiquePage" prefHeight="26.0" prefWidth="106.0" text="Statistique" />
+               <Button mnemonicParsing="false" onAction="#toDossiersPatients" prefHeight="26.0" prefWidth="106.0" text="Dossier Patients" />
+               <Button mnemonicParsing="false" onAction="#toAnamnese" prefHeight="26.0" prefWidth="109.0" text="Anamnese" />
+               <Button mnemonicParsing="false" onAction="#toTests" prefHeight="26.0" prefWidth="109.0" text="Tests" />
+            </children>
+            <padding>
+               <Insets left="5.0" right="10.0" top="20.0" />
+            </padding>
+         </VBox>
+         <VBox alignment="TOP_CENTER" prefHeight="95.0" prefWidth="100.0" spacing="14.0">
+            <children>
+               <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="106.0" text="Parametres" />
+               <Button mnemonicParsing="false" onAction="#toLogOut" prefHeight="26.0" prefWidth="106.0" scaleShape="false" text="Log Out" textFill="#d32323">
+                  <font>
+                     <Font name="System Bold" size="13.0" />
+                  </font>
+                  <cursor>
+                     <Cursor fx:constant="DEFAULT" />
+                  </cursor>
+               </Button>
+            </children>
+            <padding>
+               <Insets top="10.0" />
+            </padding>
+         </VBox>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="600.0" prefWidth="626.0">
+               <children>
+                  <Text fill="#131414" layoutX="-2.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mes paramètres" textAlignment="CENTER" wrappingWidth="626.3999999999999" AnchorPane.topAnchor="50.0">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                  </Text>
+                  <Label layoutX="47.0" layoutY="142.0" prefHeight="34.0" prefWidth="209.0" text="Mise à jour du mot de passe :" textFill="#181a1b">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tf_mdp" layoutX="54.0" layoutY="201.0" prefHeight="27.0" prefWidth="159.0" promptText="Nouveau mdp" />
+                  <Button fx:id="btn_mdp" layoutX="244.0" layoutY="200.0" mnemonicParsing="false" onAction="#handleUpdatePassword" prefHeight="30.0" prefWidth="135.0" text="mettre à jour" textFill="#141212">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="47.0" layoutY="240.0" prefHeight="34.0" prefWidth="209.0" text="Mise à jour de l'adresse :" textFill="#070e14">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tf_adr" layoutX="54.0" layoutY="289.0" prefHeight="27.0" prefWidth="162.0" promptText="Nouveau adr" />
+                  <Button fx:id="btn_adr" layoutX="244.0" layoutY="288.0" mnemonicParsing="false" onAction="#handleUpdateAdr" prefHeight="30.0" prefWidth="135.0" text="mettre à jour" textFill="#141313">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="47.0" layoutY="335.0" prefHeight="34.0" prefWidth="209.0" text="Mise à jour le numéro du télé :" textFill="#090f14">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tf_tele" layoutX="54.0" layoutY="385.0" prefHeight="27.0" prefWidth="162.0" promptText="Nouveau télé" />
+                  <Button fx:id="btn_tele" layoutX="246.0" layoutY="383.0" mnemonicParsing="false" onAction="#handleUpdateTele" prefHeight="30.0" prefWidth="135.0" text="mettre à jour" textFill="#1b1919">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
