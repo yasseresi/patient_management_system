@@ -1,19 +1,11 @@
 package Controllers.DossierPatientsControllers;
 
-import DataBases.RendezVousFileDB;
-import Exceptions.ConsultationAlreadyPassedExecption;
-import Exceptions.ConsultationFirstException;
 import Models.DossierPatient.DossierPatientSchema;
-import Models.RendezVous.ConsultationSchema;
-import Models.RendezVous.DeroulementSuivi;
 import Models.RendezVous.RendezVousSchema;
-import Models.RendezVous.SuiviSchema;
 import Models.Patient.PatientSchema;
 import Utils.SceneSwitcher;
 import com.example.patient_management_system.HelloApplication;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -21,14 +13,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 
-import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.ArrayList;
 
 public class RendezVousListController {

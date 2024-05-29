@@ -90,7 +90,7 @@ public class AcuilePageController  implements Initializable {
 
     @FXML
     void toProfilPage(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Profil-page-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("profile-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),800,600);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         stage.setTitle("Profil");
@@ -112,7 +112,7 @@ public class AcuilePageController  implements Initializable {
 
     @FXML
     void toStatistiquePage(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("statistique-page-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("profile-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),800,600);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         stage.setTitle("statistique");

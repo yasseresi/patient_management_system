@@ -1,8 +1,6 @@
 package DataBases;
 
-import DataBases.DateTimeKey;
-import DataBases.RendezVouzDB;
-import Exceptions.ConsultationAlreadyPassedExecption;
+import Exceptions.ConsultationAlreadyCreatedExecption;
 import Exceptions.ConsultationFirstException;
 import Models.RendezVous.ConsultationSchema;
 import Models.RendezVous.RendezVousSchema;
@@ -26,24 +24,25 @@ public class RendezVousFileDB implements RendezVouzDB {
 
     }
 
-    @Override
-    public void create(LocalDate date, LocalTime time, RendezVousSchema rendezVous) throws ConsultationAlreadyPassedExecption, ConsultationFirstException {
+
+
+    public void createConsult(LocalDate date, LocalTime time, ConsultationSchema rendezVous) throws ConsultationAlreadyCreatedExecption {
 
         boolean isConsultationPassed = isConsultationAlreadyCreated(this.rendezVous);
 
-        if (rendezVous instanceof ConsultationSchema && isConsultationPassed) throw new ConsultationAlreadyPassedExecption();
-        if (rendezVous instanceof SuiviSchema && !isConsultationPassed) throw new ConsultationFirstException();
+        if (isConsultationPassed) throw new ConsultationAlreadyCreatedExecption();
         DateTimeKey dateTimeKey = new DateTimeKey(date, time);
         this.rendezVous.put(dateTimeKey, rendezVous);
     }
-
-    public void createConsult(LocalDate date, LocalTime time, ConsultationSchema rendezVous) throws ConsultationAlreadyPassedExecption{
+    public void createSuivi(LocalDate date,LocalTime time , SuiviSchema rendezVous) throws ConsultationFirstException{
 
         boolean isConsultationPassed = isConsultationAlreadyCreated(this.rendezVous);
 
-        if (isConsultationPassed) throw new ConsultationAlreadyPassedExecption();
+        if ( !isConsultationPassed) throw new ConsultationFirstException();
         DateTimeKey dateTimeKey = new DateTimeKey(date, time);
         this.rendezVous.put(dateTimeKey, rendezVous);
+
+
     }
 
 

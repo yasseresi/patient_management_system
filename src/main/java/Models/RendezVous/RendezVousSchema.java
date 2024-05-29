@@ -4,8 +4,9 @@ import java.io.Serializable;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Comparator;
 
-public abstract class RendezVousSchema implements Serializable ,Comparable<RendezVousSchema>{
+public abstract class RendezVousSchema implements Serializable , Comparator<RendezVousSchema> {
 
 
     protected LocalDate date;
@@ -45,9 +46,12 @@ public abstract class RendezVousSchema implements Serializable ,Comparable<Rende
 
     //todo:modify this function to compaire between the rendezVous with date and time
     @Override
-    public int compareTo(RendezVousSchema o) {
-        return this.date.compareTo(o.date);
+    public int compare(RendezVousSchema r1,RendezVousSchema r2){
+        if(r1.getDate().isBefore(r2.getDate())) return 1;
+        else if (r1.getDate().isEqual(r2.getDate())) return 0;
+        else return -1;
     }
+
 
     @Override
     public String toString() {

@@ -24,5 +24,14 @@ public class SuiviSchema extends RendezVousSchema {
         this.deroulementSuivi = deroulementSuivi;
     }
 
-
+    @Override
+    public String toString() {
+        return "SuiviSchema{" +
+                "deroulementSuivi=" + deroulementSuivi.toString() +
+                ", date=" + date +
+                ", heure=" + heure +
+                ", duree='" + duree + '\'' +
+                ", observation='" + observation + '\'' +
+                '}';
+    }
 }

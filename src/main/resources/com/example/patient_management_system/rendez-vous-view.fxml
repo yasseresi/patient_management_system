@@ -70,7 +70,7 @@
                         <Button mnemonicParsing="false" text="add Observation" />
                         <Button mnemonicParsing="false" text="+ atelier" />
                         <Button mnemonicParsing="false" onAction="#AjouterConsultation" text="+ Consultation" />
-                        <Button mnemonicParsing="false" text="+Suivi" />
+                        <Button mnemonicParsing="false" onAction="#AjouterSuivi" text="+AjouterSuivi" />
                     </children>
                     <padding>
                         <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />

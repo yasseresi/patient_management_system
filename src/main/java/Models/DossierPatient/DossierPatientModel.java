@@ -1,15 +1,17 @@
 package Models.DossierPatient;
 
-import Exceptions.ConsultationAlreadyPassedExecption;
+import Exceptions.ConsultationAlreadyCreatedExecption;
 import Exceptions.ConsultationFirstException;
 import Models.Patient.PatientSchema;
 import Models.RendezVous.ConsultationSchema;
 import Models.RendezVous.RendezVousSchema;
+import Models.RendezVous.SuiviSchema;
 import com.example.patient_management_system.HelloApplication;
 
 import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Objects;
 
@@ -63,15 +65,7 @@ public class DossierPatientModel {
 
     }
 
-    public DossierPatientSchema getDossierPatientById(String PatientName) {
-        for (DossierPatientSchema dossierPatient : dossierPatients) {
-            if (dossierPatient.getId().equals(PatientName)) {
-                return dossierPatient;
-            }
-        }
-        return null; // Return null if no matching DossierPatientSchema is found
-    }
-//    public DossierPatientSchema getDossierPatient() {
+
 
 
     public boolean existe(String nom, String prenom) {
@@ -105,7 +99,7 @@ public class DossierPatientModel {
 
 
     //this function add a medicalFolder when creating a new rendezVous so if the patient new doesn't have any one we create one and add the rendezVous
-    public void CreerRendezVous(ConsultationSchema rendezVousSchema, PatientSchema patientSchema) throws ConsultationFirstException, ConsultationAlreadyPassedExecption {
+    public void CreerRendezVous(ConsultationSchema rendezVousSchema, PatientSchema patientSchema) throws ConsultationFirstException, ConsultationAlreadyCreatedExecption {
         if (existe(patientSchema.getNom(), patientSchema.getPrenom())) {
             System.out.println("does  exist 1 :");
 
@@ -130,7 +124,7 @@ public class DossierPatientModel {
         }
     }
 
-    public void CreerConsultation(ConsultationSchema consultation, PatientSchema patient) throws ConsultationAlreadyPassedExecption {
+    public void CreerConsultation(ConsultationSchema consultation, PatientSchema patient) throws ConsultationAlreadyCreatedExecption {
 
 
 
@@ -142,12 +136,25 @@ public class DossierPatientModel {
 
     }
 
+    public void CreerSuivi(SuiviSchema suivi, PatientSchema patient) throws ConsultationFirstException {
+
+
+
+        DossierPatientSchema dossier = getDossierPatientSelonID(patient.getNom(), patient.getPrenom());
+        System.out.println(dossier.toString());
+
+        dossier.getRendezVous().createSuivi(suivi);
+        updateDossierPatient(dossier);
+
+    }
+
 
     public ArrayList<RendezVousSchema> getRendezVousOfDay(LocalDate date) {
         ArrayList<RendezVousSchema> rendezVous = new ArrayList<>();
         for (DossierPatientSchema dossier : dossierPatients) {
             rendezVous.addAll(dossier.getRendezVous().findAll(date));
         }
+        // TODO 0 : SORTE THIS ARRAYLISTBEFORE DESPLAY IT
         return rendezVous;
     }
 

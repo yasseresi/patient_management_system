@@ -102,6 +102,17 @@ public class RendezVousController implements Initializable {
     }
 
     @FXML
+    public void AjouterSuivi(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("suivi-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(),800,600);
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("ADD Suivi");
+        stage.setScene(scene);
+
+        CurrentDate.setText(LocalDate.now().getDayOfMonth() + " " + LocalDate.now().getMonth().toString() + " " + LocalDate.now().getYear());
+    }
+
+    @FXML
     public void toAccueilPage(ActionEvent event) throws IOException {
         Stage stage = (Stage) accueilButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("home-page-view.fxml"));
@@ -142,7 +153,7 @@ public class RendezVousController implements Initializable {
     @FXML
     public void toProfilPage(ActionEvent event) throws IOException {
         Stage stage = (Stage) profileButton.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Profil-page-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("profile-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 835, 549);
         stage.setScene(scene);
         stage.show();
@@ -151,7 +162,7 @@ public class RendezVousController implements Initializable {
     @FXML
     public void toStatistiquePage(ActionEvent event) throws IOException {
         Stage stage = (Stage) statistiqueButton.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("statistique-page-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("profile-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 835, 549);
         stage.setScene(scene);
         stage.show();

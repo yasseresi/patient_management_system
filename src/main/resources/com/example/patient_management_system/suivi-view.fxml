@@ -25,15 +25,6 @@
             <ComboBox fx:id="rdvHeur" layoutX="262.0" layoutY="187.0" prefHeight="20.0" prefWidth="74.0" promptText="00h" />
             <ComboBox fx:id="rdvMin" layoutX="340.0" layoutY="187.0" prefHeight="26.0" prefWidth="74.0" promptText="00m" />
             <Button layoutX="403.0" layoutY="258.0" mnemonicParsing="false" onAction="#CreerSuivi" prefHeight="26.0" prefWidth="118.0" text="Creer Suivi" />
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
-               <children>
-                  <Text fill="#0e1011" layoutX="72.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date, heure et durée">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                  </Text>
-               </children>
-            </AnchorPane>
             <SplitMenuButton fx:id="type" layoutX="370.0" layoutY="83.0" mnemonicParsing="false" text="Type de deroulement">
               <items>
                 <MenuItem mnemonicParsing="false" text="Action 1" />

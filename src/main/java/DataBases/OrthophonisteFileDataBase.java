@@ -65,6 +65,23 @@ public class OrthophonisteFileDataBase implements OrthophonistheDataBase, Serial
         return orthophonistes.replace(key, userSchema);
     }
 
+    public OrthophonisteSchema updatePassword(String username,String password){
+           OrthophonisteSchema orthophoniste = orthophonistes.get(username);
+           orthophoniste.setPassword(password);
+           return orthophoniste;
+    }
+
+    public OrthophonisteSchema updateAdress(String username , String adress){
+         OrthophonisteSchema orthophoniste = orthophonistes.get(username);
+         orthophoniste.setAdress(adress);
+         return orthophoniste;
+    }
+    public OrthophonisteSchema udpateNbPhone(String username,int nbPhone){
+        OrthophonisteSchema orthophoniste = orthophonistes.get(username);
+        orthophoniste.setNb_phone(nbPhone);
+        return orthophoniste;
+    }
+
     @Override
     public OrthophonisteSchema delete(String username) throws UserDoesNotExistException {
         if (!orthophonistes.containsKey(username)) throw new UserDoesNotExistException();

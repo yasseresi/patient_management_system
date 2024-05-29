@@ -54,5 +54,14 @@ public class OrthophonisteModel {
     public OrthophonisteSchema delete(String username) throws UserDoesNotExistException{
         return this.dataBase.delete(username);
     }
+    public OrthophonisteSchema updatePassword(String username,String password){
+        return this.dataBase.updatePassword(username,password);
+    }
+    public OrthophonisteSchema updateAdress(String username, String adress){
+        return this.dataBase.updateAdress(username,adress);
+    }
+    public OrthophonisteSchema updatePhoneNumber(String username,int nbPhone){
+        return this.dataBase.udpateNbPhone(username, nbPhone);
+    }
 
 }

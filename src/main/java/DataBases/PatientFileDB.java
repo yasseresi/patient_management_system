@@ -40,7 +40,7 @@ public class PatientFileDB implements PatientDB, Serializable {
 
     @Override
     public PatientSchema create(PatientSchema newPatient) throws PatientAlreadyExistException {
-        if (patients.contains(newPatient) || exists(newPatient.getNom(), newPatient.getPrenom())) throw new PatientAlreadyExistException();
+        if ((patients.contains(newPatient) || exists(newPatient.getNom(), newPatient.getPrenom())) && !newPatient.isNouveau()) throw new PatientAlreadyExistException();
         patients.add(newPatient);
         return newPatient;
     }

@@ -14,6 +14,9 @@ public interface OrthophonistheDataBase extends Serializable {
     public OrthophonisteSchema find(String username) throws UserDoesNotExistException;
     public OrthophonisteSchema update(String oldUsername,OrthophonisteSchema userSchema) throws UniqueUsernameViolationException, UserDoesNotExistException;
     public OrthophonisteSchema update(OrthophonisteSchema userSchema) throws UserDoesNotExistException;
+    public OrthophonisteSchema udpateNbPhone(String username,int nbPhone);
+    public OrthophonisteSchema updateAdress(String username , String adress);
+    public OrthophonisteSchema updatePassword(String username,String password);
     public OrthophonisteSchema delete(String username) throws UserDoesNotExistException;
 
 }

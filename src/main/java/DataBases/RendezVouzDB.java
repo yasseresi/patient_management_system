@@ -1,9 +1,10 @@
 package DataBases;
 
-import Exceptions.ConsultationAlreadyPassedExecption;
+import Exceptions.ConsultationAlreadyCreatedExecption;
 import Exceptions.ConsultationFirstException;
 import Models.RendezVous.ConsultationSchema;
 import Models.RendezVous.RendezVousSchema;
+import Models.RendezVous.SuiviSchema;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -12,10 +13,9 @@ import java.util.ArrayList;
 
 public interface RendezVouzDB extends Serializable {
 
-    void create(LocalDate date, LocalTime time, RendezVousSchema rendezVous) throws ConsultationAlreadyPassedExecption, ConsultationFirstException;
 
-    public void createConsult(LocalDate date, LocalTime time, ConsultationSchema rendezVous) throws ConsultationAlreadyPassedExecption;
-
+    public void createConsult(LocalDate date, LocalTime time, ConsultationSchema rendezVous) throws ConsultationAlreadyCreatedExecption;
+    public void createSuivi(LocalDate date,LocalTime time , SuiviSchema rendezVous) throws ConsultationFirstException;
     RendezVousSchema find(LocalDate date, LocalTime time);
 
     ArrayList<RendezVousSchema> findAll(LocalDate date);

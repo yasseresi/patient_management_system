@@ -2,7 +2,7 @@ package Models.RendezVous;
 
 import DataBases.RendezVousFileDB;
 import DataBases.RendezVouzDB;
-import Exceptions.ConsultationAlreadyPassedExecption;
+import Exceptions.ConsultationAlreadyCreatedExecption;
 import Exceptions.ConsultationFirstException;
 import com.example.patient_management_system.HelloApplication;
 
@@ -10,8 +10,6 @@ import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
-
-import static com.example.patient_management_system.HelloApplication.categoryDbFileName;
 
 public class RendezVousModel implements Serializable {
 
@@ -41,11 +39,14 @@ public class RendezVousModel implements Serializable {
     }
 
 
-    public void createAtelier(RendezVousSchema rendezVous) throws ConsultationFirstException, ConsultationAlreadyPassedExecption {
-        dataBase.create(rendezVous.date, rendezVous.heure, rendezVous);
+    public void createAtelier(RendezVousSchema rendezVous) throws ConsultationFirstException, ConsultationAlreadyCreatedExecption {
+//        dataBase.create(rendezVous.date, rendezVous.heure, rendezVous);
     }
-    public void createConsultation(ConsultationSchema rendezVousSchema) throws  ConsultationAlreadyPassedExecption {
+    public void createConsultation(ConsultationSchema rendezVousSchema) throws ConsultationAlreadyCreatedExecption {
         dataBase.createConsult(rendezVousSchema.date,rendezVousSchema.heure,rendezVousSchema);
+    }
+    public void createSuivi(SuiviSchema suivi) throws ConsultationFirstException {
+        dataBase.createSuivi(suivi.date,suivi.heure,suivi);
     }
 
     public ArrayList<RendezVousSchema> findAll(LocalDate date) {
