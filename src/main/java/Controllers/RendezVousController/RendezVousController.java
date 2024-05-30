@@ -149,7 +149,7 @@ public class RendezVousController implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),800,600);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("login");
+        stage.setTitle("connexion");
         stage.setScene(scene);
         System.out.println("Logged out successfully");
         HelloApplication.patientModel.save();
@@ -205,25 +205,3 @@ public class RendezVousController implements Initializable {
 
 
 
-
-
-
-//@Override
-//public void initialize(URL url, ResourceBundle resourceBundle) {
-//    CurrentDate.setText(LocalDate.now().getDayOfMonth() + " " + LocalDate.now().getMonth().toString() + " " + LocalDate.now().getYear());
-//    Date.setCellValueFactory(new PropertyValueFactory<>("date"));
-//    dureeColumn.setCellValueFactory(new PropertyValueFactory<>("duree"));
-//    heure.setCellValueFactory(new PropertyValueFactory<>("heure"));
-//
-//    ObservableList<RendezVousSchema> rendezVous = FXCollections.observableArrayList();
-//    rendezVous.addAll(HelloApplication.dossierPatientModel.getRendezVousOfToday());
-//    System.out.println("liste des id stokee dans le model de dossierPatients");
-//    HelloApplication.dossierPatientModel.toString();
-//    System.out.println("liste des rendez Vous stocke dans la liste observable");
-//    for (int i = 0; i < rendezVous.toArray().length; i++) {
-//        System.out.println(rendezVous.get(i).toString());
-//    }
-//
-//    rendezVousTable.setItems(rendezVous);
-//
-//}

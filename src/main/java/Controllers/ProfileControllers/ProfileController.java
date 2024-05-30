@@ -90,7 +90,7 @@ public class ProfileController implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),800,600);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("login");
+        stage.setTitle("connexion");
         stage.setScene(scene);
         System.out.println("Logged out successfully");
         HelloApplication.patientModel.save();
@@ -174,7 +174,8 @@ public class ProfileController implements Initializable {
                 Popups.showErrorMessage("le nouveau numero de telephone est vide");
             }else {
                 HelloApplication.orthophonisteModel.updatePhoneNumber(currentUser,nbPhone);
-                Popups.showSuccessMessage("phone number updated","your phone number has been updated succesfuly "+nbPhone);
+                Popups.showSuccessMessage("numéro de téléphone mis à jour","votre numéro de téléphone a été mis à jour avec succès "+
+                        " "+nbPhone);
                 tf_tele.clear();
             }
         }catch (NumberFormatException e){

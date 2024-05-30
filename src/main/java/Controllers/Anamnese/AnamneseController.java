@@ -125,7 +125,7 @@ public class AnamneseController {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),800,600);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("login");
+        stage.setTitle("connexion");
         stage.setScene(scene);
         System.out.println("Logged out successfully");
         HelloApplication.patientModel.save();
@@ -146,7 +146,7 @@ public class AnamneseController {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("profile-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),800,600);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("Profil");
+        stage.setTitle("Profile");
         stage.setScene(scene);
 
     }
@@ -207,7 +207,7 @@ public class AnamneseController {
             childrenQuestionField.clear();
             childrenTypeChoiceBox.setValue(null);
         } else {
-            Popups.showErrorMessage("Input Error", "Question field and type cannot be empty!");
+            Popups.showErrorMessage("Erreur de saisie",  "Le champ de question et le type ne peuvent pas être vides !");
         }
     }
 
@@ -225,7 +225,7 @@ public class AnamneseController {
             adultQuestionField.clear();
             adultTypeChoiceBox.setValue(null);
         } else {
-            Popups.showErrorMessage("Input Error", "Question field and type cannot be empty!");
+            Popups.showErrorMessage("Erreur de saisie",  "Le champ de question et le type ne peuvent pas être vides !");
         }
     }
 
@@ -240,7 +240,7 @@ public class AnamneseController {
                 Popups.showErrorMessage(e.getMessage());
             }
         } else {
-            Popups.showErrorMessage("Selection Error", "Please select a question to delete!");
+            Popups.showErrorMessage("Erreur de sélection", "Veuillez sélectionner une question à supprimer !");
         }
     }
 
@@ -255,7 +255,7 @@ public class AnamneseController {
                 Popups.showErrorMessage(e.getMessage());
             }
         } else {
-            Popups.showErrorMessage("Selection Error", "Please select a question to delete!");
+            Popups.showErrorMessage("Erreur de sélection", "Veuillez sélectionner une question à supprimer !");
         }
     }
    //todo: check out the update methods cause it's not working
@@ -275,10 +275,10 @@ public class AnamneseController {
                 childrenQuestionField.clear();
                 childrenTypeChoiceBox.setValue(null);
             } else {
-                Popups.showErrorMessage("Input Error", "Question field and type cannot be empty!");
+                Popups.showErrorMessage("Erreur de saisie",  "Le champ de question et le type ne peuvent pas être vides !");
             }
         } else {
-            Popups.showErrorMessage("Selection Error", "Please select a question to modify!");
+            Popups.showErrorMessage("Erreur de sélection", "Veuillez sélectionner une question à modifier !");
         }
     }
 
@@ -298,10 +298,10 @@ public class AnamneseController {
                 adultQuestionField.clear();
                 adultTypeChoiceBox.setValue(null);
             } else {
-                Popups.showErrorMessage("Input Error", "Question field and type cannot be empty!");
+                Popups.showErrorMessage("Erreur de saisie",  "Le champ de question et le type ne peuvent pas être vides !");
             }
         } else {
-            Popups.showErrorMessage("Selection Error", "Please select a question to modify!");
+            Popups.showErrorMessage("Erreur de sélection", "Veuillez sélectionner une question à modifier !");
         }
     }
     @FXML

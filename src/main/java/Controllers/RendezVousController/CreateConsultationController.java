@@ -109,7 +109,7 @@ public class CreateConsultationController implements Initializable {
 
 
         } catch (NumberFormatException e) {
-            Popups.showErrorMessage("please enter a correct phone number or age format");
+            Popups.showErrorMessage("veuillez entrer un format correct de numéro de téléphone ou d'âge");
         } catch (ConsultationAlreadyCreatedExecption | PatientAlreadyExistException e) {
             Popups.showErrorMessage(e.getMessage());
         }

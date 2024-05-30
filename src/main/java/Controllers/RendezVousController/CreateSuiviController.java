@@ -84,7 +84,7 @@ public class CreateSuiviController  implements Initializable {
         PatientSchema patient;
 
         if (selectedType == null) {
-            Popups.showErrorMessage("Please select the type of the follow-up (Suivi).");
+            Popups.showErrorMessage("Veuillez sélectionner le type de suivi (Suivi).");
             return;
         }
 

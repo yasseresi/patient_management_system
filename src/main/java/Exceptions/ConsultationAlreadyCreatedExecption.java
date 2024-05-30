@@ -4,6 +4,6 @@ public class ConsultationAlreadyCreatedExecption extends Exception{
 
     @Override
     public String getMessage() {
-        return "Consultation already created you should choose a Suivi rendez-vous";
+        return "Consultation déjà créée, vous devez choisir un rendez-vous de suivi.";
     }
 }

@@ -3,7 +3,7 @@ package Exceptions;
 public class UserNameNotProvidedException extends Throwable {
     @Override
     public String getMessage() {
-        return "Username not provided";
+        return "Nom d'utilisateur non fourni";
     }
 
 }

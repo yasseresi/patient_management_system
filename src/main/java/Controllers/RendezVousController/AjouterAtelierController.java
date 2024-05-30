@@ -125,7 +125,7 @@ public class AjouterAtelierController implements Initializable {
 
 
             if (rdvHour == null || rdvMinute == null) {
-                throw new IllegalArgumentException("Please select valid time values.");
+                throw new IllegalArgumentException("Veuillez sélectionner des valeurs de temps valides");
             }
 
             LocalTime rdvTime = LocalTime.of(rdvHour, rdvMinute);
@@ -143,7 +143,7 @@ public class AjouterAtelierController implements Initializable {
 
             HelloApplication.dossierPatientModel.CreerAtelier(newAtelier);
 
-            Popups.showSuccessMessage("Created", "Atelier ajouté avec succès");
+            Popups.showSuccessMessage("Cree", "Atelier ajouté avec succès");
         } catch (AllInputsShouldBeProvidedException e) {
             Popups.showErrorMessage(e.getMessage());
         } catch (IllegalArgumentException e) {

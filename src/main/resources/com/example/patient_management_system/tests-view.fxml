@@ -44,7 +44,7 @@
                     </VBox>
                     <VBox alignment="TOP_CENTER" prefHeight="95.0" prefWidth="100.0" spacing="14.0">
                         <children>
-                            <Button fx:id="profileButton" mnemonicParsing="false" onAction="#toProfilPage" prefHeight="26.0" prefWidth="106.0" text="Profil" />
+                            <Button fx:id="profileButton" mnemonicParsing="false" onAction="#toProfilPage" prefHeight="26.0" prefWidth="106.0" text="Profile" />
                             <Button fx:id="logOutButton" mnemonicParsing="false" onAction="#toLogOut" prefHeight="26.0" prefWidth="106.0" scaleShape="false" text="Log Out" textFill="#d32323">
                                 <font>
                                     <Font name="System Bold" size="13.0" />

@@ -5,8 +5,8 @@ import javafx.scene.control.Alert;
 public class Popups {
     static public void showErrorMessage(String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Error");
-        alert.setHeaderText("Error");
+        alert.setTitle("Erreur");
+        alert.setHeaderText("Erreur");
         alert.setContentText(message);
         alert.showAndWait();
     }

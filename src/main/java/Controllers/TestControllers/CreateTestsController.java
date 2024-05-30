@@ -94,7 +94,7 @@ public class CreateTestsController {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),800,600);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("login");
+        stage.setTitle("connexion");
         stage.setScene(scene);
         System.out.println("Logged out successfully");
         HelloApplication.patientModel.save();
@@ -115,7 +115,7 @@ public class CreateTestsController {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("profile-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),800,600);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("Profil");
+        stage.setTitle("Profile");
         stage.setScene(scene);
 
 
@@ -184,8 +184,8 @@ public class CreateTestsController {
         String selectedExerciseName = exerciseListView.getSelectionModel().getSelectedItem();
         if (selectedExerciseName != null) {
             TextInputDialog dialog = new TextInputDialog(selectedExerciseName);
-            dialog.setTitle("Modify Exercise");
-            dialog.setHeaderText("Modify the exercise name");
+            dialog.setTitle("Modifier Exercise");
+            dialog.setHeaderText("Modifier le nom d'exercise ");
             dialog.setContentText("Exercise name:");
             dialog.showAndWait().ifPresent(newName -> {
                 Exercice oldExercise = exerciceModel.getExerciceByName(selectedExerciseName);
@@ -215,13 +215,13 @@ public class CreateTestsController {
         if (questionType != null) {
             switch (questionType) {
                 case "QCM":
-                    openPopup(event, "QCMPopup.fxml", "Add QCM Question");
+                    openPopup(event, "QCMPopup.fxml", "Ajouter QCM Question");
                     break;
                 case "QCU":
-                    openPopup(event, "QCUPopup.fxml", "Add QCU Question");
+                    openPopup(event, "QCUPopup.fxml", "Ajouter QCU Question");
                     break;
                 case "Libre":
-                    openPopup(event, "LibrePopup.fxml", "Add Libre Question");
+                    openPopup(event, "LibrePopup.fxml", "Ajouter Libre Question");
                     break;
             }
         }
@@ -234,13 +234,13 @@ public class CreateTestsController {
             String questionType = HelloApplication.testquestions.getQuestionTypeByText(selectedQuestion);
             switch (questionType) {
                 case "QCM":
-                    openPopup("QCMPopup.fxml", "Modify QCM Question", selectedQuestion, questionType);
+                    openPopup("QCMPopup.fxml", "Modifier QCM Question", selectedQuestion, questionType);
                     break;
                 case "QCU":
-                    openPopup("QCUPopup.fxml", "Modify QCU Question", selectedQuestion, questionType);
+                    openPopup("QCUPopup.fxml", "Modifier QCU Question", selectedQuestion, questionType);
                     break;
                 case "Libre":
-                    openPopup("LibrePopup.fxml", "Modify Libre Question", selectedQuestion, questionType);
+                    openPopup("LibrePopup.fxml", "Modiier Question Libre ", selectedQuestion, questionType);
                     break;
             }
         }

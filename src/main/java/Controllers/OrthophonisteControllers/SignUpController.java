@@ -123,7 +123,7 @@ public class SignUpController {
             try {
                 System.out.println(orthophonisteModel.find(nom + " " + prenom).getNom() + orthophonisteModel.find(nom + " " + prenom).getPrenom() );
             } catch (UserDoesNotExistException e) {
-                Popups.showErrorMessage("User does not exist");
+                Popups.showErrorMessage("Orthophoniste n'existe pas");
             }
         }
 

@@ -84,7 +84,7 @@ public class LogInController {
 //            fxmlLoader.setControllerFactory(c -> new LoginController());
             Scene scene = new Scene(fxmlLoader.load(), 840, 500);
             Stage stage = (Stage) userName.getScene().getWindow();
-            stage.setTitle("home");
+            stage.setTitle("Acuile");
 
             //center the view on the user's screen
             Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
@@ -101,8 +101,8 @@ public class LogInController {
     private void showErrorMessage(String message) {
         Alert errorMessage = new Alert(Alert.AlertType.ERROR);
         errorMessage.setContentText(message);
-        errorMessage.setHeaderText("Error");
-        errorMessage.setTitle("Error");
+        errorMessage.setHeaderText("Erreur");
+        errorMessage.setTitle("Erreur");
         errorMessage.showAndWait();
     }
     public void moveToSignupView(ActionEvent event) throws IOException {
