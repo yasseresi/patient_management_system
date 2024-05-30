@@ -49,6 +49,7 @@ public class DiagnosticController {
 
         HelloApplication.bilonModel.addBilan(HelloApplication.bilonSchema);
 
+        HelloApplication.patientModel.getPatientById(HelloApplication.currentPatientName).setNouveau(false);
         HelloApplication.dossierPatientModel.getDossierPatientSelonID(HelloApplication.currentPatientName).setBilan( HelloApplication.bilonModel );
 
 

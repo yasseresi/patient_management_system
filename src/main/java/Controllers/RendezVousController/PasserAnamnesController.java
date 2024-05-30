@@ -91,7 +91,7 @@ public class PasserAnamnesController {
         HelloApplication.bilonSchema.setAnamneseModel(HelloApplication.anamneseModel);
 
         // Add the bilan to the BilonModel (assuming you have a way to access it)
-        HelloApplication.bilonModel.addBilan(HelloApplication.bilonSchema);
+        //HelloApplication.bilonModel.addBilan(HelloApplication.bilonSchema);
 
 
         // Change the scene to the Tests window
