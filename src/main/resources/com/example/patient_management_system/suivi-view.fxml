@@ -27,8 +27,6 @@
             <Button layoutX="403.0" layoutY="258.0" mnemonicParsing="false" onAction="#CreerSuivi" prefHeight="26.0" prefWidth="118.0" text="Creer Suivi" />
             <SplitMenuButton fx:id="type" layoutX="370.0" layoutY="83.0" mnemonicParsing="false" text="Type de deroulement">
               <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
               </items>
             </SplitMenuButton>
             <Text fill="#191c1e" layoutX="71.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date et heure" wrappingWidth="100.2431640625">

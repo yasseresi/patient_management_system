@@ -18,7 +18,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Objects;
 
-public class DossierPatientModel {
+public class DossierPatientModel implements Serializable{
 
     private ArrayList<DossierPatientSchema> dossierPatients;
 

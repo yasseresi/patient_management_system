@@ -97,7 +97,7 @@ public class RendezVousController implements Initializable {
     @FXML
     public void AjouterConsultation(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("consultation-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(),800,600);
+        Scene scene = new Scene(fxmlLoader.load(),1025,800);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         stage.setTitle("ADD Consultation");
         stage.setScene(scene);
@@ -108,7 +108,7 @@ public class RendezVousController implements Initializable {
     @FXML
     public void AjouterSuivi(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("suivi-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(),800,600);
+        Scene scene = new Scene(fxmlLoader.load(),1025,800);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         stage.setTitle("ADD Suivi");
         stage.setScene(scene);
@@ -119,7 +119,7 @@ public class RendezVousController implements Initializable {
     @FXML
     public void toAtelier(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("atelier-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(),800,600);
+        Scene scene = new Scene(fxmlLoader.load(),1025,800);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         stage.setTitle("ADD Suivi");
         stage.setScene(scene);
@@ -157,7 +157,7 @@ public class RendezVousController implements Initializable {
     @FXML
     void toLogOut(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(),800,600);
+        Scene scene = new Scene(fxmlLoader.load(),1025,800);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         stage.setTitle("login");
         stage.setScene(scene);
@@ -194,7 +194,7 @@ public class RendezVousController implements Initializable {
     @FXML
     public void toTests(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("tests-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(),800,600);
+        Scene scene = new Scene(fxmlLoader.load(),1025,800);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         stage.setTitle("statistique");
         stage.setScene(scene);
@@ -204,7 +204,7 @@ public class RendezVousController implements Initializable {
     @FXML
     public void toAnamnese(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("anamnese-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(),800,600);
+        Scene scene = new Scene(fxmlLoader.load(),1025,800);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         stage.setTitle("statistique");
         stage.setScene(scene);

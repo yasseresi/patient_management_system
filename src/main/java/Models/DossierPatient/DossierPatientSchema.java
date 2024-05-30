@@ -7,9 +7,10 @@ import Models.Objectif.FichSuiviModel;
 import Models.Objectif.ObjectifModel;
 import Models.RendezVous.RendezVousModel;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class DossierPatientSchema {
+public class DossierPatientSchema implements Serializable {
 
     private String id;
 

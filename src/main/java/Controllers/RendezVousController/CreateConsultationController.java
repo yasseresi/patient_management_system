@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ResourceBundle;
 import java.util.stream.IntStream;
 
@@ -86,6 +87,8 @@ public class CreateConsultationController implements Initializable {
 
             LocalDate rdvDay = this.rdvDate.getValue();
             LocalTime rdvTime = LocalTime.of(this.rdvHeur.getValue(), this.rdvMin.getValue());
+
+            age = (int) ChronoUnit.YEARS.between(birthDday, LocalDate.now());
 
 
             PatientSchema patient;

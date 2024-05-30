@@ -59,7 +59,7 @@ public class ProfileController implements Initializable {
     @FXML
     public void toTests(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("tests-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(),800,600);
+        Scene scene = new Scene(fxmlLoader.load(),1025,800);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle("statistique");
         stage.setScene(scene);
@@ -69,7 +69,7 @@ public class ProfileController implements Initializable {
     @FXML
     public void toAnamnese(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("anamnese-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(),800,600);
+        Scene scene = new Scene(fxmlLoader.load(),1025,800);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle("statistique");
         stage.setScene(scene);
@@ -88,7 +88,7 @@ public class ProfileController implements Initializable {
     @FXML
     void toLogOut(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(),800,600);
+        Scene scene = new Scene(fxmlLoader.load(),1025,800);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         stage.setTitle("connexion");
         stage.setScene(scene);
@@ -120,7 +120,7 @@ public class ProfileController implements Initializable {
     @FXML
     void toRendezVousPage(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("rendez-vous-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(),800,600);
+        Scene scene = new Scene(fxmlLoader.load(),1025,800);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle("Rendez vous");
         stage.setScene(scene);
@@ -131,7 +131,7 @@ public class ProfileController implements Initializable {
     @FXML
     void toStatistiquePage(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("statistique-page-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(),800,600);
+        Scene scene = new Scene(fxmlLoader.load(),1025,800);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle("statistique");
         stage.setScene(scene);

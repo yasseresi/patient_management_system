@@ -82,7 +82,7 @@ public class LogInController {
 
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("home-page-view.fxml"));
 //            fxmlLoader.setControllerFactory(c -> new LoginController());
-            Scene scene = new Scene(fxmlLoader.load(), 840, 500);
+            Scene scene = new Scene(fxmlLoader.load(),1025,800);
             Stage stage = (Stage) userName.getScene().getWindow();
             stage.setTitle("Acuile");
 
@@ -106,8 +106,11 @@ public class LogInController {
         errorMessage.showAndWait();
     }
     public void moveToSignupView(ActionEvent event) throws IOException {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        SceneSwitcher.switchScene(stage, "signup-view.fxml", 1200, 625);
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("signup-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("signup");
+        stage.setScene(scene);
     }
 }
 

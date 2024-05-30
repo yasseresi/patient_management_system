@@ -5,9 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22522964-ee30-41fa-aa84-8bf6b9a1ee96" name="Changes" comment="first commit project initialisation">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/RendezVousController/DiagnosticController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/RendezVousController/DiagnosticController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/RendezVousController/ObservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/RendezVousController/ObservationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/RendezVousController/PasserAnamnesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/RendezVousController/PasserAnamnesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Anamnese/AnamneseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Anamnese/AnamneseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/DossierPatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/DossierPatientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/OrthophonisteControllers/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/OrthophonisteControllers/LogInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ProfileControllers/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ProfileControllers/ProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/RendezVousController/CreateConsultationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/RendezVousController/CreateConsultationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/RendezVousController/RendezVousController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/RendezVousController/RendezVousController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/StatistiqueControllers/StatistiqueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/StatistiqueControllers/StatistiqueController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/TestControllers/CreateTestsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/TestControllers/CreateTestsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/DossierPatient/DossierPatientModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/DossierPatient/DossierPatientModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/DossierPatient/DossierPatientSchema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/DossierPatient/DossierPatientSchema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/suivi-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/suivi-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

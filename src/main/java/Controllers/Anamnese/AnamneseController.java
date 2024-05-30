@@ -123,7 +123,7 @@ public class AnamneseController {
     @FXML
     void toLogOut(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(),800,600);
+        Scene scene = new Scene(fxmlLoader.load(),1025,800);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         stage.setTitle("connexion");
         stage.setScene(scene);
@@ -144,7 +144,7 @@ public class AnamneseController {
     @FXML
     void toProfilPage(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("profile-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(),800,600);
+        Scene scene = new Scene(fxmlLoader.load(),1025,800);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         stage.setTitle("Profile");
         stage.setScene(scene);
@@ -154,7 +154,7 @@ public class AnamneseController {
     @FXML
     void toRendezVousPage(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("rendez-vous-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(),800,600);
+        Scene scene = new Scene(fxmlLoader.load(),1025,800);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         stage.setTitle("Rendez vous");
         stage.setScene(scene);
@@ -165,7 +165,7 @@ public class AnamneseController {
     @FXML
     void toStatistiquePage(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("statistique-page-view.fxml.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(),800,600);
+        Scene scene = new Scene(fxmlLoader.load(),1025,800);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         stage.setTitle("statistique");
         stage.setScene(scene);
@@ -307,7 +307,7 @@ public class AnamneseController {
     @FXML
     public void toTests(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("tests-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(),800,600);
+        Scene scene = new Scene(fxmlLoader.load(),1025,800);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         stage.setTitle("statistique");
         stage.setScene(scene);
