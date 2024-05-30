@@ -4,6 +4,8 @@ import DataBases.*;
 import Models.Anamnese.AnamneseModel;
 import Models.Bilan.BilonModel;
 import Models.Bilan.BilonSchema;
+import Models.Diagnostique.TroubleModel;
+import Models.Diagnostique.TroubleSchema;
 import Models.DossierPatient.DossierPatientModel;
 import Models.Objectif.ObjectifModel;
 import Models.ObservationsCliniques.ObservationModel;
@@ -41,9 +43,10 @@ public class HelloApplication extends Application {
 //    public static final ObjectifModel fichesuivi = new ObjectifModel(new objectifFileDB());
     public static BilonModel bilonModel = new BilonModel();
     public static BilonSchema bilonSchema = new BilonSchema();
+    public static TroubleModel troubleModel = new TroubleModel();
+    public static TroubleSchema troubleSchema = new TroubleSchema() ;
 
     public static ObservationModel observationModel = new ObservationModel() ;
-//    public static ObservationSchema observationSchema = new ObservationSchema();
 
     public static  TestModel testModel = new TestModel(new TestFileDB());
 

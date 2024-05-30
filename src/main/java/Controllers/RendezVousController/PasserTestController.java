@@ -9,6 +9,7 @@ import Models.Test.*;
 import com.example.patient_management_system.HelloApplication;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -35,19 +36,24 @@ public class PasserTestController {
     private Map<TextField, Exercice> exerciceResponseFields = new HashMap<>();
 
     TestModel testModel = new TestModel(new TestFileDB());
-    AnamneseModel anamneseModel = HelloApplication.anamneseModel;
+    AnamneseModel anamneseModel = HelloApplication.anamneseModel ;
     QuestionQpreuveModel questionQpreuveModel = HelloApplication.testquestions;
     TestExerciceModel testExerciceModel = HelloApplication.testexercice;
 
-    public void initialize() {
+    public void initialize(){
         addQuestionsToView();
     }
 
     private void addQuestionsToView() {
+        // Add example questions for demonstration purposes
         ArrayList<QuestionLibre> libreQuestions = new ArrayList<>();
         ArrayList<QCU> qcuQuestions = new ArrayList<>();
         ArrayList<QCM> qcmQuestions = new ArrayList<>();
         ArrayList<Exercice> exerciceQuestions = HelloApplication.testexercice.getExercices();
+
+        // Fill these lists with example questions or fetch from your model
+        // Example:
+        //libreQuestions.add(new QuestionLibre("What is your favorite color?",""));
 
         ArrayList<QuestionEpreuve> TestQquestionList = HelloApplication.testquestions.getQuestions();
 
@@ -59,10 +65,10 @@ public class PasserTestController {
             } else if (testquestion instanceof QCU qcuQuestion) {
                 qcuQuestions.add(qcuQuestion);
             } else {
+                // Handle unexpected question types (optional)
                 System.err.println("Unknown question type encountered: " + testquestion.getClass().getName());
             }
         }
-
         addLibreQuestions(libreQuestions);
         addQCUQuestions(qcuQuestions);
         addQCMQuestions(qcmQuestions);
@@ -73,7 +79,6 @@ public class PasserTestController {
         for (QuestionLibre question : questions) {
             Label questionLabel = new Label(question.getQuestion());
             TextField responseField = new TextField();
-            questionLabel.setStyle("-fx-font-weight: bold; -fx-text-fill: #094fa8; -fx-font-size: 13; -fx-padding: 10");
             libreQuestionsVBox.getChildren().addAll(questionLabel, responseField);
             libreResponseFields.put(responseField, question);
         }
@@ -84,8 +89,6 @@ public class PasserTestController {
             Label questionLabel = new Label(question.getQuestion());
             ComboBox<String> responseField = new ComboBox<>();
             responseField.getItems().addAll(question.getPropositions());
-            questionLabel.setStyle("-fx-font-weight: bold; -fx-text-fill: #094fa8; -fx-font-size: 13; -fx-padding: 10");
-            responseField.setStyle("-fx-background-color: #EFFAFF;");
             qcuQuestionsVBox.getChildren().addAll(questionLabel, responseField);
             qcuResponseFields.put(responseField, question);
         }
@@ -100,7 +103,6 @@ public class PasserTestController {
                 checkBoxes[i] = new CheckBox(question.getPropositions().get(i));
                 optionsBox.getChildren().add(checkBoxes[i]);
             }
-            questionLabel.setStyle("-fx-font-weight: bold; -fx-text-fill: #094fa8; -fx-font-size: 13; -fx-padding: 10");
             qcmQuestionsVBox.getChildren().addAll(questionLabel, optionsBox);
             qcmResponseFields.put(checkBoxes, question);
         }
@@ -110,7 +112,6 @@ public class PasserTestController {
         for (Exercice question : questions) {
             Label questionLabel = new Label(question.getNom());
             TextField responseField = new TextField();
-            questionLabel.setStyle("-fx-font-weight: bold; -fx-text-fill: #094fa8; -fx-font-size: 13 ; -fx-padding: 10");
             exerciceQuestionsVBox.getChildren().addAll(questionLabel, responseField);
             exerciceResponseFields.put(responseField, question);
         }
@@ -119,9 +120,11 @@ public class PasserTestController {
     @FXML
     private void handleTestSubmit(javafx.event.ActionEvent event) throws TestNomUniqueException {
 
-        List<QuestionEpreuve> questions = new ArrayList<>();
+        // Create a new TestSchema based on question types
         TestSchema testSchema;
+        List<QuestionEpreuve> questions = new ArrayList<>();
 
+        // Process Libre Questions
         for (Map.Entry<TextField, QuestionLibre> entry : libreResponseFields.entrySet()) {
             TextField responseField = entry.getKey();
             QuestionLibre question = entry.getValue();
@@ -130,6 +133,7 @@ public class PasserTestController {
             questions.add(question);
         }
 
+        // Process QCU Questions
         for (Map.Entry<ComboBox<String>, QCU> entry : qcuResponseFields.entrySet()) {
             ComboBox<String> responseField = entry.getKey();
             QCU question = entry.getValue();
@@ -138,6 +142,7 @@ public class PasserTestController {
             questions.add(question);
         }
 
+        // Process QCM Questions
         for (Map.Entry<CheckBox[], QCM> entry : qcmResponseFields.entrySet()) {
             CheckBox[] checkBoxes = entry.getKey();
             QCM question = entry.getValue();
@@ -151,6 +156,7 @@ public class PasserTestController {
             questions.add(question);
         }
 
+        // Process Exercice Questions
         List<Exercice> exercices = new ArrayList<>();
         TreeSet<Float> progress = new TreeSet<>();
 
@@ -161,33 +167,40 @@ public class PasserTestController {
             try {
                 float progressValue = Float.parseFloat(response);
                 progress.add(progressValue);
-                exercice.setProgress(progress);
+                exercice.setProgress(progress); // Add progress instead of setting the entire progress
             } catch (NumberFormatException e) {
                 System.err.println("Invalid progress value entered for exercise: " + exercice.getNom());
             }
             exercices.add(exercice);
         }
 
+        // Create TestSchema based on question types
         if (!questions.isEmpty()) {
             testSchema = new TestSchemaQuestionaire("Test Questionnaire de " + HelloApplication.currentPatientName, questions);
         } else if (!exercices.isEmpty()) {
-            testSchema = new TestSchemaExercice("Test Exercice de " + HelloApplication.currentPatientName, exercices);
+            testSchema = new TestSchemaExercice("Test Exercice de" + HelloApplication.currentPatientName , exercices);
         } else {
+            // Handle case where no questions or exercises were answered
             System.err.println("No questions or exercises were answered in the test.");
             return;
         }
 
-        HelloApplication.testModel.createTest(testSchema);
-        HelloApplication.bilonSchema.setTests(HelloApplication.testModel);
+        // Add the TestSchema to the TestModel and update bilan
+        HelloApplication.testModel.createTest(testSchema); // Assuming createTest creates a new test
+        HelloApplication.bilonSchema.setTests(HelloApplication.testModel); // Assuming setTests takes the entire
+
 
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("observation-view.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("observation-view.fxml" ));
+            Scene scene = new Scene(fxmlLoader.load(),600,400);
             Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             stage.setTitle("PasserRendzVous");
             stage.setScene(scene);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 }

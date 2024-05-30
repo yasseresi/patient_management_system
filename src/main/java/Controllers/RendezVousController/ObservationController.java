@@ -23,6 +23,9 @@ public class ObservationController {
 
         HelloApplication.observationModel.addObservation( observation );
 
+        HelloApplication.bilonSchema.setObservations( HelloApplication.observationModel );
+        HelloApplication.bilonModel.addBilan( HelloApplication.bilonSchema );
+
         System.out.println(" Hello.ObservationModel = " + HelloApplication.observationModel.getObservations().getFirst().toUpperCase());
 
         // Load the diagnostic view

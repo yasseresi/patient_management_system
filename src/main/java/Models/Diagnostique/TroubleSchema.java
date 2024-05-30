@@ -9,6 +9,9 @@ public class TroubleSchema {
         this.categorie = categorie;
     }
 
+    public TroubleSchema() {
+    }
+
     public String getNom() {
         return nom;
     }
@@ -21,7 +24,24 @@ public class TroubleSchema {
         return categorie;
     }
 
-    public void setCategorie(TypeTrouble categorie) {
-        this.categorie = categorie;
+    public void setCategorie(String selectedType) {
+        // Handle potential case-insensitivity
+        selectedType = selectedType.toUpperCase();
+
+        // Map string to corresponding TypeTrouble enum value
+        TypeTrouble categorie = null;
+        for (TypeTrouble type : TypeTrouble.values()) {
+            if (type.name().equals(selectedType)) {
+                categorie = type;
+                break;
+            }
+        }
+
+        if (categorie != null) {
+            this.categorie = categorie;
+        } else {
+            // Handle invalid selection (optional: raise an exception or provide a warning)
+            System.out.println("Invalid type selection: " + selectedType);
+        }
     }
 }
