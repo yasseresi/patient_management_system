@@ -124,17 +124,20 @@ public class AnamneseController {
     void toLogOut(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),800,600);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         stage.setTitle("login");
         stage.setScene(scene);
-        //todo: save the files of the current orthophoniste
-        HelloApplication.patientModel.save();
-        HelloApplication.anamneseModel.save();
-        HelloApplication.testexercice.save();
-        HelloApplication.testquestions.save();
-//        HelloApplication.testModel.save();
-        HelloApplication.currentUserName = null;
         System.out.println("Logged out successfully");
+        HelloApplication.patientModel.save();
+        HelloApplication.testquestions.save();
+        HelloApplication.testexercice.save();
+        HelloApplication.anamneseModel.save();
+        HelloApplication.dossierPatientModel.save();
+        System.out.println("Files saved succeessfully");
+        HelloApplication.currentUserName = null;
+        HelloApplication.currentPatientName = null;
+        System.out.println("the current user after logout is "+HelloApplication.currentUserName);
+        System.out.println("the current patient after logout is "+HelloApplication.currentPatientName);
 
     }
 
@@ -161,7 +164,7 @@ public class AnamneseController {
 
     @FXML
     void toStatistiquePage(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("profile-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("statistique-page-view.fxml.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),800,600);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         stage.setTitle("statistique");

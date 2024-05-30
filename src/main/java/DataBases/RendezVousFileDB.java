@@ -2,6 +2,7 @@ package DataBases;
 
 import Exceptions.ConsultationAlreadyCreatedExecption;
 import Exceptions.ConsultationFirstException;
+import Models.RendezVous.AtelierSchema;
 import Models.RendezVous.ConsultationSchema;
 import Models.RendezVous.RendezVousSchema;
 import Models.RendezVous.SuiviSchema;
@@ -41,8 +42,10 @@ public class RendezVousFileDB implements RendezVouzDB {
         if ( !isConsultationPassed) throw new ConsultationFirstException();
         DateTimeKey dateTimeKey = new DateTimeKey(date, time);
         this.rendezVous.put(dateTimeKey, rendezVous);
-
-
+    }
+    public void createAtelier( AtelierSchema rendezVous){
+           DateTimeKey dateTimeKey = new DateTimeKey(rendezVous.getDate(),rendezVous.getHeure());
+           this.rendezVous.put(dateTimeKey,rendezVous);
     }
 
 

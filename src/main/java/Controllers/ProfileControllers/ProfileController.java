@@ -89,7 +89,7 @@ public class ProfileController implements Initializable {
     void toLogOut(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),800,600);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         stage.setTitle("login");
         stage.setScene(scene);
         System.out.println("Logged out successfully");
@@ -97,6 +97,7 @@ public class ProfileController implements Initializable {
         HelloApplication.testquestions.save();
         HelloApplication.testexercice.save();
         HelloApplication.anamneseModel.save();
+        HelloApplication.dossierPatientModel.save();
         System.out.println("Files saved succeessfully");
         HelloApplication.currentUserName = null;
         HelloApplication.currentPatientName = null;
@@ -129,7 +130,7 @@ public class ProfileController implements Initializable {
 
     @FXML
     void toStatistiquePage(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("profile-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("statistique-page-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),800,600);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle("statistique");

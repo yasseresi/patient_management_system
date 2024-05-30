@@ -31,6 +31,11 @@
                 <MenuItem mnemonicParsing="false" text="Action 2" />
               </items>
             </SplitMenuButton>
+            <Text fill="#191c1e" layoutX="71.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date et heure" wrappingWidth="100.2431640625">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
    </children>

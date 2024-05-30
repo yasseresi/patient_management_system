@@ -68,7 +68,7 @@
                     <children>
                         <Button mnemonicParsing="false" text="Passe Rendez vous" />
                         <Button mnemonicParsing="false" text="add Observation" />
-                        <Button mnemonicParsing="false" text="+ atelier" />
+                        <Button mnemonicParsing="false" onAction="#toAtelier" text="+ atelier" />
                         <Button mnemonicParsing="false" onAction="#AjouterConsultation" text="+ Consultation" />
                         <Button mnemonicParsing="false" onAction="#AjouterSuivi" text="+AjouterSuivi" />
                     </children>

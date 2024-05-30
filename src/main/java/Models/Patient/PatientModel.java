@@ -53,12 +53,8 @@ public class PatientModel implements Serializable {
 
     }
 
-    public void create(String nom , String prenom, LocalDate dateNaissance, String lieuNaissance, String adresse,int nbTelephone ,boolean nouveau) {
-        try {
-            this.dataBase.create(nom,prenom,caluclateAge(dateNaissance),dateNaissance,lieuNaissance,adresse,nbTelephone,nouveau);
-        } catch (PatientAlreadyExistException e) {
-            throw new RuntimeException(e);
-        }
+    public void create(String nom, String prenom, LocalDate dateNaissance, String lieuNaissance, String adresse, int nbTelephone, boolean nouveau)  {
+        this.dataBase.create(nom,prenom,caluclateAge(dateNaissance),dateNaissance,lieuNaissance,adresse,nbTelephone,nouveau);
     }
 
     public PatientSchema find(String nom,String prenom)  {

@@ -96,12 +96,18 @@ public class CreateConsultationController implements Initializable {
 
 
             HelloApplication.patientModel.create(patient);
-            System.out.println("patient " + patient.getPrenom() + " " + patient.getNom() + " is created");
-
+            for (PatientSchema patientSchema : HelloApplication.patientModel.getPatients()){
+                System.out.println( patientSchema.getNom()+ " "+ patientSchema.getPrenom());
+            }
             HelloApplication.dossierPatientModel.creerDossierPatient(patient);
+            for (PatientSchema patientSchema : HelloApplication.patientModel.getPatients()){
+                System.out.println( patientSchema.getNom()+ " "+ patientSchema.getPrenom());
+            }
 
 
             HelloApplication.dossierPatientModel.CreerConsultation(rendezVousSchema, patient);
+
+
         } catch (NumberFormatException e) {
             Popups.showErrorMessage("please enter a correct phone number or age format");
         } catch (ConsultationAlreadyCreatedExecption | PatientAlreadyExistException e) {

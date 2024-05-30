@@ -10,7 +10,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 public interface PatientDB extends Serializable {
-public void create(String nom, String prenom, int age, LocalDate dateNaissance, String lieuNaissance, String adresse,int nbTelephone, boolean nouveau) throws PatientAlreadyExistException;
+public void create(String nom, String prenom, int age, LocalDate dateNaissance, String lieuNaissance, String adresse,int nbTelephone, boolean nouveau) ;
 public PatientSchema create(PatientSchema newPatient) throws PatientAlreadyExistException;
 public boolean exists(String nom, String prenom);
 public PatientSchema find(String nom, String prenom) ;

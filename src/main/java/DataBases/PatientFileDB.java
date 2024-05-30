@@ -11,14 +11,15 @@ import javafx.collections.ObservableList;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.TreeSet;
 
 public class PatientFileDB implements PatientDB, Serializable {
 
-    private TreeSet<PatientSchema> patients = new TreeSet<>();
+    private ArrayList<PatientSchema> patients = new ArrayList<>();
 
-    public PatientFileDB(TreeSet< PatientSchema> patients) {
+    public PatientFileDB(ArrayList< PatientSchema> patients) {
         this.patients = patients;
     }
 
@@ -26,12 +27,18 @@ public class PatientFileDB implements PatientDB, Serializable {
     }
 
     @Override
-    public void create(String nom, String prenom, int age, LocalDate dateNaissance, String lieuNaissance, String adresse,int nbTelephone, boolean nouveau) throws PatientAlreadyExistException {
+    public void create(String nom, String prenom, int age, LocalDate dateNaissance, String lieuNaissance, String adresse,int nbTelephone, boolean nouveau)  {
         //creating an object of type PatientSchema
+        System.out.println("----avant patient creation");
         PatientSchema patient = (age <= 13) ? patient = new EnfantSchema(nom, prenom, age, dateNaissance, lieuNaissance, adresse,nbTelephone, nouveau) : new AdultSchema(nom, prenom, age, dateNaissance, lieuNaissance, adresse,nbTelephone, nouveau);
-
-        if (patients.contains(patient)) throw new PatientAlreadyExistException();
+        System.out.println("----after patient creation : " + patient.toString());
+        System.out.println("after check of existance in the patient db");
         patients.add(patient);
+        System.out.println("the db size is :" +patients.size());
+        System.out.println("\n");
+        for (PatientSchema patientt : patients){
+            System.out.println( patientt.toString());
+        }
         System.out.println("Patient added successfully : "+patient.getNom() + " " + patient.getPrenom());
 
     }
@@ -40,7 +47,6 @@ public class PatientFileDB implements PatientDB, Serializable {
 
     @Override
     public PatientSchema create(PatientSchema newPatient) throws PatientAlreadyExistException {
-        if ((patients.contains(newPatient) || exists(newPatient.getNom(), newPatient.getPrenom())) && !newPatient.isNouveau()) throw new PatientAlreadyExistException();
         patients.add(newPatient);
         return newPatient;
     }

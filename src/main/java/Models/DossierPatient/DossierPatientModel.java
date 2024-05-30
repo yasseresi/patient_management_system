@@ -2,7 +2,10 @@ package Models.DossierPatient;
 
 import Exceptions.ConsultationAlreadyCreatedExecption;
 import Exceptions.ConsultationFirstException;
+import Models.Diagnostique.TroubleModel;
+import Models.Diagnostique.TypeTrouble;
 import Models.Patient.PatientSchema;
+import Models.RendezVous.AtelierSchema;
 import Models.RendezVous.ConsultationSchema;
 import Models.RendezVous.RendezVousSchema;
 import Models.RendezVous.SuiviSchema;
@@ -89,6 +92,20 @@ public class DossierPatientModel {
         return null;
     }
 
+    public DossierPatientSchema getDossierPatientSelonID(String patientName) {
+        Iterator<DossierPatientSchema> iterator = dossierPatients.iterator();
+        DossierPatientSchema dossier = new DossierPatientSchema("");
+        while (iterator.hasNext()) {
+            dossier = iterator.next();
+            if (Objects.equals(dossier.getId(), patientName)) return dossier;
+
+        }
+        return null;
+    }
+
+
+
+
     public void updateDossierPatient(DossierPatientSchema dossierPatientSchema) {
         for (DossierPatientSchema dossier : dossierPatients) {
             if (dossier.getId().equals(dossierPatientSchema.getId())) {
@@ -98,36 +115,16 @@ public class DossierPatientModel {
     }
 
 
-    //this function add a medicalFolder when creating a new rendezVous so if the patient new doesn't have any one we create one and add the rendezVous
-    public void CreerRendezVous(ConsultationSchema rendezVousSchema, PatientSchema patientSchema) throws ConsultationFirstException, ConsultationAlreadyCreatedExecption {
-        if (existe(patientSchema.getNom(), patientSchema.getPrenom())) {
-            System.out.println("does  exist 1 :");
 
-
-            DossierPatientSchema dossier = getDossierPatientSelonID(patientSchema.getNom(), patientSchema.getPrenom());
-            System.out.println("does  exist 1 :");
-
-            dossier.getRendezVous().createConsultation(rendezVousSchema);
-            updateDossierPatient(dossier);
-            System.out.println("does  exist 2 :");
-
-        } else {
-            System.out.println("else");
-            String id = patientSchema.getNom() + " " + patientSchema.getPrenom();
-            System.out.println("before dossier :");
-
-            DossierPatientSchema dossier = new DossierPatientSchema(id);
-
-            dossier.getRendezVous().createConsultation(rendezVousSchema);
-            System.out.println("does not exist 2 :");
-            dossierPatients.add(dossier);
+    public void CreerAtelier(AtelierSchema atelier){
+        for (String username : atelier.getParticipants()){
+            DossierPatientSchema dossierPatientSchema = getDossierPatientSelonID(username);
+            dossierPatientSchema.getRendezVous().createAtelier(atelier);
+            updateDossierPatient(dossierPatientSchema);
         }
     }
 
     public void CreerConsultation(ConsultationSchema consultation, PatientSchema patient) throws ConsultationAlreadyCreatedExecption {
-
-
-
         DossierPatientSchema dossier = getDossierPatientSelonID(patient.getNom(), patient.getPrenom());
         System.out.println(dossier.toString());
 
@@ -137,9 +134,6 @@ public class DossierPatientModel {
     }
 
     public void CreerSuivi(SuiviSchema suivi, PatientSchema patient) throws ConsultationFirstException {
-
-
-
         DossierPatientSchema dossier = getDossierPatientSelonID(patient.getNom(), patient.getPrenom());
         System.out.println(dossier.toString());
 
@@ -168,6 +162,14 @@ public class DossierPatientModel {
 
 
         return rendezVous;
+    }
+
+    public int getNBPatientParTrouble(TypeTrouble typeTrouble){
+        int count =0;
+        for (DossierPatientSchema dossierPatientSchema : dossierPatients){
+            count+= dossierPatientSchema.getNbTroubleType(typeTrouble);
+        }
+        return count;
     }
 
 

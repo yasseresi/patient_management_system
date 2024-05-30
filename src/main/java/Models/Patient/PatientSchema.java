@@ -99,11 +99,11 @@ public abstract class PatientSchema implements Serializable, Comparable<PatientS
     }
 
     @Override
-    public boolean equals(Object o) {
+    public final boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        PatientSchema that = (PatientSchema) o;
-        return age == that.age && nouveau == that.nouveau && Objects.equals(nom, that.nom) && Objects.equals(prenom, that.prenom) && Objects.equals(dateNaissance, that.dateNaissance) && Objects.equals(lieuNaissance, that.lieuNaissance) && Objects.equals(adresse, that.adresse);
+        if (!(o instanceof PatientSchema that)) return false;
+
+        return nom.equals(that.nom) && prenom.equals(that.prenom);
     }
 
     @Override

@@ -1,6 +1,7 @@
 package Models.Bilan;
 
 import DataBases.RendezVouzDB;
+import Models.Diagnostique.TypeTrouble;
 import com.example.patient_management_system.HelloApplication;
 
 import java.io.*;
@@ -51,6 +52,15 @@ public class BilonModel {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file))) {
             oos.writeObject(bilans);
         }
+    }
+
+
+    public int getNbTroubleType(TypeTrouble type){
+        int count =0;
+        for (BilonSchema bilon : bilans){
+            count+= bilon.getNbTrouble(type);
+        }
+        return count;
     }
 
 

@@ -87,11 +87,13 @@ public class SignUpController {
                 new File(HelloApplication.usersDirectoryName + "/"+ HelloApplication.currentUserName +"/"+"listTestQuestions.dt").createNewFile();
                 new File(HelloApplication.usersDirectoryName + "/"+ HelloApplication.currentUserName +"/"+"listTestExercice.dt").createNewFile();
                 new File(HelloApplication.usersDirectoryName + "/"+ HelloApplication.currentUserName +"/"+HelloApplication.anamneseDBFileName).createNewFile();
+                new File(HelloApplication.usersDirectoryName +"/"+ HelloApplication.currentUserName + "/"+HelloApplication.dossierPatientFileName).createNewFile();
                 //load them to the model
                 HelloApplication.patientModel.load();
                 HelloApplication.testquestions.load();
                 HelloApplication.testexercice.load();
                 HelloApplication.anamneseModel.load();
+                HelloApplication.dossierPatientModel.load();
 
 
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

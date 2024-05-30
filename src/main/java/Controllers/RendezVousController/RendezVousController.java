@@ -22,7 +22,9 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.ResourceBundle;
+import java.util.Set;
 
 public class RendezVousController implements Initializable {
 
@@ -78,9 +80,8 @@ public class RendezVousController implements Initializable {
     }
 
     private void showRendezVousForDate(LocalDate date) {
-        ObservableList<RendezVousSchema> rendezVousList = FXCollections.observableArrayList();
-        rendezVousList.addAll(HelloApplication.dossierPatientModel.getRendezVousOfDay(date));
-
+        Set<RendezVousSchema> rendezVousSet = new HashSet<>(HelloApplication.dossierPatientModel.getRendezVousOfDay(date));
+        ObservableList<RendezVousSchema> rendezVousList = FXCollections.observableArrayList(rendezVousSet);
 
         rendezVousTable.setItems(rendezVousList);
         CurrentDate.setText(date.getDayOfMonth() + " " + date.getMonth().toString() + " " + date.getYear());
@@ -113,6 +114,16 @@ public class RendezVousController implements Initializable {
         stage.setScene(scene);
 
         CurrentDate.setText(LocalDate.now().getDayOfMonth() + " " + LocalDate.now().getMonth().toString() + " " + LocalDate.now().getYear());
+    }
+
+    @FXML
+    public void toAtelier(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("atelier-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(),800,600);
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("ADD Suivi");
+        stage.setScene(scene);
+
     }
 
     @FXML
@@ -165,7 +176,7 @@ public class RendezVousController implements Initializable {
     @FXML
     public void toStatistiquePage(ActionEvent event) throws IOException {
         Stage stage = (Stage) statistiqueButton.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("profile-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("statistique-page-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 835, 549);
         stage.setScene(scene);
         stage.show();

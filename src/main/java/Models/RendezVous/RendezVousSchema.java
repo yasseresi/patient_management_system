@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Comparator;
+import java.util.Objects;
 
 public abstract class RendezVousSchema implements Serializable, Comparator<RendezVousSchema> {
 
@@ -32,12 +33,20 @@ public abstract class RendezVousSchema implements Serializable, Comparator<Rende
         this.duree = duree;
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        RendezVousSchema that = (RendezVousSchema) o;
+        return Objects.equals(date, that.date) &&
+                Objects.equals(duree, that.duree) &&
+                Objects.equals(heure, that.heure);
+    }
+
     @Override
     public int hashCode() {
-        int result = date.hashCode();
-        result = 31 * result + heure.hashCode();
-        result = 31 * result + duree.hashCode();
-        return result;
+        return Objects.hash(date, duree, heure);
     }
 
     @Override

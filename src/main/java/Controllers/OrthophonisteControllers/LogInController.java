@@ -63,6 +63,7 @@ public class LogInController {
             HelloApplication.anamneseModel.load();
             HelloApplication.testquestions.load();
             HelloApplication.testquestions.load();
+            HelloApplication.dossierPatientModel.load();
 //            HelloApplication.currentUserSettings = user.getSettings();
 
             //Load the DBs from the corresponding files

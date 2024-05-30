@@ -98,6 +98,7 @@ public class HelloApplication extends Application {
             testquestions.save();
             testexercice.save();
             anamneseModel.save();
+            dossierPatientModel.save();
 
 
         }

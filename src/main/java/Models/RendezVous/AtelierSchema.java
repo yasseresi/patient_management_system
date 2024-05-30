@@ -9,9 +9,9 @@ import java.util.List;
 public class AtelierSchema extends RendezVousSchema{
 
     private String thematique;
-    private List<PatientSchema> participants;
+    private List<String> participants;
 
-    public AtelierSchema(LocalDate date , LocalTime heure,String thematique, List<PatientSchema> participants) {
+    public AtelierSchema(LocalDate date , LocalTime heure,String thematique, List<String> participants) {
         this.thematique = thematique;
         this.participants = participants;
         this.date = date;
@@ -27,11 +27,22 @@ public class AtelierSchema extends RendezVousSchema{
         this.thematique = thematique;
     }
 
-    public List<PatientSchema> getParticipants() {
+    public List<String> getParticipants() {
         return participants;
     }
 
-    public void setParticipants(List<PatientSchema> participants) {
+    public void setParticipants(List<String> participants) {
         this.participants = participants;
+    }
+
+    @Override
+    public String toString() {
+        return "AtelierSchema{" +
+                "thematique='" + thematique + '\'' +
+                ", participants=" + participants +
+                ", date=" + date +
+                ", heure=" + heure +
+                ", duree='" + duree + '\'' +
+                '}';
     }
 }

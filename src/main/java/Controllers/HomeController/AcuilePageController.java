@@ -80,6 +80,7 @@ public class AcuilePageController  implements Initializable {
         HelloApplication.testquestions.save();
         HelloApplication.testexercice.save();
         HelloApplication.anamneseModel.save();
+        HelloApplication.dossierPatientModel.save();
         System.out.println("Files saved succeessfully");
         HelloApplication.currentUserName = null;
         HelloApplication.currentPatientName = null;
@@ -112,7 +113,7 @@ public class AcuilePageController  implements Initializable {
 
     @FXML
     void toStatistiquePage(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("profile-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("statistique-page-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),800,600);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         stage.setTitle("statistique");

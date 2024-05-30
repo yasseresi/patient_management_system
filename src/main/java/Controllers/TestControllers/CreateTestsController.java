@@ -101,6 +101,7 @@ public class CreateTestsController {
         HelloApplication.testquestions.save();
         HelloApplication.testexercice.save();
         HelloApplication.anamneseModel.save();
+        HelloApplication.dossierPatientModel.save();
         System.out.println("Files saved succeessfully");
         HelloApplication.currentUserName = null;
         HelloApplication.currentPatientName = null;

@@ -1,6 +1,7 @@
 package Models.Diagnostique;
 
 import java.io.*;
+import java.util.Map;
 import java.util.TreeMap;
 
 import static com.example.patient_management_system.HelloApplication.troubleDBFileName;
@@ -52,5 +53,16 @@ public class TroubleModel {
 
     public TreeMap<String, TroubleSchema> getTroubles() {
         return troubles;
+    }
+
+
+
+    public int getTroublebyType(TypeTrouble trouble){
+        int count =0;
+         for (Map.Entry<String,TroubleSchema> entry : troubles.entrySet()){
+                TroubleSchema troubleSchema = entry.getValue();
+                if (troubleSchema.getCategorie().equals(trouble)) ++count;
+         }
+         return count;
     }
 }

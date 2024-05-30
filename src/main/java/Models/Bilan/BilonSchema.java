@@ -2,6 +2,7 @@ package Models.Bilan;
 
 import Models.Anamnese.AnamneseModel;
 import Models.Diagnostique.TroubleModel;
+import Models.Diagnostique.TypeTrouble;
 import Models.ObservationsCliniques.ObservationModel;
 import Models.Test.TestModel;
 
@@ -57,5 +58,9 @@ public class BilonSchema {
 
     public void setDiagnostic(TroubleModel diagnostic) {
         this.diagnostic = diagnostic;
+    }
+
+    public int getNbTrouble(TypeTrouble trouble){
+        return this.diagnostic.getTroublebyType(trouble);
     }
 }

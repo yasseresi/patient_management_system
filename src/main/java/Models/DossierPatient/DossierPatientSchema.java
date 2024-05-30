@@ -2,6 +2,7 @@ package Models.DossierPatient;
 
 import Models.Bilan.BilonModel;
 import Models.Bilan.BilonSchema;
+import Models.Diagnostique.TypeTrouble;
 import Models.Objectif.FichSuiviModel;
 import Models.Objectif.ObjectifModel;
 import Models.RendezVous.RendezVousModel;
@@ -67,5 +68,9 @@ public class DossierPatientSchema {
         return "DossierPatientSchema{" +
                 "id='" + id + '\'' +
                 '}';
+    }
+
+    public int getNbTroubleType(TypeTrouble typeTrouble){
+        return this.bilan.getNbTroubleType(typeTrouble);
     }
 }

@@ -74,14 +74,6 @@ public class DossierPatientController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-//        if (new File(HelloApplication.usersDirectoryName + "/" + HelloApplication.currentUserName, HelloApplication.patientsDBFileName).exists()) {
-//            try {
-//                HelloApplication.patientModel.load();
-//            } catch (IOException e) {
-//                throw new RuntimeException(e);
-//            }
-//            System.out.println("Patient model has been loaded");
-//        }
 
         noms.setCellValueFactory(new PropertyValueFactory<>("nom"));
         prenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
@@ -100,8 +92,6 @@ public class DossierPatientController implements Initializable {
         if (patients.isEmpty()) {
             System.out.println("Patient list is empty");
         } else {
-            System.out.println("Current Patient: " + HelloApplication.currentPatientName);
-
             System.out.println("Patient size: " + patients.size());
 
             for (PatientSchema element : patients){
@@ -131,12 +121,12 @@ public class DossierPatientController implements Initializable {
             stage.setScene(scene);
 
             // Update the current patient name in the application
-            HelloApplication.currentPatientName = patient.getNom() + " " + patient.getPrenom();
+//            HelloApplication.currentPatientName = patient.getNom() + " " + patient.getPrenom();
             System.out.println("Current Patient: " + HelloApplication.currentPatientName);
 
-            // Get the controller for the Patient Details view and set the patient details
-            PatientDetailsController controller = fxmlLoader.getController();
-            controller.setPatientDetails(patient);
+//            // Get the controller for the Patient Details view and set the patient details
+//            PatientDetailsController controller = fxmlLoader.getController();
+//            controller.setPatientDetails(patient);
 
             // Show the updated stage
             stage.show();
@@ -185,19 +175,26 @@ public class DossierPatientController implements Initializable {
 
         }
 
-        @FXML
-        void toLogOut(javafx.event.ActionEvent event) throws IOException {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(),800,600);
-            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-            stage.setTitle("login");
-            stage.setScene(scene);
-            //todo:save the files
-            HelloApplication.patientModel.save();
-            HelloApplication.currentUserName = null;
-            System.out.println("Logged out successfully");
+    @FXML
+    void toLogOut(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(),800,600);
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("login");
+        stage.setScene(scene);
+        System.out.println("Logged out successfully");
+        HelloApplication.patientModel.save();
+        HelloApplication.testquestions.save();
+        HelloApplication.testexercice.save();
+        HelloApplication.anamneseModel.save();
+        HelloApplication.dossierPatientModel.save();
+        System.out.println("Files saved succeessfully");
+        HelloApplication.currentUserName = null;
+        HelloApplication.currentPatientName = null;
+        System.out.println("the current user after logout is "+HelloApplication.currentUserName);
+        System.out.println("the current patient after logout is "+HelloApplication.currentPatientName);
 
-        }
+    }
 
         @FXML
         void toProfilPage(javafx.event.ActionEvent event) throws IOException {
@@ -223,7 +220,7 @@ public class DossierPatientController implements Initializable {
 
         @FXML
         void toStatistiquePage(ActionEvent event) throws IOException {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("profile-view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("statistique-page-view.fxml"));
             Scene scene = new Scene(fxmlLoader.load(),800,600);
             Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             stage.setTitle("statistique");
