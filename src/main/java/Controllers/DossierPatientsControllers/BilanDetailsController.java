@@ -84,7 +84,7 @@ public class BilanDetailsController {
     private void populateTestListView(List<TestSchema> data) {
         List<String> items = new ArrayList<>();
         for (TestSchema item : data) {
-            items.add(item.toString());
+            items.add(item.getNom());
         }
         testListView.setItems(FXCollections.observableArrayList(items));
     }

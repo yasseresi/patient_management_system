@@ -71,7 +71,7 @@ public class AcuilePageController  implements Initializable {
     @FXML
     void toLogOut(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(),800,600);
+        Scene scene = new Scene(fxmlLoader.load(),1025,800);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         stage.setTitle("login");
         stage.setScene(scene);

@@ -8,6 +8,9 @@ public class ObservationSchema {
         this.contenu = contenu;
     }
 
+    public ObservationSchema() {
+    }
+
     public String getContenu() {
         return contenu;
     }

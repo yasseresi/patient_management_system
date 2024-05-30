@@ -3,8 +3,11 @@ package com.example.patient_management_system;
 import DataBases.*;
 import Models.Anamnese.AnamneseModel;
 import Models.Bilan.BilonModel;
+import Models.Bilan.BilonSchema;
 import Models.DossierPatient.DossierPatientModel;
 import Models.Objectif.ObjectifModel;
+import Models.ObservationsCliniques.ObservationModel;
+import Models.ObservationsCliniques.ObservationSchema;
 import Models.Orthophoniste.OrthophonisteModel;
 import Models.Patient.PatientModel;
 import Models.Question.QuestionQpreuveModel;
@@ -32,11 +35,15 @@ public class HelloApplication extends Application {
     public static  OrthophonisteModel orthophonisteModel = new OrthophonisteModel(new OrthophonisteFileDataBase() );
     public static  PatientModel patientModel = new PatientModel( new PatientFileDB() );
     public static  AnamneseModel anamneseModel = new AnamneseModel(new AnamneseDBFile());
-    public static  DossierPatientModel dossierPatientModel = new DossierPatientModel();
+    public static  DossierPatientModel dossierPatientModel = new DossierPatientModel() ;
 
 //    public static final RendezVousModel rendezvousModel = new RendezVousModel(new RendezVousFileDB());
 //    public static final ObjectifModel fichesuivi = new ObjectifModel(new objectifFileDB());
-    public static final BilonModel bilonModel = new BilonModel();
+    public static BilonModel bilonModel = new BilonModel();
+    public static BilonSchema bilonSchema = new BilonSchema();
+
+    public static ObservationModel observationModel = new ObservationModel() ;
+//    public static ObservationSchema observationSchema = new ObservationSchema();
 
     public static  TestModel testModel = new TestModel(new TestFileDB());
 
@@ -98,7 +105,6 @@ public class HelloApplication extends Application {
             testquestions.save();
             testexercice.save();
             anamneseModel.save();
-
 
         }
 

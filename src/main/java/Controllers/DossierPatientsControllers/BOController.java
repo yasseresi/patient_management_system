@@ -49,6 +49,8 @@ public class BOController {
     @FXML
     private VBox bilanDetailContainer; // Container for displaying bilan details
 
+    BilonModel bilonModel = HelloApplication.bilonModel;
+
 
     public void setPatientDetails(PatientSchema patient) {
 
@@ -81,35 +83,35 @@ public class BOController {
 
 
         // ------------------ Example data for testing ------------------------------
-        AnamneseModel anamneseModel = new AnamneseModel(new AnamneseDBFile());
-        try {
-            anamneseModel.createQuestion(new QuestionEnfant("Question 1", TypeEnfant.ANTECEDENTS_FAMILIAUX));
-            anamneseModel.createQuestion(new QuestionEnfant("Question 2", TypeEnfant.CARACTERE_ET_COMPORTEMENT));
-            anamneseModel.createQuestion(new QuestionEnfant("Question 3", TypeEnfant.DEVELOPPEMENT_PSYCHOMOTEUR));
-        } catch (QuestionAlreadyExistException e) {
-            e.printStackTrace();
-        }
-
-        TestModel testModel = new TestModel(new TestFileDB());
-        try {
-            testModel.createTest( new TestSchemaQuestionaire("Test Questionaire"));
-        } catch (TestNomUniqueException e) {
-            e.printStackTrace();
-        }
-
-        ObservationModel observationModel = new ObservationModel(new ArrayList<>());
-        observationModel.addObservation("Observation 1");
-
-        TroubleModel troubleModel = new TroubleModel(new TreeMap<>());
-        troubleModel.addTroubles("Trouble 1", TypeTrouble.CONGNITIFS);
-
-        BilonSchema bilan = new BilonSchema(anamneseModel, testModel, observationModel, troubleModel);
-        ArrayList<BilonSchema> bilans_exemple = new ArrayList<>();
-        bilans_exemple.add(bilan);
+//        AnamneseModel anamneseModel = new AnamneseModel(new AnamneseDBFile());
+//        try {
+//            anamneseModel.createQuestion(new QuestionEnfant("Question 1", TypeEnfant.ANTECEDENTS_FAMILIAUX));
+//            anamneseModel.createQuestion(new QuestionEnfant("Question 2", TypeEnfant.CARACTERE_ET_COMPORTEMENT));
+//            anamneseModel.createQuestion(new QuestionEnfant("Question 3", TypeEnfant.DEVELOPPEMENT_PSYCHOMOTEUR));
+//        } catch (QuestionAlreadyExistException e) {
+//            e.printStackTrace();
+//        }
+//
+//        TestModel testModel = new TestModel(new TestFileDB());
+//        try {
+//            testModel.createTest( new TestSchemaQuestionaire("Test Questionaire"));
+//        } catch (TestNomUniqueException e) {
+//            e.printStackTrace();
+//        }
+//
+//        ObservationModel observationModel = new ObservationModel(new ArrayList<>());
+//        observationModel.addObservation("Observation 1");
+//
+//        TroubleModel troubleModel = new TroubleModel(new TreeMap<>());
+//        troubleModel.addTroubles("Trouble 1", TypeTrouble.CONGNITIFS);
+//
+//        BilonSchema bilan = new BilonSchema(anamneseModel, testModel, observationModel, troubleModel);
+//        ArrayList<BilonSchema> bilans_exemple = new ArrayList<>();
+//        bilans_exemple.add(bilan);
 
         // Combine example data with loaded data
-        bilans.addAll(bilans_exemple);
-        System.out.println("EX : Bilan.Anamnese.QuestionFirst : " + bilan.getAnamneseModel().getQuestionsEnfant().getFirst().getQuestion().toUpperCase());
+        //bilans.addAll(bilans_exemple);
+        //System.out.println("EX : Bilan.Anamnese.QuestionFirst : " + bilan.getAnamneseModel().getQuestionsEnfant().getFirst().getQuestion().toUpperCase());
 
         displayBilans(bilans);
 

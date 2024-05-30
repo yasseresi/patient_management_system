@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.RendezVousController.PasserAnamnesController" alignment="CENTER" prefWidth="600" prefHeight="400" spacing="25" >
+    <children>
+        <Label text="Anamnèse Questions" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-padding: 25" />
+        <ScrollPane fx:id="questionsScrollPane" fitToWidth="true" fitToHeight="true" style="-fx-padding: 10"  >
+            <content>
+                <VBox fx:id="questionsVBox" spacing="10" style="-fx-padding: 10">
+                    <!-- Dynamically added questions will appear here -->
+                </VBox>
+            </content>
+        </ScrollPane>
+        <Button text="Submit" fx:id="validateButton" onAction="#handleSubmit" prefHeight="25.0" prefWidth="75.0" style="-fx-padding: 10px; -fx-font-size: 15; -fx-border-radius: 15; -fx-background-color: #053c7c" textFill="white" />
+    </children>
+</VBox>

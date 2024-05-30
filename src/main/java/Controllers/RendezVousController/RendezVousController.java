@@ -80,8 +80,6 @@ public class RendezVousController implements Initializable {
     private void showRendezVousForDate(LocalDate date) {
         ObservableList<RendezVousSchema> rendezVousList = FXCollections.observableArrayList();
         rendezVousList.addAll(HelloApplication.dossierPatientModel.getRendezVousOfDay(date));
-
-
         rendezVousTable.setItems(rendezVousList);
         CurrentDate.setText(date.getDayOfMonth() + " " + date.getMonth().toString() + " " + date.getYear());
     }
@@ -113,6 +111,16 @@ public class RendezVousController implements Initializable {
         stage.setScene(scene);
 
         CurrentDate.setText(LocalDate.now().getDayOfMonth() + " " + LocalDate.now().getMonth().toString() + " " + LocalDate.now().getYear());
+    }
+
+    @FXML
+    public void toPasserRendezVous(ActionEvent event) throws IOException {
+        // Load the FXML file for passer-rendezvous
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("passer-rendevouz.fxml" ));
+        Scene scene = new Scene(fxmlLoader.load(),600,400);
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("PasserRendzVous");
+        stage.setScene(scene);
     }
 
     @FXML
@@ -165,7 +173,7 @@ public class RendezVousController implements Initializable {
     @FXML
     public void toStatistiquePage(ActionEvent event) throws IOException {
         Stage stage = (Stage) statistiqueButton.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("profile-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("statistique-page-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 835, 549);
         stage.setScene(scene);
         stage.show();

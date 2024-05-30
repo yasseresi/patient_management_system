@@ -24,8 +24,8 @@
 
     <!-- Buttons -->
     <HBox alignment="CENTER" spacing="25" style="-fx-padding: 50;">
-        <Button text="Rendez-vous" fx:id="rendezVousButton" onAction="#handleRendezVous" style="-fx-min-width: 200; -fx-min-height: 200; -fx-background-color: brown; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 15; -fx-font-size: 20px;" />
-        <Button text="BO" fx:id="boButton" onAction="#handleBO" style="-fx-min-width: 200; -fx-min-height: 200; -fx-background-color: brown; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 15; -fx-font-size: 20px;" />
-        <Button text="Fiche de suivi" fx:id="ficheSuiviButton" onAction="#handleFicheSuivi" style="-fx-min-width: 200; -fx-min-height: 200; -fx-background-color: brown; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 15; -fx-font-size: 20px;" />
+        <Button text="Rendez-vous" fx:id="rendezVousButton" onAction="#handleRendezVous" style="-fx-min-width: 200; -fx-min-height: 200; -fx-text-fill: white; -fx-background-radius: 15; -fx-font-size: 20px; -fx-background-color: #86D6F8; -fx-font-weight: bold;" />
+        <Button text="BO" fx:id="boButton" onAction="#handleBO" style="-fx-min-width: 200; -fx-min-height: 200; -fx-text-fill: white; -fx-background-radius: 15; -fx-font-size: 20px; -fx-background-color: #86D6F8; -fx-font-weight: bold;" />
+        <Button text="Fiche de suivi" fx:id="ficheSuiviButton" onAction="#handleFicheSuivi" style="-fx-min-width: 200; -fx-min-height: 200; -fx-text-fill: white; -fx-background-radius: 15; -fx-font-size: 20px; -fx-background-color: #86D6F8; -fx-font-weight: bold;" />
     </HBox>
 </VBox>

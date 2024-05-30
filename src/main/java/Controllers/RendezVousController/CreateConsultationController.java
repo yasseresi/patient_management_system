@@ -1,6 +1,7 @@
 package Controllers.RendezVousController;
 
 import Exceptions.ConsultationAlreadyCreatedExecption;
+import Exceptions.ConsultationAlreadyPassedExecption;
 import Exceptions.PatientAlreadyExistException;
 import Models.Patient.AdultSchema;
 import Models.Patient.EnfantSchema;
@@ -24,7 +25,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.Period;
 import java.util.ResourceBundle;
 import java.util.stream.IntStream;
 
@@ -78,12 +78,14 @@ public class CreateConsultationController implements Initializable {
         try {
             nbTelephone = Integer.parseInt(this.tf_tele_one.getText());
 
-            int age;
+
+            // Validate that the age input is a valid integer
+            int age = 0;
+
             age = Integer.parseInt(this.age.getText());
 
             LocalDate rdvDay = this.rdvDate.getValue();
             LocalTime rdvTime = LocalTime.of(this.rdvHeur.getValue(), this.rdvMin.getValue());
-             age = Period.between(birthDday,LocalDate.now()).getYears();
 
 
             PatientSchema patient;
@@ -104,8 +106,10 @@ public class CreateConsultationController implements Initializable {
             HelloApplication.dossierPatientModel.CreerConsultation(rendezVousSchema, patient);
         } catch (NumberFormatException e) {
             Popups.showErrorMessage("please enter a correct phone number or age format");
-        } catch (ConsultationAlreadyCreatedExecption | PatientAlreadyExistException e) {
+        } catch (PatientAlreadyExistException e) {
             Popups.showErrorMessage(e.getMessage());
+        } catch (ConsultationAlreadyCreatedExecption e) {
+            throw new RuntimeException(e);
         }
 
 
