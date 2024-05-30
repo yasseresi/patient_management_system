@@ -49,7 +49,7 @@ public class FicheSuiviController {
     public void setPatientDetails(PatientSchema patient) {
 
         // Set patient name label
-        patientNameLabel.setText(patient.getNom().toUpperCase() + " " + patient.getPrenom().toUpperCase() + "   |   " + LocalDate.now());
+        patientNameLabel.setText(HelloApplication.currentPatientName + "   |   " + LocalDate.now());
 
         ArrayList<DossierPatientSchema> dossiers = HelloApplication.dossierPatientModel.getDossierPatients();
 

@@ -6,19 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="22522964-ee30-41fa-aa84-8bf6b9a1ee96" name="Changes" comment="first commit project initialisation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orthophoniste_directory/SpeachTherapistDBFile.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orthophoniste_directory/y k/AnamneseFileDB.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orthophoniste_directory/y k/dossiersPatientFileDB.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orthophoniste_directory/y k/listTestExercice.dt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orthophoniste_directory/y k/listTestQuestions.dt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orthophoniste_directory/y k/patientsFileDatabase.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/HomeController/AcuilePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/HomeController/AcuilePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/BOController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/BOController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/DossierPatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/DossierPatientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/FicheSuiviController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/FicheSuiviController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/PatientDetailsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/PatientDetailsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/RendezVousListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/DossierPatientsControllers/RendezVousListController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/RendezVousController/DiagnosticController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/RendezVousController/DiagnosticController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/RendezVousController/ObservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/RendezVousController/ObservationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/RendezVousController/PasserTestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/RendezVousController/PasserTestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Diagnostique/TroubleSchema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Diagnostique/TroubleSchema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/patient_management_system/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/patient_management_system/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/tests-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/patient_management_system/tests-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/RendezVousController/ListRendezVousByPatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/RendezVousController/ListRendezVousByPatientController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

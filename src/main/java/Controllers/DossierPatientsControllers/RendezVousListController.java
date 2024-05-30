@@ -52,7 +52,7 @@ public class RendezVousListController {
     private TableColumn<RendezVousSchema, String> observationColumn;
 
     public void setPatientDetails(PatientSchema patient) {
-        patientNameLabel.setText(patient.getNom().toUpperCase() + " " + patient.getPrenom().toUpperCase());
+        patientNameLabel.setText(HelloApplication.currentPatientName);
 
         System.out.println("Current Patient: " + HelloApplication.currentPatientName);
 

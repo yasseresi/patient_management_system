@@ -49,12 +49,10 @@ public class BOController {
     @FXML
     private VBox bilanDetailContainer; // Container for displaying bilan details
 
-    BilonModel bilonModel = HelloApplication.bilonModel;
-
 
     public void setPatientDetails(PatientSchema patient) {
 
-        patientNameLabel.setText(patient.getNom().toUpperCase() + " " + patient.getPrenom().toUpperCase());
+        patientNameLabel.setText(HelloApplication.currentPatientName.toUpperCase());
 
         ArrayList<BilonSchema> bilans = new ArrayList<>();
 

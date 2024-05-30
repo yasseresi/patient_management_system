@@ -61,6 +61,9 @@ public class PatientDetailsController {
 
     private void loadNewContent(String fxmlFile, String title, PatientSchema patient) {
         try {
+
+            HelloApplication.currentPatientName = patient.getNom() + " " + patient.getPrenom() ;
+
             FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource(fxmlFile));
             Scene newScene = new Scene(loader.load());
 

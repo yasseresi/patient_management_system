@@ -121,12 +121,12 @@ public class DossierPatientController implements Initializable {
             stage.setScene(scene);
 
             // Update the current patient name in the application
-//            HelloApplication.currentPatientName = patient.getNom() + " " + patient.getPrenom();
+            HelloApplication.currentPatientName = patient.getNom() + " " + patient.getPrenom();
             System.out.println("Current Patient: " + HelloApplication.currentPatientName);
 
 //            // Get the controller for the Patient Details view and set the patient details
-//            PatientDetailsController controller = fxmlLoader.getController();
-//            controller.setPatientDetails(patient);
+            PatientDetailsController controller = fxmlLoader.getController();
+            controller.setPatientDetails(patient);
 
             // Show the updated stage
             stage.show();

@@ -123,18 +123,22 @@ public class ListRendezVousByPatientController {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("passer-anamnese.fxml"));
         Parent parent = fxmlLoader.load();
 
-//        if ( rendezVous instanceof ConsultationSchema ){
-//            System.out.println("Le rendezvous est une consultation");
-//            PasserAnamnesController controller = fxmlLoader.getController();
-//            controller.setRendezVous(rendezVous);
-//
-//        } else if ( rendezVous instanceof SuiviSchema) {
-//            System.out.println("Le rendezvous est un suivi");
-//        }
+        if ( rendezVous instanceof ConsultationSchema ){
+            System.out.println("Le rendezvous est une consultation");
+            PasserAnamnesController controller = fxmlLoader.getController();
+            controller.setRendezVous(rendezVous);
+
+        } else if ( rendezVous instanceof SuiviSchema) {
+
+            PasserTestController controller = fxmlLoader.getController();
+            controller.initialize();
+
+            System.out.println("Le rendezvous est un suivi");
+        }
 
 
-        PasserAnamnesController controller = fxmlLoader.getController();
-        controller.setRendezVous(rendezVous);
+//        PasserAnamnesController controller = fxmlLoader.getController();
+//        controller.setRendezVous(rendezVous);
 
         Stage stage = new Stage();
         stage.setTitle("Selected Rendezvous");

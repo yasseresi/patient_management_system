@@ -49,6 +49,9 @@ public class DiagnosticController {
 
         HelloApplication.bilonModel.addBilan(HelloApplication.bilonSchema);
 
+        HelloApplication.dossierPatientModel.getDossierPatientSelonID(HelloApplication.currentPatientName).setBilan( HelloApplication.bilonModel );
+
+
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("rendez-vous-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
