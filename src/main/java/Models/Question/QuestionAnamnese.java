@@ -10,5 +10,12 @@ public abstract class QuestionAnamnese extends Question implements Serializable 
         return super.question;
     }
 
+    public String getReponse() {
+        return reponse;
+    }
+
+    public void setReponse(String reponse) {
+        this.reponse = reponse;
+    }
 
 }

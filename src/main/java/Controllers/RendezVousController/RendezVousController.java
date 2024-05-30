@@ -127,6 +127,16 @@ public class RendezVousController implements Initializable {
     }
 
     @FXML
+    public void toPasserRendezVous(ActionEvent event) throws IOException {
+        // Load the FXML file for passer-rendezvous
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("passer-rendevouz.fxml" ));
+        Scene scene = new Scene(fxmlLoader.load(),600,400);
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("PasserRendzVous");
+        stage.setScene(scene);
+    }
+
+    @FXML
     public void toAccueilPage(ActionEvent event) throws IOException {
         Stage stage = (Stage) accueilButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("home-page-view.fxml"));
@@ -149,7 +159,7 @@ public class RendezVousController implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),800,600);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("connexion");
+        stage.setTitle("login");
         stage.setScene(scene);
         System.out.println("Logged out successfully");
         HelloApplication.patientModel.save();
